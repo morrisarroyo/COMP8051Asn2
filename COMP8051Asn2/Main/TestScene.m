@@ -7,14 +7,14 @@
 //
 
 #import "TestScene.h"
-#import "NorthWall.h"
+#import "Cube.h"
 
 //#import "RWMushroom.h"
 @implementation TestScene {
     //RWMushroom* _mushroom;
     CGSize _gameArea;
     float _sceneOffset;
-    NorthWall *_northWall;
+    Cube *_cube;
 }
 - (instancetype)initWithShader:(GLKBaseEffect *)shader {
     if ((self = [super initWithName:"TestScene" shader:shader vertices:nil vertexCount:0])) {
@@ -25,9 +25,9 @@
         self.position = GLKVector3Make(-_gameArea.width / 2, -_gameArea.height/2, -_sceneOffset);
         self.rotationX = GLKMathDegreesToRadians(15);
         
-        _northWall = [[NorthWall alloc] initWithShader:shader];
-        _northWall.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
-        [self.children addObject:_northWall];
+        _cube = [[Cube alloc] initWithShader:shader];
+        _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        [self.children addObject:_cube];
         
         //self.position = GLKVector3Make(0, -1, -10);
         

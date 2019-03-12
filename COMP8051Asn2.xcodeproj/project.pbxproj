@@ -22,10 +22,11 @@
 		3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */; };
 		3F794FE122383B1B007E86A9 /* maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDE22383B1B007E86A9 /* maze.cpp */; };
 		3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FE322383B3D007E86A9 /* dungeon_01.png */; };
-		3F794FE722383B3D007E86A9 /* NorthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FE522383B3D007E86A9 /* NorthWall.m */; };
+		3F794FE722383B3D007E86A9 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FE522383B3D007E86A9 /* Cube.m */; };
 		3F794FEB22383B54007E86A9 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FEA22383B54007E86A9 /* Node.m */; };
 		3F794FF022383B64007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FED22383B64007E86A9 /* SimpleFragment.glsl */; };
 		3F794FF122383B64007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FEE22383B64007E86A9 /* SimpleVertex.glsl */; };
+		3F794FF522385FCF007E86A9 /* TopFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FF422385FCF007E86A9 /* TopFace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,13 +57,15 @@
 		3F794FDE22383B1B007E86A9 /* maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maze.cpp; path = MazeStart/maze.cpp; sourceTree = "<group>"; };
 		3F794FDF22383B1B007E86A9 /* maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = maze.h; path = MazeStart/maze.h; sourceTree = "<group>"; };
 		3F794FE322383B3D007E86A9 /* dungeon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeon_01.png; path = Models/dungeon_01.png; sourceTree = "<group>"; };
-		3F794FE422383B3D007E86A9 /* NorthWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NorthWall.h; path = Models/NorthWall.h; sourceTree = "<group>"; };
-		3F794FE522383B3D007E86A9 /* NorthWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NorthWall.m; path = Models/NorthWall.m; sourceTree = "<group>"; };
+		3F794FE422383B3D007E86A9 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = Models/Cube.h; sourceTree = "<group>"; };
+		3F794FE522383B3D007E86A9 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cube.m; path = Models/Cube.m; sourceTree = "<group>"; };
 		3F794FE922383B54007E86A9 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = Nodes/Node.h; sourceTree = "<group>"; };
 		3F794FEA22383B54007E86A9 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Nodes/Node.m; sourceTree = "<group>"; };
 		3F794FED22383B64007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
 		3F794FEE22383B64007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
 		3F794FEF22383B64007E86A9 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = Shaders/Vertex.h; sourceTree = "<group>"; };
+		3F794FF322385FCF007E86A9 /* TopFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopFace.h; path = Models/TopFace.h; sourceTree = "<group>"; };
+		3F794FF422385FCF007E86A9 /* TopFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopFace.m; path = Models/TopFace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +158,10 @@
 				29EBC59E22385E0B0031A9AF /* WestFace.h */,
 				29EBC59B22385E0A0031A9AF /* WestFace.m */,
 				3F794FE322383B3D007E86A9 /* dungeon_01.png */,
-				3F794FE422383B3D007E86A9 /* NorthWall.h */,
-				3F794FE522383B3D007E86A9 /* NorthWall.m */,
+				3F794FE422383B3D007E86A9 /* Cube.h */,
+				3F794FE522383B3D007E86A9 /* Cube.m */,
+				3F794FF322385FCF007E86A9 /* TopFace.h */,
+				3F794FF422385FCF007E86A9 /* TopFace.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -257,12 +262,13 @@
 			files = (
 				29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */,
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
-				3F794FE722383B3D007E86A9 /* NorthWall.m in Sources */,
+				3F794FE722383B3D007E86A9 /* Cube.m in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F794FD922383AEB007E86A9 /* TestScene.m in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
 				29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */,
+				3F794FF522385FCF007E86A9 /* TopFace.m in Sources */,
 				3F794FD822383AEB007E86A9 /* Director.m in Sources */,
 				3F794FC922383938007E86A9 /* AppDelegate.m in Sources */,
 				29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */,

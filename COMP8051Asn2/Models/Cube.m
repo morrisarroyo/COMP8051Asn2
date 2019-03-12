@@ -5,9 +5,9 @@
 //  Created by Renz on 3/11/19.
 //  Copyright © 2019 Renz. All rights reserved.
 //
-#import "NorthWall.h"
+#import "Cube.h"
 
-@implementation NorthWall
+@implementation Cube
 
 const Vertex Vertices[] = {
     // Front

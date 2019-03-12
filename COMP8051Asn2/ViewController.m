@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NorthWall.h"
+#import "Cube.h"
 #import "TestScene.h"
 #import "Director.h"
 
