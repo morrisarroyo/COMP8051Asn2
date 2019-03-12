@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59A22385E090031A9AF /* SouthFace.m */; };
+		29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59B22385E0A0031A9AF /* WestFace.m */; };
+		29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59D22385E0A0031A9AF /* NorthFace.m */; };
+		29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC5A022385E0B0031A9AF /* EastFace.m */; };
 		3F794FA5223834C5007E86A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FA4223834C5007E86A9 /* main.m */; };
 		3F794FAB223834C5007E86A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FAA223834C5007E86A9 /* ViewController.m */; };
 		3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FAC223834C5007E86A9 /* Main.storyboard */; };
@@ -25,6 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29EBC59922385E090031A9AF /* EastFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EastFace.h; path = Models/EastFace.h; sourceTree = "<group>"; };
+		29EBC59A22385E090031A9AF /* SouthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SouthFace.m; path = Models/SouthFace.m; sourceTree = "<group>"; };
+		29EBC59B22385E0A0031A9AF /* WestFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WestFace.m; path = Models/WestFace.m; sourceTree = "<group>"; };
+		29EBC59C22385E0A0031A9AF /* NorthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NorthFace.h; path = Models/NorthFace.h; sourceTree = "<group>"; };
+		29EBC59D22385E0A0031A9AF /* NorthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NorthFace.m; path = Models/NorthFace.m; sourceTree = "<group>"; };
+		29EBC59E22385E0B0031A9AF /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
+		29EBC59F22385E0B0031A9AF /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
+		29EBC5A022385E0B0031A9AF /* EastFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EastFace.m; path = Models/EastFace.m; sourceTree = "<group>"; };
 		3F794FA0223834C5007E86A9 /* COMP8051Asn2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP8051Asn2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F794FA4223834C5007E86A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F794FA9223834C5007E86A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -134,6 +146,14 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EBC59922385E090031A9AF /* EastFace.h */,
+				29EBC5A022385E0B0031A9AF /* EastFace.m */,
+				29EBC59C22385E0A0031A9AF /* NorthFace.h */,
+				29EBC59D22385E0A0031A9AF /* NorthFace.m */,
+				29EBC59F22385E0B0031A9AF /* SouthFace.h */,
+				29EBC59A22385E090031A9AF /* SouthFace.m */,
+				29EBC59E22385E0B0031A9AF /* WestFace.h */,
+				29EBC59B22385E0A0031A9AF /* WestFace.m */,
 				3F794FE322383B3D007E86A9 /* dungeon_01.png */,
 				3F794FE422383B3D007E86A9 /* NorthWall.h */,
 				3F794FE522383B3D007E86A9 /* NorthWall.m */,
@@ -235,15 +255,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */,
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
 				3F794FE722383B3D007E86A9 /* NorthWall.m in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F794FD922383AEB007E86A9 /* TestScene.m in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
+				29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */,
 				3F794FD822383AEB007E86A9 /* Director.m in Sources */,
 				3F794FC922383938007E86A9 /* AppDelegate.m in Sources */,
+				29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */,
 				3F794FA5223834C5007E86A9 /* main.m in Sources */,
+				29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +428,7 @@
 				3F794FB9223834C5007E86A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
