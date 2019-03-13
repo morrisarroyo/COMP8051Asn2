@@ -13,6 +13,8 @@
 
 @interface ViewController () {
     GLKBaseEffect* _shader;
+    GLKMatrix4 cameraViewMatrix;
+
 }
 
 @end
@@ -27,7 +29,20 @@
     
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
+    UIPinchGestureRecognizer *zoomInGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action: @selector(handleZoomInPinchGesture:)];
+    [self.view addGestureRecognizer:zoomInGesture];
     [self setupScene];
+}
+
+-(void)handleZoomInPinchGesture:(UIPinchGestureRecognizer *)sender {
+    if (sender.scale > 1.0) {
+        NSLog(@"%@ %@", @"> 1.0", @"Forward");
+        cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, 0, 0, 3.0f);
+    } else {
+        NSLog(@"%@ %@", @"< 1.0", @"Backward");
+        cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, 0, 0, -3.0f);
+    }
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -36,10 +51,7 @@
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
-    GLKMatrix4 viewMatrix = GLKMatrix4Identity;
-    /*
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);    /*
      float amount = 0.25 * sin(CACurrentMediaTime()) + 0.75;
      float amount2 = 0.25 * sin(CACurrentMediaTime()+M_PI_4) + 0.75;
      float amount3 = 0.25 * sin(CACurrentMediaTime()+M_PI_2) + 0.75;
@@ -49,12 +61,13 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
      */
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:GLKMatrix4Identity];
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix];
 }
 
 - (void) setupScene{
     _shader = [[GLKBaseEffect alloc] init];
     _shader.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 150);
+    cameraViewMatrix = GLKMatrix4Identity;
     
     
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
