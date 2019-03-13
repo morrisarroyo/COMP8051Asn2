@@ -31,7 +31,17 @@
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     UIPinchGestureRecognizer *zoomInGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action: @selector(handleZoomInPinchGesture:)];
+    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    UISwipeGestureRecognizer *swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
+    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
+    doubleTapGesture.numberOfTapsRequired = 2;
+    doubleTapGesture.numberOfTouchesRequired = 1;
     [self.view addGestureRecognizer:zoomInGesture];
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    [self.view addGestureRecognizer:swipeRightGesture];
+    [self.view addGestureRecognizer:doubleTapGesture];
     [self setupScene];
 }
 
@@ -43,6 +53,21 @@
         NSLog(@"%@ %@", @"< 1.0", @"Backward");
         cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, 0, 0, -3.0f);
     }
+}
+
+-(void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *) sender {
+    NSLog(@"%@", @"Rotate Left");
+    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(90), 0, 1, 0);
+}
+
+-(void)handleSwipeRightGesture:(UISwipeGestureRecognizer *) sender {
+    NSLog(@"%@", @"Rotate Right");
+    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(-90), 0, 1, 0);
+}
+
+-(void)handleDoubleTapGesture:(UITapGestureRecognizer *) sender {
+    NSLog(@"%@", @"Reset Position");
+    cameraViewMatrix = GLKMatrix4Identity;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
