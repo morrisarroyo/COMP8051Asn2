@@ -6,6 +6,7 @@
 //  Copyright © 2019 Renz. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "ViewController.h"
 #import "Cube.h"
 #import "TestScene.h"
@@ -15,7 +16,9 @@
 @interface ViewController () {
     BaseEffect* _shader;
     GLKMatrix4 cameraViewMatrix;
-
+    float xtrans;
+    float ztrans;
+    
 }
 
 @end
@@ -27,46 +30,58 @@
     GLKView *view = (GLKView *)self.view;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    
+    xtrans = 0;
+    ztrans = 0;
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    UIPanGestureRecognizer *singlePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingePanGesture:)];
+    singlePanGesture.maximumNumberOfTouches = 1;
+    singlePanGesture.minimumNumberOfTouches = 1;
+    //singlePanGesture.m
     
     UIPinchGestureRecognizer *zoomInGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action: @selector(handleZoomInPinchGesture:)];
-    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
-    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    UISwipeGestureRecognizer *swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
-    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
     doubleTapGesture.numberOfTapsRequired = 2;
     doubleTapGesture.numberOfTouchesRequired = 1;
     UISwipeGestureRecognizer *swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownGesture:)];
     swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:zoomInGesture];
-    [self.view addGestureRecognizer:swipeLeftGesture];
-    [self.view addGestureRecognizer:swipeRightGesture];
+    swipeDownGesture.numberOfTouchesRequired = 2;
+    [self.view addGestureRecognizer:singlePanGesture];
     [self.view addGestureRecognizer:doubleTapGesture];
     [self.view addGestureRecognizer:swipeDownGesture];
     [self setupScene];
 }
 
--(void)handleZoomInPinchGesture:(UIPinchGestureRecognizer *)sender {
-    if (sender.scale > 1.0) {
-        NSLog(@"%@ %@", @"> 1.0", @"Forward");
-        cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, 0, 0, 3.0f);
+-(void)handleSingePanGesture:(UIPanGestureRecognizer *)sender {
+    if (sender.numberOfTouches == 1) {
+        NSLog(@"%@ %@", @"> 1.0", @"Pan");
+        CGPoint translatedPoint = CGPointZero;
+        CGPoint initialCenter = CGPointZero;
+        if(sender.state == UIGestureRecognizerStateBegan) {
+            initialCenter = [sender translationInView:sender.view.superview];
+            
+        }
+        if(sender.state == UIGestureRecognizerStateChanged) {
+            translatedPoint = [sender translationInView:sender.view.superview];
+            if (fabs(translatedPoint.y  - initialCenter.y) > 3)
+                ztrans = -(translatedPoint.y  - initialCenter.y) / 200;
+            else
+                ztrans = 0.0f;
+            if (fabs(translatedPoint.x  - initialCenter.x) > 3)
+                xtrans = -(translatedPoint.x  - initialCenter.x) / 200;
+            else
+                xtrans = 0.0f;
+        }
+        if(sender.state == UIGestureRecognizerStateEnded) {
+            xtrans = 0.0f;
+            ztrans = 0.0f;
+        }
     } else {
-        NSLog(@"%@ %@", @"< 1.0", @"Backward");
-        cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, 0, 0, -3.0f);
+        
+        xtrans = 0.0f;
+        ztrans = 0.0f;
     }
-}
-
--(void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *) sender {
-    NSLog(@"%@", @"Rotate Left");
-    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(90), 0, 1, 0);
-}
-
--(void)handleSwipeRightGesture:(UISwipeGestureRecognizer *) sender {
-    NSLog(@"%@", @"Rotate Right");
-    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(-90), 0, 1, 0);
 }
 
 -(void)handleDoubleTapGesture:(UITapGestureRecognizer *) sender {
@@ -83,8 +98,6 @@
 
     }    
     NSLog(@"%@ %f", @"Toggle Day and Night", [Director sharedInstance].scene.dayNightFactor);
-
-    //[_shader compileShader:@"SimpleFragment.glsl" withType:GL_VERTEX_SHADER];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -103,6 +116,7 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
      */
+    cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, xtrans, 0, ztrans);
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor];
 }
 
