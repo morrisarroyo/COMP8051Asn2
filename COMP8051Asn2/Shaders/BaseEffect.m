@@ -81,7 +81,7 @@
   _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
   _matColourUniform = glGetUniformLocation(_programHandle, "u_MatColour");
-  
+    _dayNightFactorUniform = glGetUniformLocation(_programHandle, "u_DayNightFactor");
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
   if (linkSuccess == GL_FALSE) {
@@ -109,7 +109,8 @@
   glUniform1f(_lightDiffuseIntensityUniform, 1.0);
   glUniform1f(_matSpecularIntensityUniform, .7);
   glUniform1f(_shininessUniform, 64.0);
-  glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
+    glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
+    glUniform1f(_dayNightFactorUniform, _dayNightFactor);
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:

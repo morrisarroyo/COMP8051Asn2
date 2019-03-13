@@ -36,6 +36,7 @@
         self.height = 1.0;
         self.children = [NSMutableArray array];
         self.matColour = GLKVector4Make(1, 1, 1, 1);
+        self.dayNightFactor = 1.0;
         
         glGenVertexArraysOES(1, &_vao);
         glBindVertexArrayOES(_vao);
@@ -89,17 +90,19 @@
     return modelMatrix;
 }
 
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor {
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
     
     for (Node *child in self.children) {
-        [child renderWithParentModelViewMatrix:modelViewMatrix];
+        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor];
     }
     
     _shader.modelViewMatrix = modelViewMatrix;
     _shader.texture = self.texture;
-    _shader.matColour = self.matColour;
+    _shader.matColour = self.matColour;    
+    _shader.dayNightFactor = dayNightFactor;
+
     [_shader prepareToDraw];
     
     glBindVertexArrayOES(_vao);

@@ -39,10 +39,13 @@
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
     doubleTapGesture.numberOfTapsRequired = 2;
     doubleTapGesture.numberOfTouchesRequired = 1;
+    UISwipeGestureRecognizer *swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownGesture:)];
+    swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:zoomInGesture];
     [self.view addGestureRecognizer:swipeLeftGesture];
     [self.view addGestureRecognizer:swipeRightGesture];
     [self.view addGestureRecognizer:doubleTapGesture];
+    [self.view addGestureRecognizer:swipeDownGesture];
     [self setupScene];
 }
 
@@ -69,6 +72,19 @@
 -(void)handleDoubleTapGesture:(UITapGestureRecognizer *) sender {
     NSLog(@"%@", @"Reset Position");
     cameraViewMatrix = GLKMatrix4Identity;
+    //_shader
+}
+
+-(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {    if(_shader.dayNightFactor == 1.0) {
+        [Director sharedInstance].scene.dayNightFactor = .25f;
+    } else {
+        
+        [Director sharedInstance].scene.dayNightFactor = 1.0f;
+
+    }    
+    NSLog(@"%@ %f", @"Toggle Day and Night", [Director sharedInstance].scene.dayNightFactor);
+
+    //[_shader compileShader:@"SimpleFragment.glsl" withType:GL_VERTEX_SHADER];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -87,7 +103,7 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
      */
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix];
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor];
 }
 
 - (void) setupScene{

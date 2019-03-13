@@ -7,6 +7,7 @@ uniform sampler2D u_Texture;
 uniform highp float u_MatSpecularIntensity;
 uniform highp float u_Shininess;
 uniform lowp vec4 u_MatColour;
+uniform lowp float u_DayNightFactor;
 
 struct Light {
     lowp vec3 Colour;
@@ -20,12 +21,12 @@ uniform Light u_Light;
 void main(void) {
     
     //Ambient
-    lowp vec3 AmbientColour = u_Light.Colour * u_Light.AmbientIntensity;
+    lowp vec3 AmbientColour = u_Light.Colour * u_Light.AmbientIntensity * u_DayNightFactor;
     
     //Diffuse
     lowp vec3 Normal = normalize(frag_Normal);
     lowp float DiffuseFactor = max(-dot(Normal, u_Light.Direction), 0.0);
-    lowp vec3 DiffuseColour = u_Light.Colour * u_Light.DiffuseIntensity * DiffuseFactor;
+    lowp vec3 DiffuseColour = u_Light.Colour * u_Light.DiffuseIntensity * DiffuseFactor * u_DayNightFactor;
     
     //Specular
     lowp vec3 Eye = normalize(frag_Position);

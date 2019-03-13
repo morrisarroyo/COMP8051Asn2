@@ -27,12 +27,13 @@
 @property (nonatomic, assign) float shininess;
 @property (assign) float width;
 @property (assign) float height;
+@property (assign) float dayNightFactor;
 
 @property (nonatomic, strong) NSMutableArray *children;
 
 - (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
 - (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor;
 - (void)updateWithDelta:(GLfloat)dt;
 - (void)loadTexture:(NSString *)fileName;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

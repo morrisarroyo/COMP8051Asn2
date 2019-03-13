@@ -19,6 +19,8 @@
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (assign) GLKTextureInfo* texture;
 @property (assign) GLKVector4 matColour;
+@property (assign) float dayNightFactor;
+@property (assign) GLuint dayNightFactorUniform;
 
 - (id)initWithVertexShader:(NSString *)vertexShader
             fragmentShader:(NSString *)fragmentShader;
