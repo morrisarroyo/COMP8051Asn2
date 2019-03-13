@@ -23,7 +23,7 @@ struct Flashlight {
 };
 
 uniform Light u_Light;
-uniform Flashlight u_FlashLight;
+uniform Flashlight u_Flashlight;
 void main(void) {
     
     //Ambient
@@ -38,17 +38,24 @@ void main(void) {
     lowp vec3 Reflection = reflect(u_Light.Direction, Normal);
     lowp float SpecularFactor = pow(max(0.0, -dot(Reflection, Eye)), u_Shininess);
     lowp vec3 SpecularColour = u_Light.Colour * u_MatSpecularIntensity * SpecularFactor * u_DayNightFactor;
+    //lowp vec3 tempPos = u_Flashlight.Position;
+    //tempPos.z = 0.0;
+    lowp vec3 lightDir =  u_Flashlight.Position - frag_Position.xyz;
     
-    highp float theta = dot(-( u_FlashLight.Position - gl_FragCoord.xyz), normalize(u_FlashLight.Direction));
-    if (theta > u_FlashLight.Cutoff) {
+    lowp float theta = dot( lightDir, normalize(-u_Flashlight.Direction));
+    if (theta > u_Flashlight.Cutoff) {
         //Diffuse
         lowp vec3 Normal = normalize(frag_Normal);
-        lowp float DiffuseFactor = max(-dot(Normal, u_FlashLight.Direction), 0.0);
+        lowp float DiffuseFactor = max(dot(Normal, u_Flashlight.Direction), 0.0);
         if (u_DayNightFactor < 1.0) {
-            DiffuseColour =  DiffuseColour / u_DayNightFactor * 1.5;
+            DiffuseColour =  DiffuseColour / u_DayNightFactor * 1.5 ;
+        } else {
+            DiffuseColour =  DiffuseColour * 1.5;
         }
 
-        
+        //gl_FragColor = vec4 (1,1,1,1);
+    } else {
+    
     }
     gl_FragColor = u_MatColour * texture2D(u_Texture, frag_TexCoord) * vec4((AmbientColour + DiffuseColour + SpecularColour), 1.0);
 }

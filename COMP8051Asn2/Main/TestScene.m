@@ -8,6 +8,7 @@
 
 #import "TestScene.h"
 #import "Cube.h"
+#import "BaseEffect.h"
 
 //#import "RWMushroom.h"
 @implementation TestScene {
@@ -22,11 +23,13 @@
         // Create initial scene position
         _gameArea = CGSizeMake(40, 80);
         _sceneOffset = _gameArea.height/2 / tanf(GLKMathRadiansToDegrees(85.0/2));
+        
         self.position = GLKVector3Make(-_gameArea.width / 2, -_gameArea.height/2, -_sceneOffset);
         self.rotationX = GLKMathDegreesToRadians(15);
         
         _cube = [[Cube alloc] initWithShader:shader];
         _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        //_cube.position = GLKVector3Make(0, 0, -100);
         [self.children addObject:_cube];
         
         //self.position = GLKVector3Make(0, -1, -10);
