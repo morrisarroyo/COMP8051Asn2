@@ -11,13 +11,13 @@
 @implementation SouthFace
 
 const Vertex Vertices3[] = {
-    {{1, -1, 1}, {1, 0}, {0, 0, 1}}, // 0
-    {{1, 1, 1}, {1, 1}, {0, 0, 1}}, // 1
-    {{-1, 1, 1}, {0, 1}, {0, 0, 1}}, // 2
+    {{1, -1, 1},  {1,1,1,1}, {1, 0}, {0, 0, 1}}, // 0
+    {{1, 1, 1},  {1,1,1,1}, {1, 1}, {0, 0, 1}}, // 1
+    {{-1, 1, 1},  {1,1,1,1}, {0, 1}, {0, 0, 1}}, // 2
     
-    {{-1, 1, 1}, {0, 1}, {0, 0, 1}}, // 2
-    {{-1, -1, 1}, {0, 0}, {0, 0, 1}}, // 3
-    {{1, -1, 1}, {1, 0}, {0, 0, 1}}, // 0
+    {{-1, 1, 1},  {1,1,1,1}, {0, 1}, {0, 0, 1}}, // 2
+    {{-1, -1, 1},  {1,1,1,1}, {0, 0}, {0, 0, 1}}, // 3
+    {{1, -1, 1},  {1,1,1,1}, {1, 0}, {0, 0, 1}}, // 0
 };
 
 const GLubyte Indices3[] = {
@@ -25,7 +25,7 @@ const GLubyte Indices3[] = {
     2, 3, 0
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"SouthWall" shader:shader
                            vertices:(Vertex *)Vertices3

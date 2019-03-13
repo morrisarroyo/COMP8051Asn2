@@ -11,6 +11,6 @@
 @interface TopFace : Node
 
 - (instancetype)initWithShader:
-(GLKBaseEffect *)shader;
+(BaseEffect *)shader;
 
 @end

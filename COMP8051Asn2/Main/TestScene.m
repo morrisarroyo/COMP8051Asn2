@@ -16,7 +16,7 @@
     float _sceneOffset;
     Cube *_cube;
 }
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     if ((self = [super initWithName:"TestScene" shader:shader vertices:nil vertexCount:0])) {
         
         // Create initial scene position

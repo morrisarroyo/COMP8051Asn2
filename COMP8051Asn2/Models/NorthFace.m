@@ -11,13 +11,13 @@
 @implementation NorthFace
 
 const Vertex Vertices2[] = {
-    {{-1, -1, -1}, {1, 0}, {0, 0, -1}}, // 0
-    {{-1, 1, -1}, {1, 1}, {0, 0, -1}}, // 1
-    {{1, 1, -1}, {0, 1}, {0, 0, -1}}, // 2
+    {{-1, -1, -1},  {1,1,1,1}, {1, 0}, {0, 0, -1}}, // 0
+    {{-1, 1, -1},  {1,1,1,1}, {1, 1}, {0, 0, -1}}, // 1
+    {{1, 1, -1},  {1,1,1,1}, {0, 1}, {0, 0, -1}}, // 2
     
-    {{1, 1, -1}, {0, 1}, {0, 0, -1}}, // 2
-    {{1, -1, -1}, {0, 0}, {0, 0, -1}}, // 3
-    {{-1, -1, -1}, {1, 0}, {0, 0, -1}}, // 0
+    {{1, 1, -1},  {1,1,1,1}, {0, 1}, {0, 0, -1}}, // 2
+    {{1, -1, -1},  {1,1,1,1}, {0, 0}, {0, 0, -1}}, // 3
+    {{-1, -1, -1},  {1,1,1,1}, {1, 0}, {0, 0, -1}}, // 0
 };
 
 const GLubyte Indices2[] = {
@@ -25,7 +25,7 @@ const GLubyte Indices2[] = {
     2, 3, 0
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"NorthFace" shader:shader
                            vertices:(Vertex *)Vertices2

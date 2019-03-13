@@ -11,6 +11,6 @@
 @interface SouthFace : Node
 
 - (instancetype)initWithShader:
-(GLKBaseEffect *)shader;
+(BaseEffect *)shader;
 
 @end

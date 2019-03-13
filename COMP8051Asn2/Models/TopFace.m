@@ -10,13 +10,13 @@
 
 @implementation TopFace
 const Vertex Vertices4[] = {
-    {{1, -1, -1}, {1, 0}, {0, 1, 0}}, // 0
-    {{1, 1, -1}, {1, 1}, {0, 1, 0}}, // 1
-    {{1, 1, 1}, {0, 1}, {0, 1, 0}}, // 2
+    {{1, -1, -1},  {1,1,1,1}, {1, 0}, {0, 1, 0}}, // 0
+    {{1, 1, -1},  {1,1,1,1}, {1, 1}, {0, 1, 0}}, // 1
+    {{1, 1, 1},  {1,1,1,1}, {0, 1}, {0, 1, 0}}, // 2
     
-    {{1, 1, 1}, {0, 1}, {0, 1, 0}}, // 2
-    {{1, -1, 1}, {0, 0}, {0, 1, 0}}, // 3
-    {{1, -1, -1}, {1, 0}, {0, 1, 0}}, // 0
+    {{1, 1, 1},  {1,1,1,1}, {0, 1}, {0, 1, 0}}, // 2
+    {{1, -1, 1},  {1,1,1,1}, {0, 0}, {0, 1, 0}}, // 3
+    {{1, -1, -1},  {1,1,1,1}, {1, 0}, {0, 1, 0}}, // 0
 };
 
 const GLubyte Indices4[] = {
@@ -24,7 +24,7 @@ const GLubyte Indices4[] = {
     2, 3, 0
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"WestFace" shader:shader
                            vertices:(Vertex *)Vertices4

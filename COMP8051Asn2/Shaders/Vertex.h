@@ -1,7 +1,29 @@
 #import <OpenGLES/ES2/glext.h>
+/*
+typedef enum {
+    VertexAttribPosition = 0,
+    VertexAttribColour,
+    VertexAttribTexCoord,
+    VertexAttribNormal
+} VertexAttributes;
 
 typedef struct {
-    float Position[3];
-    float TexCoord[2];
-    float Normal[3];
+    GLfloat Position[3];
+    GLfloat Colour[4];
+    GLfloat TexCoord[2];
+    GLfloat Normal[3];
+} Vertex;
+*/
+typedef enum {
+    VertexAttribPosition = 0,
+    VertexAttribColour,
+    VertexAttribTexCoord,
+    VertexAttribNormal
+} VertexAttributes;
+
+typedef struct {
+    GLfloat Position[3];
+    GLfloat Colour[4];
+    GLfloat TexCoord[2];
+    GLfloat Normal[3];
 } Vertex;

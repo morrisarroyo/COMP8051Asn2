@@ -24,9 +24,10 @@
 		3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FE322383B3D007E86A9 /* dungeon_01.png */; };
 		3F794FE722383B3D007E86A9 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FE522383B3D007E86A9 /* Cube.m */; };
 		3F794FEB22383B54007E86A9 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FEA22383B54007E86A9 /* Node.m */; };
-		3F794FF022383B64007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FED22383B64007E86A9 /* SimpleFragment.glsl */; };
-		3F794FF122383B64007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FEE22383B64007E86A9 /* SimpleVertex.glsl */; };
 		3F794FF522385FCF007E86A9 /* TopFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FF422385FCF007E86A9 /* TopFace.m */; };
+		3F7950012238B445007E86A9 /* BaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7950002238B445007E86A9 /* BaseEffect.m */; };
+		3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */; };
+		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,11 +62,13 @@
 		3F794FE522383B3D007E86A9 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cube.m; path = Models/Cube.m; sourceTree = "<group>"; };
 		3F794FE922383B54007E86A9 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = Nodes/Node.h; sourceTree = "<group>"; };
 		3F794FEA22383B54007E86A9 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Nodes/Node.m; sourceTree = "<group>"; };
-		3F794FED22383B64007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
-		3F794FEE22383B64007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
 		3F794FEF22383B64007E86A9 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = Shaders/Vertex.h; sourceTree = "<group>"; };
 		3F794FF322385FCF007E86A9 /* TopFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopFace.h; path = Models/TopFace.h; sourceTree = "<group>"; };
 		3F794FF422385FCF007E86A9 /* TopFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopFace.m; path = Models/TopFace.m; sourceTree = "<group>"; };
+		3F794FFF2238B445007E86A9 /* BaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEffect.h; path = Shaders/BaseEffect.h; sourceTree = "<group>"; };
+		3F7950002238B445007E86A9 /* BaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEffect.m; path = Shaders/BaseEffect.m; sourceTree = "<group>"; };
+		3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
+		3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +181,10 @@
 		3F794FF222383B6F007E86A9 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				3F794FED22383B64007E86A9 /* SimpleFragment.glsl */,
-				3F794FEE22383B64007E86A9 /* SimpleVertex.glsl */,
+				3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */,
+				3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */,
+				3F794FFF2238B445007E86A9 /* BaseEffect.h */,
+				3F7950002238B445007E86A9 /* BaseEffect.m */,
 				3F794FEF22383B64007E86A9 /* Vertex.h */,
 			);
 			name = Shaders;
@@ -248,8 +253,8 @@
 				3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */,
 				3F794FB0223834C5007E86A9 /* Assets.xcassets in Resources */,
 				3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */,
-				3F794FF022383B64007E86A9 /* SimpleFragment.glsl in Resources */,
-				3F794FF122383B64007E86A9 /* SimpleVertex.glsl in Resources */,
+				3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */,
+				3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +269,7 @@
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
 				3F794FE722383B3D007E86A9 /* Cube.m in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
+				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				3F794FD922383AEB007E86A9 /* TestScene.m in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Cube : Node
 
 - (instancetype)initWithShader:
-(GLKBaseEffect *)shader;
+(BaseEffect *)shader;
 
 @end
 
