@@ -11,6 +11,6 @@
 @interface NorthFace : Node
 
 - (instancetype)initWithShader:
-(GLKBaseEffect *)shader;
+(BaseEffect *)shader;
 
 @end

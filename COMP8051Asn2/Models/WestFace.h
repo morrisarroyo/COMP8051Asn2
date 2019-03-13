@@ -11,6 +11,6 @@
 @interface WestFace : Node
 
 - (instancetype)initWithShader:
-(GLKBaseEffect *)shader;
+(BaseEffect *)shader;
 
 @end

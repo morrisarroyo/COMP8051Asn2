@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Vertex.h"
 #import <GLKit/GLKit.h>
+#import "BaseEffect.h"
+#import "Vertex.h"
 
 @interface Node : NSObject
 
-@property (nonatomic, strong) GLKBaseEffect *shader;
+@property (nonatomic, strong) BaseEffect *shader;
 @property (nonatomic, assign) GLKVector3 position;
 @property (nonatomic) float rotationX;
 @property (nonatomic) float rotationY;
@@ -27,8 +28,8 @@
 @property (nonatomic, assign) float width;
 @property (nonatomic, assign) float height;
 
-- (instancetype)initWithName:(const char *)name shader:(GLKBaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
-- (instancetype)initWithName:(const char *)name shader:(GLKBaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
+- (instancetype)initWithName:(const char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
+- (instancetype)initWithName:(const char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
 
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
 - (GLKMatrix4)modelMatrix;

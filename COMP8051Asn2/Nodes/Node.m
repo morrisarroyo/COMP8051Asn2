@@ -13,10 +13,10 @@
     GLuint _vao;
     GLuint _vertexBuffer;
     unsigned int _vertexCount;
-    GLKBaseEffect *_shader;
+    BaseEffect *_shader;
 }
 
-- (instancetype)initWithName:(const char *)name shader:(GLKBaseEffect *)shader vertices:(Vertex *)vertices
+- (instancetype)initWithName:(const char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices
                  vertexCount:(unsigned int)vertexCount {
     if ((self = [self init])) {
         
@@ -62,7 +62,7 @@
     return self;
 }
 
-- (instancetype)initWithName:(const char *)name shader:(GLKBaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess {
+- (instancetype)initWithName:(const char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess {
     if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount])) {
         [self loadTexture:textureName];
         self.specularColor = specularColor;

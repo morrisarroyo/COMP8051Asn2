@@ -25,7 +25,7 @@ const GLubyte Indices1[] = {
     2, 3, 0
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"EastWall" shader:shader
                            vertices:(Vertex *)Vertices1

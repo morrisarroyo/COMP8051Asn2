@@ -86,7 +86,7 @@ const GLubyte Indices[] = {
     22, 23, 20
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"square" shader:shader
                            vertices:(Vertex *)Vertices

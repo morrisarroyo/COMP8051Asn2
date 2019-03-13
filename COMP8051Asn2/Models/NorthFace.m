@@ -25,7 +25,7 @@ const GLubyte Indices2[] = {
     2, 3, 0
 };
 
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
+- (instancetype)initWithShader:(BaseEffect *)shader {
     
     if ((self = [super initWithName:"NorthFace" shader:shader
                            vertices:(Vertex *)Vertices2

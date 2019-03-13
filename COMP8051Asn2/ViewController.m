@@ -12,7 +12,7 @@
 #import "Director.h"
 
 @interface ViewController () {
-    GLKBaseEffect* _shader;
+    BaseEffect* _shader;
     GLKMatrix4 cameraViewMatrix;
 
 }
@@ -90,7 +90,7 @@
 }
 
 - (void) setupScene{
-    _shader = [[GLKBaseEffect alloc] init];
+    _shader = [[BaseEffect alloc] init];
     _shader.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 150);
     cameraViewMatrix = GLKMatrix4Identity;
     
