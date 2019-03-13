@@ -102,7 +102,7 @@
     _shader.texture = self.texture;
     _shader.matColour = self.matColour;    
     _shader.dayNightFactor = dayNightFactor;
-
+    
     [_shader prepareToDraw];
     
     glBindVertexArrayOES(_vao);

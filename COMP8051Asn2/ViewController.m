@@ -61,12 +61,12 @@
 
 -(void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *) sender {
     NSLog(@"%@", @"Rotate Left");
-    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(90), 0, 1, 0);
+    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(5), 0, 1, 0);
 }
 
 -(void)handleSwipeRightGesture:(UISwipeGestureRecognizer *) sender {
     NSLog(@"%@", @"Rotate Right");
-    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(-90), 0, 1, 0);
+    cameraViewMatrix = GLKMatrix4Rotate(cameraViewMatrix, GLKMathDegreesToRadians(-5), 0, 1, 0);
 }
 
 -(void)handleDoubleTapGesture:(UITapGestureRecognizer *) sender {
@@ -103,16 +103,17 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
      */
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor];
+    [Director sharedInstance].scene.shader.flashlightPosition = GLKVector3Make(cameraViewMatrix.m30,cameraViewMatrix.m31, cameraViewMatrix.m32);
+    [Director sharedInstance].scene.shader.flashlightDirection = GLKVector3Make(cameraViewMatrix.m20,cameraViewMatrix.m21, cameraViewMatrix.m22);    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor];
 }
 
 - (void) setupScene{
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
-    _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 150);
+    _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 1000);
     cameraViewMatrix = GLKMatrix4Identity;
-    
-    
+    _shader.flashlightPosition = GLKVector3Make(cameraViewMatrix.m30,cameraViewMatrix.m31, cameraViewMatrix.m32);
+    _shader.flashlightDirection = GLKVector3Make(cameraViewMatrix.m20,cameraViewMatrix.m21, cameraViewMatrix.m22);
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
     [Director sharedInstance].view = self.view;
 }
