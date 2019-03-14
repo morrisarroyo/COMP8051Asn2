@@ -24,6 +24,9 @@
     GLuint _flashlightActiveUniform;
     GLuint _flashlightIntensityUniform;
     GLuint _flashlightViewportUniform;
+    GLuint _fogColourUniform;
+    GLuint _fogStartUniform;
+    GLuint _fogEndUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -90,6 +93,10 @@
     _flashlightActiveUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Active");
     _flashlightIntensityUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Intensity");
     _flashlightViewportUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Viewport");
+    _fogColourUniform =  glGetUniformLocation(_programHandle, "u_Fog.Colour");
+    _fogStartUniform =  glGetUniformLocation(_programHandle, "u_Fog.Start");
+    _fogEndUniform =  glGetUniformLocation(_programHandle, "u_Fog.End");
+    
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
   if (linkSuccess == GL_FALSE) {
@@ -127,6 +134,10 @@
     }
     glUniform1f(_flashlightIntensityUniform, 1.5);
     glUniform2f(_flashlightViewportUniform, _viewportUniform.x, _viewportUniform.y);
+    //glUniform4f(_fogColourUniform, _fogColour.r, _fogColour.g, _fogColour.b, _fogColour.a);
+    glUniform4f(_fogColourUniform, 0.5, 0.5, 0.5, 1.0);
+    glUniform1f(_fogStartUniform, 50.0);
+    glUniform1f(_fogEndUniform, 70.0);
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:

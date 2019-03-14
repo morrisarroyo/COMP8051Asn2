@@ -23,8 +23,15 @@ struct Flashlight {
     lowp vec2 Viewport;
 };
 
+struct Fog {
+    lowp vec4 Colour;
+    lowp float Start;
+    lowp float End;
+};
+
 uniform Light u_Light;
 uniform Flashlight u_Flashlight;
+uniform Fog u_Fog;
 
 void main(void) {
     
@@ -58,5 +65,10 @@ void main(void) {
             }
         }
     }
-    gl_FragColor = u_MatColour * texture2D(u_Texture, frag_TexCoord) * vec4((AmbientColour + DiffuseColour + SpecularColour), 1.0);
+    
+    lowp float dist = (gl_FragCoord.z / gl_FragCoord.w);
+    lowp vec4 FogColour = vec4 (0.5,0.5,0.5,1);
+    lowp float FogFactor = (u_Fog.End - dist) / (u_Fog.End - u_Fog.Start);
+    FogFactor = clamp(FogFactor, 0.0, 1.0);
+    gl_FragColor = mix(FogColour, u_MatColour * texture2D(u_Texture, frag_TexCoord) * vec4((AmbientColour + DiffuseColour + SpecularColour), 1.0), FogFactor);
 }
