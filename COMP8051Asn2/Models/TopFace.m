@@ -27,7 +27,7 @@ const GLubyte Indices4[] = {
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
-    if ((self = [super initWithName:"WestFace" shader:shader
+    if ((self = [super initWithName:"TopFace" shader:shader
                            vertices:(Vertex *)Vertices4
                         vertexCount:sizeof(Vertices4) / sizeof(Vertices4[0])])) {
         
@@ -35,6 +35,8 @@ const GLubyte Indices4[] = {
         self.specularColor = GLKVector4Make(1, 1, 1, 1);
         self.shininess = 10;
         self.scale = 5;
+        self.width = 5;
+        //self.height = 5;
         
         [self loadTexture:@"floor.jpg"];
     }
