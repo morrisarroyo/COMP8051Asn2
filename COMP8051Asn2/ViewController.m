@@ -18,9 +18,13 @@
     GLKMatrix4 cameraViewMatrix;
     float xtrans;
     float ztrans;
-    
+    //float xrot;
+    float yrot;
+    float totalyrot;
+    //float zrot;
+    GLKMatrix4 translationMatrix;
+    GLKMatrix4 rotationMatrix;
 }
-
 @end
 
 @implementation ViewController
@@ -32,36 +36,39 @@
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     xtrans = 0;
     ztrans = 0;
+    totalyrot =0;
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     UIPanGestureRecognizer *singlePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingePanGesture:)];
     singlePanGesture.maximumNumberOfTouches = 1;
     singlePanGesture.minimumNumberOfTouches = 1;
-    //singlePanGesture.m
-    
-    UIPinchGestureRecognizer *zoomInGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action: @selector(handleZoomInPinchGesture:)];
-    
+    UIPanGestureRecognizer *doublePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoublePanGesture:)];
+    doublePanGesture.maximumNumberOfTouches = 2;
+    doublePanGesture.minimumNumberOfTouches = 2;
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
     doubleTapGesture.numberOfTapsRequired = 2;
     doubleTapGesture.numberOfTouchesRequired = 1;
     UISwipeGestureRecognizer *swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownGesture:)];
     swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
     swipeDownGesture.numberOfTouchesRequired = 2;
-    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
-    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    swipeLeftGesture.numberOfTouchesRequired = 2;
+    UISwipeGestureRecognizer *swipeUpGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpGesture:)];
+    swipeUpGesture.direction = UISwipeGestureRecognizerDirectionUp;
+    swipeUpGesture.numberOfTouchesRequired = 2;
     [self.view addGestureRecognizer:singlePanGesture];
+    [self.view addGestureRecognizer:doublePanGesture];
     [self.view addGestureRecognizer:doubleTapGesture];
     [self.view addGestureRecognizer:swipeDownGesture];
-    [self.view addGestureRecognizer:swipeLeftGesture];
+    [self.view addGestureRecognizer:swipeUpGesture];
     [self setupScene];
 }
 
 -(void)handleSingePanGesture:(UIPanGestureRecognizer *)sender {
     if (sender.numberOfTouches == 1) {
-        NSLog(@"%@ %@", @"> 1.0", @"Pan");
+        //NSLog(@"%@ %@", @"> 1.0", @"Single Pan");
         CGPoint translatedPoint = CGPointZero;
         CGPoint initialCenter = CGPointZero;
+        
+        
         if(sender.state == UIGestureRecognizerStateBegan) {
             initialCenter = [sender translationInView:sender.view.superview];
             
@@ -88,10 +95,35 @@
     }
 }
 
+-(void)handleDoublePanGesture:(UIPanGestureRecognizer *)sender {
+    if (sender.numberOfTouches == 2) {
+        //NSLog(@"%@ %@", @"> 1.0", @"Double Pan");
+        CGPoint translatedPoint = CGPointZero;
+        CGPoint initialCenter = CGPointZero;
+        if(sender.state == UIGestureRecognizerStateBegan) {
+            initialCenter = [sender translationInView:sender.view.superview];
+            
+        }
+        if(sender.state == UIGestureRecognizerStateChanged) {
+            translatedPoint = [sender translationInView:sender.view.superview];
+            if (fabs(translatedPoint.x  - initialCenter.x) > 3)
+                yrot = (translatedPoint.x  - initialCenter.x) / 2000;
+            else
+                yrot = 0.0f;
+        }
+        if(sender.state == UIGestureRecognizerStateEnded) {
+            yrot = 0.0f;
+        }
+    } else {
+        yrot = 0.0f;
+    }
+}
+
+
 -(void)handleDoubleTapGesture:(UITapGestureRecognizer *) sender {
     NSLog(@"%@", @"Reset Position");
-    cameraViewMatrix = GLKMatrix4Identity;
-    //_shader
+    translationMatrix = GLKMatrix4Identity;
+    rotationMatrix = GLKMatrix4Identity;
 }
 
 -(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {
@@ -105,7 +137,7 @@
     NSLog(@"%@ %f", @"Toggle Day and Night", [Director sharedInstance].scene.dayNightFactor);
 }
 
--(void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *) sender {
+-(void)handleSwipeUpGesture:(UISwipeGestureRecognizer *) sender {
     if(_shader.flashlightActive == true) {
         [Director sharedInstance].scene.flashlightActive = false;
     } else {
@@ -130,19 +162,28 @@
      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
-     */
-    cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, xtrans, 0, ztrans);
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
+                                                                */
+
+    totalyrot += yrot;
+    int tc = totalyrot / (M_PI * 2);
+    totalyrot = totalyrot - (tc * M_PI * 2);
+
+    //NSLog(@"%f %f %f %f", totalyrot, xtrans, ztrans, yrot);
+    translationMatrix = GLKMatrix4Translate(translationMatrix, xtrans * cosf(totalyrot) - ztrans * sinf(totalyrot), 0, xtrans * sinf(totalyrot) + ztrans * cosf(totalyrot));
+    rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
+    GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
+    vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);    [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
+    
 }
 
 - (void) setupScene{
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
-                                        fragmentShader:@"SimpleFragment.glsl"];
+        fragmentShader:@"SimpleFragment.glsl"];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 1000);
     _shader.viewportUniform = GLKVector2Make(self.view.bounds.size.width, self.view.bounds.size.height);
     cameraViewMatrix = GLKMatrix4Identity;
-    
-    
+    translationMatrix = GLKMatrix4Identity;
+    rotationMatrix = GLKMatrix4Identity;
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
     [Director sharedInstance].view = self.view;
 }
