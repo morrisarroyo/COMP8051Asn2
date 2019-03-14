@@ -21,6 +21,8 @@
 @property (assign) GLKVector4 matColour;
 @property (assign) float dayNightFactor;
 @property (assign) GLuint dayNightFactorUniform;
+@property (assign) GLKVector2 viewportUniform;
+@property (assign) bool flashlightActive;
 
 - (id)initWithVertexShader:(NSString *)vertexShader
             fragmentShader:(NSString *)fragmentShader;

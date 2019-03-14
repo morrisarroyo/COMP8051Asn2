@@ -37,6 +37,7 @@
         self.children = [NSMutableArray array];
         self.matColour = GLKVector4Make(1, 1, 1, 1);
         self.dayNightFactor = 1.0;
+        self.flashlightActive = false;
         
         glGenVertexArraysOES(1, &_vao);
         glBindVertexArrayOES(_vao);
@@ -90,18 +91,19 @@
     return modelMatrix;
 }
 
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor {
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive{
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
     
     for (Node *child in self.children) {
-        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor];
+        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor withFlashlightActive:flashlightActive];
     }
     
     _shader.modelViewMatrix = modelViewMatrix;
     _shader.texture = self.texture;
     _shader.matColour = self.matColour;    
     _shader.dayNightFactor = dayNightFactor;
+    _shader.flashlightActive = flashlightActive;
 
     [_shader prepareToDraw];
     

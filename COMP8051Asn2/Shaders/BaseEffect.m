@@ -20,6 +20,10 @@
     GLuint _matSpecularIntensityUniform;
     GLuint _shininessUniform;
     GLuint _matColourUniform;
+    GLuint _flashlightRadiusUniform;
+    GLuint _flashlightActiveUniform;
+    GLuint _flashlightIntensityUniform;
+    GLuint _flashlightViewportUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -82,6 +86,10 @@
   _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
   _matColourUniform = glGetUniformLocation(_programHandle, "u_MatColour");
     _dayNightFactorUniform = glGetUniformLocation(_programHandle, "u_DayNightFactor");
+    _flashlightRadiusUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Radius");
+    _flashlightActiveUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Active");
+    _flashlightIntensityUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Intensity");
+    _flashlightViewportUniform = glGetUniformLocation(_programHandle, "u_Flashlight.Viewport");
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
   if (linkSuccess == GL_FALSE) {
@@ -111,6 +119,14 @@
   glUniform1f(_shininessUniform, 64.0);
     glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
     glUniform1f(_dayNightFactorUniform, _dayNightFactor);
+    glUniform1f(_flashlightRadiusUniform, .75);
+    if (_flashlightActive) {
+        glUniform1f(_flashlightActiveUniform, 1.0);
+    } else {
+        glUniform1f(_flashlightActiveUniform, 0.0);
+    }
+    glUniform1f(_flashlightIntensityUniform, 1.5);
+    glUniform2f(_flashlightViewportUniform, _viewportUniform.x, _viewportUniform.y);
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:
