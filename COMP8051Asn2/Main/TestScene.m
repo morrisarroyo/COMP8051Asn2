@@ -36,6 +36,7 @@
         _sceneOffset = _gameArea.height/2 / tanf(GLKMathRadiansToDegrees(85.0/2));
         self.position = GLKVector3Make(-_gameArea.width / 2, -_gameArea.height/2, -_sceneOffset);
         //self.rotationX = GLKMathDegreesToRadians(15);
+        self.rotationY = GLKMathDegreesToRadians(90);
         
         _cube = [[Cube alloc] initWithShader:shader];
         _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
