@@ -47,9 +47,13 @@
     UISwipeGestureRecognizer *swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownGesture:)];
     swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
     swipeDownGesture.numberOfTouchesRequired = 2;
+    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeLeftGesture.numberOfTouchesRequired = 2;
     [self.view addGestureRecognizer:singlePanGesture];
     [self.view addGestureRecognizer:doubleTapGesture];
     [self.view addGestureRecognizer:swipeDownGesture];
+    [self.view addGestureRecognizer:swipeLeftGesture];
     [self setupScene];
 }
 
@@ -90,8 +94,9 @@
     //_shader
 }
 
--(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {    if(_shader.dayNightFactor == 1.0) {
-        [Director sharedInstance].scene.dayNightFactor = .25f;
+-(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {
+    if(_shader.dayNightFactor == 1.0) {
+        [Director sharedInstance].scene.dayNightFactor = .15f;
     } else {
         
         [Director sharedInstance].scene.dayNightFactor = 1.0f;
@@ -99,6 +104,16 @@
     }    
     NSLog(@"%@ %f", @"Toggle Day and Night", [Director sharedInstance].scene.dayNightFactor);
 }
+
+-(void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *) sender {
+    if(_shader.flashlightActive == true) {
+        [Director sharedInstance].scene.flashlightActive = false;
+    } else {
+        [Director sharedInstance].scene.flashlightActive = true;
+    }
+    NSLog(@"%@", @"Toggle Flashlight");
+}
+
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
@@ -117,13 +132,14 @@
      glEnable(GL_CULL_FACE);
      */
     cameraViewMatrix = GLKMatrix4Translate(cameraViewMatrix, xtrans, 0, ztrans);
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor];
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:cameraViewMatrix withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
 }
 
 - (void) setupScene{
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 1000);
+    _shader.viewportUniform = GLKVector2Make(self.view.bounds.size.width, self.view.bounds.size.height);
     cameraViewMatrix = GLKMatrix4Identity;
     
     
