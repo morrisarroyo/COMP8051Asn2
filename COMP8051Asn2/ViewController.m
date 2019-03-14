@@ -25,7 +25,6 @@
     GLKMatrix4 translationMatrix;
     GLKMatrix4 rotationMatrix;
 }
-
 @end
 
 @implementation ViewController
@@ -65,21 +64,11 @@
 
 -(void)handleSingePanGesture:(UIPanGestureRecognizer *)sender {
     if (sender.numberOfTouches == 1) {
-        NSLog(@"%@ %@", @"> 1.0", @"Single Pan");
+        //NSLog(@"%@ %@", @"> 1.0", @"Single Pan");
         CGPoint translatedPoint = CGPointZero;
         CGPoint initialCenter = CGPointZero;
-        /*
-        GLKMatrix4 nTranslationMatrix = translationMatrix;
-        //cameraViewMatrix = GLKMatrix4Multiply(rotationMatrix, GLKMatrix4Multiply(cameraViewMatrix, nTranslationMatrix));
-        nTranslationMatrix.m30 = -nTranslationMatrix.m30;
-        nTranslationMatrix.m32 = -nTranslationMatrix.m32;
-         
-        GLKMatrix4 tempMatrix = cameraViewMatrix;
-        GLKMatrix4 nMatrix = GLKMatrix4Invert(cameraViewMatrix, NULL);
-        GLKMatrix4 vm = GLKMatrix4Multiply(nMatrix,cameraViewMatrix);
-        //rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
-        GLKMatrix4 vm = GLKMatrix4Multiply(translationMatrix, GLKMatrix4Multiply(rotationMatrix, cameraViewMatrix));
-*/
+        
+        
         if(sender.state == UIGestureRecognizerStateBegan) {
             initialCenter = [sender translationInView:sender.view.superview];
             
@@ -99,7 +88,6 @@
             xtrans = 0.0f;
             ztrans = 0.0f;
         }
-        //vm = GLKMatrix4Translate(translationMatrix, xtrans, 0, ztrans);
     } else {
         
         xtrans = 0.0f;
@@ -109,7 +97,7 @@
 
 -(void)handleDoublePanGesture:(UIPanGestureRecognizer *)sender {
     if (sender.numberOfTouches == 2) {
-        NSLog(@"%@ %@", @"> 1.0", @"Double Pan");
+        //NSLog(@"%@ %@", @"> 1.0", @"Double Pan");
         CGPoint translatedPoint = CGPointZero;
         CGPoint initialCenter = CGPointZero;
         if(sender.state == UIGestureRecognizerStateBegan) {
@@ -136,7 +124,6 @@
     NSLog(@"%@", @"Reset Position");
     translationMatrix = GLKMatrix4Identity;
     rotationMatrix = GLKMatrix4Identity;
-    //_shader
 }
 
 -(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {
@@ -176,36 +163,28 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
                                                                 */
-    
-    GLKMatrix4 nTranslationMatrix = translationMatrix;
-    //cameraViewMatrix = GLKMatrix4Multiply(rotationMatrix, GLKMatrix4Multiply(cameraViewMatrix, nTranslationMatrix));
-    nTranslationMatrix.m30 = -nTranslationMatrix.m30;
-    nTranslationMatrix.m32 = -nTranslationMatrix.m32;
-    //translationMatrix = GLKMatrix4Translate(translationMatrix,cosf(totalyrot) *  ztrans + sinf(totalyrot) * xtrans, 0, sinf(totalyrot) * ztrans + cosf(totalyrot) * xtrans);
-    translationMatrix = GLKMatrix4Translate(translationMatrix, xtrans, 0, ztrans);
-    //rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
-    GLKMatrix4 vm = GLKMatrix4Multiply(translationMatrix, cameraViewMatrix);
+
     totalyrot += yrot;
     int tc = totalyrot / (M_PI * 2);
     totalyrot = totalyrot - (tc * M_PI * 2);
-    [Director sharedInstance].scene.rotationY = totalyrot;
-    [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
-    //cameraViewMatrix = vm;
+
+    //NSLog(@"%f %f %f %f", totalyrot, xtrans, ztrans, yrot);
+    translationMatrix = GLKMatrix4Translate(translationMatrix, xtrans * cosf(totalyrot) - ztrans * sinf(totalyrot), 0, xtrans * sinf(totalyrot) + ztrans * cosf(totalyrot));
+    rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
+    GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
+    vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);    [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
+    
 }
 
 - (void) setupScene{
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
-                                        fragmentShader:@"SimpleFragment.glsl"];
+        fragmentShader:@"SimpleFragment.glsl"];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 1000);
     _shader.viewportUniform = GLKVector2Make(self.view.bounds.size.width, self.view.bounds.size.height);
     cameraViewMatrix = GLKMatrix4Identity;
     translationMatrix = GLKMatrix4Identity;
     rotationMatrix = GLKMatrix4Identity;
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
-    
-    totalyrot = [Director sharedInstance].scene.rotationY;
-    translationMatrix = GLKMatrix4Translate(translationMatrix, [Director sharedInstance].scene.position.x, [Director sharedInstance].scene.position.y, [Director sharedInstance].scene.position.z);
-    [Director sharedInstance].scene.position = GLKVector3Make(0,0,0);
     [Director sharedInstance].view = self.view;
 }
 
