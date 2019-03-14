@@ -88,13 +88,15 @@ const GLubyte Indices[] = {
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
-    if ((self = [super initWithName:"square" shader:shader
+    if ((self = [super initWithName:"cube" shader:shader
                            vertices:(Vertex *)Vertices
                         vertexCount:sizeof(Vertices) / sizeof(Vertices[0])])) {
         
         self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
         self.specularColor = GLKVector4Make(1, 1, 1, 1);
         self.shininess = 10;
+        
+        
         
         [self loadTexture:@"dungeon_01.png"];
         

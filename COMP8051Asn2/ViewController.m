@@ -138,7 +138,7 @@
 - (void) setupScene{
     _shader = [[BaseEffect alloc] initWithVertexShader:@"SimpleVertex.glsl"
                                         fragmentShader:@"SimpleFragment.glsl"];
-    _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 150);
+    _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 1000);
     _shader.viewportUniform = GLKVector2Make(self.view.bounds.size.width, self.view.bounds.size.height);
     cameraViewMatrix = GLKMatrix4Identity;
     

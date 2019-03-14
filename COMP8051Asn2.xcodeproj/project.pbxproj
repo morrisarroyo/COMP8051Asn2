@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 292F9A5D223A03D20099250F /* MazeCaller.mm */; };
+		292F9A68223A13F80099250F /* northwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A63223A13F60099250F /* northwall.jpg */; };
+		292F9A69223A13F80099250F /* floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A64223A13F70099250F /* floor.jpg */; };
+		292F9A6A223A13F80099250F /* eastwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A65223A13F70099250F /* eastwall.jpg */; };
+		292F9A6B223A13F80099250F /* southwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A66223A13F70099250F /* southwall.jpg */; };
+		292F9A6C223A13F80099250F /* westwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A67223A13F70099250F /* westwall.jpg */; };
 		29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59A22385E090031A9AF /* SouthFace.m */; };
 		29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59B22385E0A0031A9AF /* WestFace.m */; };
 		29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59D22385E0A0031A9AF /* NorthFace.m */; };
@@ -31,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292F9A5D223A03D20099250F /* MazeCaller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MazeCaller.mm; path = MazeStart/MazeCaller.mm; sourceTree = "<group>"; };
+		292F9A5E223A03D20099250F /* MazeCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MazeCaller.h; path = MazeStart/MazeCaller.h; sourceTree = "<group>"; };
+		292F9A63223A13F60099250F /* northwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = northwall.jpg; path = Models/northwall.jpg; sourceTree = "<group>"; };
+		292F9A64223A13F70099250F /* floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = floor.jpg; path = Models/floor.jpg; sourceTree = "<group>"; };
+		292F9A65223A13F70099250F /* eastwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = eastwall.jpg; path = Models/eastwall.jpg; sourceTree = "<group>"; };
+		292F9A66223A13F70099250F /* southwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = southwall.jpg; path = Models/southwall.jpg; sourceTree = "<group>"; };
+		292F9A67223A13F70099250F /* westwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = westwall.jpg; path = Models/westwall.jpg; sourceTree = "<group>"; };
 		29EBC59922385E090031A9AF /* EastFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EastFace.h; path = Models/EastFace.h; sourceTree = "<group>"; };
 		29EBC59A22385E090031A9AF /* SouthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SouthFace.m; path = Models/SouthFace.m; sourceTree = "<group>"; };
 		29EBC59B22385E0A0031A9AF /* WestFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WestFace.m; path = Models/WestFace.m; sourceTree = "<group>"; };
@@ -141,6 +154,8 @@
 		3F794FE222383B22007E86A9 /* MazeStart */ = {
 			isa = PBXGroup;
 			children = (
+				292F9A5E223A03D20099250F /* MazeCaller.h */,
+				292F9A5D223A03D20099250F /* MazeCaller.mm */,
 				3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */,
 				3F794FDD22383B1B007E86A9 /* DisjointSet.h */,
 				3F794FDE22383B1B007E86A9 /* maze.cpp */,
@@ -152,6 +167,11 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				292F9A65223A13F70099250F /* eastwall.jpg */,
+				292F9A64223A13F70099250F /* floor.jpg */,
+				292F9A63223A13F60099250F /* northwall.jpg */,
+				292F9A66223A13F70099250F /* southwall.jpg */,
+				292F9A67223A13F70099250F /* westwall.jpg */,
 				29EBC59922385E090031A9AF /* EastFace.h */,
 				29EBC5A022385E0B0031A9AF /* EastFace.m */,
 				29EBC59C22385E0A0031A9AF /* NorthFace.h */,
@@ -250,11 +270,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */,
+				292F9A6A223A13F80099250F /* eastwall.jpg in Resources */,
 				3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */,
+				292F9A6C223A13F80099250F /* westwall.jpg in Resources */,
+				292F9A69223A13F80099250F /* floor.jpg in Resources */,
 				3F794FB0223834C5007E86A9 /* Assets.xcassets in Resources */,
 				3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */,
 				3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */,
+				292F9A68223A13F80099250F /* northwall.jpg in Resources */,
 				3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */,
+				292F9A6B223A13F80099250F /* southwall.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +295,7 @@
 				3F794FE722383B3D007E86A9 /* Cube.m in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
+				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
 				3F794FD922383AEB007E86A9 /* TestScene.m in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,

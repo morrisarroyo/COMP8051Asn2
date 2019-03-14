@@ -35,8 +35,10 @@ const GLubyte Indices3[] = {
         self.specularColor = GLKVector4Make(1, 1, 1, 1);
         self.shininess = 10;
         self.scale = 5;
+        self.width = 5;
+        self.height = 5;
         
-        [self loadTexture:@"dungeon_01.png"];
+        [self loadTexture:@"southwall.jpg"];
     }
     return self;
 }
