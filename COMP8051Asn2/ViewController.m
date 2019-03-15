@@ -213,7 +213,7 @@
     NSMutableString *consoleString = [[NSMutableString alloc] init];
     [consoleString appendFormat: @"Postion X: %f\nPostion Z: %f\n", enterPos.x  -translationMatrix.m30, translationMatrix.m32 - enterPos.z];
     [consoleString appendFormat: @"Rotation Y:%f", GLKMathRadiansToDegrees(totalyrot)];
-    //[consoleString appendFormat: @"%@", [(TestScene *)([Director sharedInstance].scene) getMapAscii]];
+    [consoleString appendFormat: @"%@", [(TestScene *)([Director sharedInstance].scene) getMapAscii]];
     _consoleTextView.text = consoleString;
 }
 
