@@ -45,7 +45,9 @@
         maze = [[MazeCaller alloc] init];
         
         for (int i = [maze getNumRows] - 1; i >= 0 ; i--) {
-            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+            //map = [map stringByAppendingFormat:@"%@", @("|")];
+
+            for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
                 if (cell.southWallPresent) {
                     map = [map stringByAppendingFormat:@"%@", @("---")];
@@ -53,10 +55,14 @@
                     map = [map stringByAppendingFormat:@"%@", @("   ")];
                 }
             }
+            //map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
-            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+            //map = [map stringByAppendingFormat:@"%@", @("|")];
+
+            for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
-                if (cell.eastWallPresent) {
+                
+                if (cell.westWallPresent) {
                     map = [map stringByAppendingFormat:@"%@", @("|")];
                 } else {
                     map = [map stringByAppendingFormat:@"%@", @(" ")];
@@ -66,14 +72,18 @@
                 } else {
                     map = [map stringByAppendingFormat:@"%@", @(" ")];
                 }
-                if (cell.westWallPresent) {
+                if (cell.eastWallPresent) {
                     map = [map stringByAppendingFormat:@"%@", @("|")];
                 } else {
                     map = [map stringByAppendingFormat:@"%@", @(" ")];
                 }
             }
+            
+           // map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
-            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+           // map = [map stringByAppendingFormat:@"%@", @("|")];
+
+            for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
                 if (cell.northWallPresent) {
                     map = [map stringByAppendingFormat:@"%@", @("---")];
@@ -81,6 +91,7 @@
                     map = [map stringByAppendingFormat:@"%@", @("   ")];
                 }
             }
+            //map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         
@@ -140,13 +151,18 @@
             //map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         NSLog(@"%@", map);
-         NSLog(@"%@", @"HELLO");
+        NSLog(@"%@", @"HELLO");
         
     }
     return self;
 }
 
--(GLKVector3) getMazeEntrancePosition {    return GLKVector3Make(_cube.position.x, 0, _sceneOffset) ;
+-(GLKVector3) getMazeEntrancePosition {
+    return GLKVector3Make(_cube.position.x, 0, _sceneOffset) ;
+}
+
+-(NSString *) getMapAscii {
+    return map ;
 }
 /*
 - (instancetype)initWithShader:(GLKBaseEffect *)shader {
