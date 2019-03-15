@@ -25,12 +25,15 @@
     
     
 }
+
+
+
 - (instancetype)initWithShader:(BaseEffect *)shader {
     if ((self = [super initWithName:"TestScene" shader:shader vertices:nil vertexCount:0])) {
         // Create initial scene position
         _gameArea = CGSizeMake(40, 80);
         _sceneOffset = _gameArea.height/2 / tanf(GLKMathRadiansToDegrees(85.0/2));
-        self.position = GLKVector3Make(-_gameArea.width / 2, -_gameArea.height/2 + 5, -_sceneOffset);
+        self.position = GLKVector3Make(-_gameArea.width / 2, -_gameArea.height/2, -_sceneOffset);
         //self.rotationX = GLKMathDegreesToRadians(15);
         self.rotationY = GLKMathDegreesToRadians(90);
         
@@ -100,6 +103,9 @@
         
     }
     return self;
+}
+
+-(GLKVector3) getMazeEntrancePosition {    return GLKVector3Make(_cube.position.x, 0, _sceneOffset) ;
 }
 /*
 - (instancetype)initWithShader:(GLKBaseEffect *)shader {

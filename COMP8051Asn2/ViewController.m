@@ -18,12 +18,14 @@
     GLKMatrix4 translationMatrix;
     GLKMatrix4 rotationMatrix;
     GLKMatrix4 minimapMatrix;
+    NSString *mazeString;
 }
 @property (weak, nonatomic) IBOutlet UISlider *fogStartSlider;
 @property (weak, nonatomic) IBOutlet UISlider *fogEndSlider;
 @property (weak, nonatomic) IBOutlet UISlider *fogRedSlider;
 @property (weak, nonatomic) IBOutlet UISlider *fogGreenSlider;
 @property (weak, nonatomic) IBOutlet UISlider *fogBlueSlider;
+@property (weak, nonatomic) IBOutlet UITextView *consoleTextView;
 
 
 
@@ -44,6 +46,11 @@
     totalyrot =0;
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self setupGestures];
+    [self setupScene];
+}
+
+-(void) setupGestures {
     UIPanGestureRecognizer *singlePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingePanGesture:)];
     singlePanGesture.maximumNumberOfTouches = 1;
     singlePanGesture.minimumNumberOfTouches = 1;
@@ -53,6 +60,10 @@
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
     doubleTapGesture.numberOfTapsRequired = 2;
     doubleTapGesture.numberOfTouchesRequired = 1;
+    UITapGestureRecognizer *doubleDoubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleDoubleTapGesture:)];
+    doubleDoubleTapGesture.numberOfTapsRequired = 2;
+    doubleDoubleTapGesture.numberOfTouchesRequired = 2;
+    _consoleTextView.hidden = true;
     UISwipeGestureRecognizer *swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownGesture:)];
     swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
     swipeDownGesture.numberOfTouchesRequired = 2;
@@ -62,10 +73,11 @@
     [self.view addGestureRecognizer:singlePanGesture];
     [self.view addGestureRecognizer:doublePanGesture];
     [self.view addGestureRecognizer:doubleTapGesture];
+    [self.view addGestureRecognizer:doubleDoubleTapGesture];
     [self.view addGestureRecognizer:swipeDownGesture];
     [self.view addGestureRecognizer:swipeUpGesture];
-    [self setupScene];
 }
+
 - (IBAction)toggleDayNight:(id)sender {
     if(_shader.dayNightFactor == 1.0) {
         [Director sharedInstance].scene.dayNightFactor = .15f;
@@ -167,6 +179,11 @@
     yrot = 0;
 }
 
+-(void)handleDoubleDoubleTapGesture:(UITapGestureRecognizer *) sender {
+    NSLog(@"%@", @"Toggle Console");
+    _consoleTextView.hidden = !_consoleTextView.hidden;
+}
+
 -(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {
     if(_shader.dayNightFactor == 1.0) {
         [Director sharedInstance].scene.dayNightFactor = .15f;
@@ -185,6 +202,14 @@
         [Director sharedInstance].scene.flashlightActive = true;
     }
     NSLog(@"%@", @"Toggle Flashlight");
+}
+
+- (void)updateConsoleText {
+    GLKVector3 enterPos = [(TestScene *)([Director sharedInstance].scene) getMazeEntrancePosition];
+    NSMutableString *consoleString = [[NSMutableString alloc] init];
+    [consoleString appendFormat: @"Postion X: %f\nPostion Z: %f\n", translationMatrix.m30 - enterPos.x, translationMatrix.m32 - enterPos.z];
+    [consoleString appendFormat: @"Rotation Y:%f\n", GLKMathRadiansToDegrees(totalyrot)];
+    _consoleTextView.text = consoleString;
 }
 
 
@@ -218,6 +243,8 @@
     GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
     vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
+    [self updateConsoleText];
+    // Minimap
     int minimapSideLength = viewportSize.x / 2;
     glViewport(0, 0, minimapSideLength, minimapSideLength );
     glScissor(0, 0, minimapSideLength, minimapSideLength);
@@ -238,10 +265,12 @@
     rotationMatrix = GLKMatrix4Identity;
     minimapMatrix = GLKMatrix4Identity;
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
-    minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(40), 1, 0, 0);
-    minimapMatrix.m30 = 5 ;
-    minimapMatrix.m31 = -90 ;
-    minimapMatrix.m32 = -10 ;
+    
+    minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(75), 1, 0, 0);
+    minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(-20), 0, 0, 1);
+    minimapMatrix.m30 = 0 ;
+    minimapMatrix.m31 = -140 ;
+    minimapMatrix.m32 = -100 ;
     [Director sharedInstance].view = self.view;
 }
 

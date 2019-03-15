@@ -143,8 +143,8 @@
 (NSString *)fragmentShader {
   if ((self = [super init])) {
       _fogColour = GLKVector4Make(.5, .5, .5, 1.0);
-      _fogStart = 50.0;
-      _fogEnd = 100.0;
+      _fogStart = 15.0;
+      _fogEnd = 25.0;
     [self compileVertexShader:vertexShader fragmentShader:fragmentShader];
   }
   return self;
