@@ -267,7 +267,9 @@
     rotationMatrix = GLKMatrix4Identity;
     minimapMatrix = GLKMatrix4Identity;
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
-    
+    GLKVector3 enterPos = [(TestScene *)([Director sharedInstance].scene) getMazeEntrancePosition];
+    translationMatrix.m30 = enterPos.x;
+    translationMatrix.m32 = enterPos.z;
     minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(75), 1, 0, 0);
     minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(-20), 0, 0, 1);
     minimapMatrix.m30 = 0 ;

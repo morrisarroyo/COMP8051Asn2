@@ -17,6 +17,7 @@
 		29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59B22385E0A0031A9AF /* WestFace.m */; };
 		29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59D22385E0A0031A9AF /* NorthFace.m */; };
 		29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC5A022385E0B0031A9AF /* EastFace.m */; };
+		3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */; };
 		3F794FA5223834C5007E86A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FA4223834C5007E86A9 /* main.m */; };
 		3F794FAB223834C5007E86A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FAA223834C5007E86A9 /* ViewController.m */; };
 		3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FAC223834C5007E86A9 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		29EBC59E22385E0B0031A9AF /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
 		29EBC59F22385E0B0031A9AF /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
 		29EBC5A022385E0B0031A9AF /* EastFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EastFace.m; path = Models/EastFace.m; sourceTree = "<group>"; };
+		3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk57-monospace.ttf"; sourceTree = "<group>"; };
 		3F794FA0223834C5007E86A9 /* COMP8051Asn2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP8051Asn2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F794FA4223834C5007E86A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F794FA9223834C5007E86A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				3F794FAF223834C5007E86A9 /* Assets.xcassets */,
 				3F794FB1223834C5007E86A9 /* LaunchScreen.storyboard */,
 				3F794FB4223834C5007E86A9 /* Info.plist */,
+				3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */,
 				3F794FA3223834C5007E86A9 /* Supporting Files */,
 			);
 			path = COMP8051Asn2;
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */,
 				3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */,
 				292F9A6A223A13F80099250F /* eastwall.jpg in Resources */,
 				3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */,
