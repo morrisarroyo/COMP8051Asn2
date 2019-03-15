@@ -43,6 +43,47 @@
         map = @"\n";
         mazeScale = 5;
         maze = [[MazeCaller alloc] init];
+        
+        for (int i = [maze getNumRows] - 1; i >= 0 ; i--) {
+            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+                cell = [maze getCelli:i j:j];
+                if (cell.southWallPresent) {
+                    map = [map stringByAppendingFormat:@"%@", @("---")];
+                } else {
+                    map = [map stringByAppendingFormat:@"%@", @("   ")];
+                }
+            }
+            map = [map stringByAppendingFormat:@"%@", @("\n")];
+            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+                cell = [maze getCelli:i j:j];
+                if (cell.eastWallPresent) {
+                    map = [map stringByAppendingFormat:@"%@", @("|")];
+                } else {
+                    map = [map stringByAppendingFormat:@"%@", @(" ")];
+                }
+                if ((i + j) < 1) {
+                    map = [map stringByAppendingFormat:@"%@", @("*")];
+                } else {
+                    map = [map stringByAppendingFormat:@"%@", @(" ")];
+                }
+                if (cell.westWallPresent) {
+                    map = [map stringByAppendingFormat:@"%@", @("|")];
+                } else {
+                    map = [map stringByAppendingFormat:@"%@", @(" ")];
+                }
+            }
+            map = [map stringByAppendingFormat:@"%@", @("\n")];
+            for (int j = [maze getNumCols] - 1; j >= 0; j--) {
+                cell = [maze getCelli:i j:j];
+                if (cell.northWallPresent) {
+                    map = [map stringByAppendingFormat:@"%@", @("---")];
+                } else {
+                    map = [map stringByAppendingFormat:@"%@", @("   ")];
+                }
+            }
+            map = [map stringByAppendingFormat:@"%@", @("\n")];
+        }
+        
         for (int i = 0; i < [maze getNumRows]; i++) {
             for (int j = 0; j < [maze getNumCols]; j++) {
                 _floor = [[TopFace alloc] initWithShader:shader];
@@ -57,9 +98,9 @@
                     _south = [[SouthFace alloc] initWithShader:shader];
                     _south.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2) - (mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_south];
-                    map = [map stringByAppendingFormat:@"%@", @("n")];
+                    //map = [map stringByAppendingFormat:@"%@", @("n")];
                 } else {
-                    map = [map stringByAppendingFormat:@"%@", @("x")];
+                    //map = [map stringByAppendingFormat:@"%@", @("x")];
                 }
                 if (cell.southWallPresent) {
                     _south = [[SouthFace alloc] initWithShader:shader];
@@ -68,9 +109,9 @@
                     _north = [[NorthFace alloc] initWithShader:shader];
                     _north.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2) + (mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_north];
-                    map = [map stringByAppendingFormat:@"%@", @("s")];
+                    //map = [map stringByAppendingFormat:@"%@", @("s")];
                 } else {
-                    map = [map stringByAppendingFormat:@"%@", @("x")];
+                    //map = [map stringByAppendingFormat:@"%@", @("x")];
                 }
                 if (cell.eastWallPresent) {
                     _west = [[WestFace alloc] initWithShader:shader];
@@ -79,9 +120,9 @@
                     _east = [[EastFace alloc] initWithShader:shader];
                     _east.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) + (mazeScale * 2));
                     [self.children addObject:_east];
-                    map = [map stringByAppendingFormat:@"%@", @("[e]]")];
+                    //map = [map stringByAppendingFormat:@"%@", @("[e]]")];
                 } else {
-                    map = [map stringByAppendingFormat:@"%@", @("x")];
+                    //map = [map stringByAppendingFormat:@"%@", @("x")];
                 }
                 if (cell.westWallPresent) {
                     _east = [[EastFace alloc] initWithShader:shader];
@@ -90,13 +131,13 @@
                     _west = [[WestFace alloc] initWithShader:shader];
                     _west.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) - (mazeScale * 2));
                     [self.children addObject:_west];
-                    map = [map stringByAppendingFormat:@"%@", @("[w]")];
+                    //map = [map stringByAppendingFormat:@"%@", @("[w]")];
                 } else {
-                    map = [map stringByAppendingFormat:@"%@", @("x")];
+                    //map = [map stringByAppendingFormat:@"%@", @("x")];
                 }
-                map = [map stringByAppendingFormat:@"%@", @(" : ")];
+                //map = [map stringByAppendingFormat:@"%@", @(" : ")];
             }
-            map = [map stringByAppendingFormat:@"%@", @("\n")];
+            //map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         NSLog(@"%@", map);
          NSLog(@"%@", @"HELLO");
