@@ -4,6 +4,7 @@
 #import "TestScene.h"
 #import "Director.h"
 #import "BaseEffect.h"
+#import "MazeCaller.h"
 
 @interface ViewController () {
     BaseEffect* _shader;
