@@ -177,6 +177,7 @@
     xtrans = 0;
     ztrans = 0;
     yrot = 0;
+    [self updateConsoleText];
 }
 
 -(void)handleDoubleDoubleTapGesture:(UITapGestureRecognizer *) sender {
@@ -207,7 +208,7 @@
 - (void)updateConsoleText {
     GLKVector3 enterPos = [(TestScene *)([Director sharedInstance].scene) getMazeEntrancePosition];
     NSMutableString *consoleString = [[NSMutableString alloc] init];
-    [consoleString appendFormat: @"Postion X: %f\nPostion Z: %f\n", translationMatrix.m30 - enterPos.x, translationMatrix.m32 - enterPos.z];
+    [consoleString appendFormat: @"Postion X: %f\nPostion Z: %f\n", enterPos.x  -translationMatrix.m30, translationMatrix.m32 - enterPos.z];
     [consoleString appendFormat: @"Rotation Y:%f\n", GLKMathRadiansToDegrees(totalyrot)];
     _consoleTextView.text = consoleString;
 }
