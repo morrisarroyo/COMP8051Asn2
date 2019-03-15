@@ -6,9 +6,8 @@
 #import "SouthFace.h"
 #import "WestFace.h"
 #import "TopFace.h"
-//#import "RWMushroom.h"
+
 @implementation MazeScene {
-    //RWMushroom* _mushroom;
     CGSize _gameArea;
     float _sceneOffset;
     Cube *_cube;
@@ -22,7 +21,6 @@
     NSArray *mapArray;
     Cell cell;
     int mazeScale;
-    
     
 }
 
@@ -40,13 +38,12 @@
         _cube = [[Cube alloc] initWithShader:shader];
         _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_cube];
+        
         map = @"\n";
-        mazeScale = 5;
         maze = [[MazeCaller alloc] init];
         
+        // 2D-Map text
         for (int i = [maze getNumRows] - 1; i >= 0 ; i--) {
-            //map = [map stringByAppendingFormat:@"%@", @("|")];
-
             for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
                 if (cell.southWallPresent) {
@@ -55,10 +52,7 @@
                     map = [map stringByAppendingFormat:@"%@", @("   ")];
                 }
             }
-            //map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
-            //map = [map stringByAppendingFormat:@"%@", @("|")];
-
             for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
                 
@@ -78,11 +72,7 @@
                     map = [map stringByAppendingFormat:@"%@", @(" ")];
                 }
             }
-            
-           // map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
-           // map = [map stringByAppendingFormat:@"%@", @("|")];
-
             for (int j = 0; j < [maze getNumCols] ; j++) {
                 cell = [maze getCelli:i j:j];
                 if (cell.northWallPresent) {
@@ -91,10 +81,10 @@
                     map = [map stringByAppendingFormat:@"%@", @("   ")];
                 }
             }
-            //map = [map stringByAppendingFormat:@"%@", @("|")];
             map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         
+        mazeScale = 5;
         for (int i = 0; i < [maze getNumRows]; i++) {
             for (int j = 0; j < [maze getNumCols]; j++) {
                 _floor = [[TopFace alloc] initWithShader:shader];
@@ -151,8 +141,6 @@
             //map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         NSLog(@"%@", map);
-        NSLog(@"%@", @"HELLO");
-        
     }
     return self;
 }
@@ -164,26 +152,5 @@
 -(NSString *) getMapAscii {
     return map ;
 }
-/*
-- (instancetype)initWithShader:(GLKBaseEffect *)shader {
-    if ((self = [super initWithName:"TestScene" shader:shader vertices:nil vertexCount:0])) {
-        
-        //Create the initial camera position
-        _gameArea = CGSizeMake(27, 48);
-        _sceneOffset = _gameArea.height/2/tanf(GLKMathDegreesToRadians(85/2));
-        self.position = GLKVector3Make(-_gameArea.width/2, -_gameArea.height/2, -_sceneOffset - 10);
-        
-        //Create floor and add to scene
-        _northWall = [[NorthWall alloc] initWithShader:shader];
-        [self.children addObject:_northWall];
-        
-        //_mushroom = [[RWMushroom alloc] initWithShader:shader];
-        //[self.children addObject:_mushroom];
-        
-        self.position = GLKVector3Make(0, -1, -10);
-        
-    }
-    return self;
-}*/
 
 @end

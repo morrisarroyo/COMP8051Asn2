@@ -1,7 +1,7 @@
 #import "Node.h"
 
 
-@interface TestScene : Node
+@interface MazeScene : Node
 
 - (instancetype)initWithShader:(BaseEffect *)shader;
 -(GLKVector3) getMazeEntrancePosition;

@@ -25,7 +25,7 @@
 		3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FB1223834C5007E86A9 /* LaunchScreen.storyboard */; };
 		3F794FC922383938007E86A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FC822383938007E86A9 /* AppDelegate.m */; };
 		3F794FD822383AEB007E86A9 /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD522383AEB007E86A9 /* Director.m */; };
-		3F794FD922383AEB007E86A9 /* TestScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD722383AEB007E86A9 /* TestScene.m */; };
+		3F794FD922383AEB007E86A9 /* MazeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD722383AEB007E86A9 /* MazeScene.m */; };
 		3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */; };
 		3F794FE122383B1B007E86A9 /* maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDE22383B1B007E86A9 /* maze.cpp */; };
 		3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FE322383B3D007E86A9 /* dungeon_01.png */; };
@@ -67,8 +67,8 @@
 		3F794FC822383938007E86A9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3F794FD422383AEB007E86A9 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Director.h; path = Main/Director.h; sourceTree = "<group>"; };
 		3F794FD522383AEB007E86A9 /* Director.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Director.m; path = Main/Director.m; sourceTree = "<group>"; };
-		3F794FD622383AEB007E86A9 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestScene.h; path = Main/TestScene.h; sourceTree = "<group>"; };
-		3F794FD722383AEB007E86A9 /* TestScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestScene.m; path = Main/TestScene.m; sourceTree = "<group>"; };
+		3F794FD622383AEB007E86A9 /* MazeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MazeScene.h; path = Main/MazeScene.h; sourceTree = "<group>"; };
+		3F794FD722383AEB007E86A9 /* MazeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MazeScene.m; path = Main/MazeScene.m; sourceTree = "<group>"; };
 		3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DisjointSet.cpp; path = MazeStart/DisjointSet.cpp; sourceTree = "<group>"; };
 		3F794FDD22383B1B007E86A9 /* DisjointSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisjointSet.h; path = MazeStart/DisjointSet.h; sourceTree = "<group>"; };
 		3F794FDE22383B1B007E86A9 /* maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maze.cpp; path = MazeStart/maze.cpp; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 			children = (
 				3F794FD422383AEB007E86A9 /* Director.h */,
 				3F794FD522383AEB007E86A9 /* Director.m */,
-				3F794FD622383AEB007E86A9 /* TestScene.h */,
-				3F794FD722383AEB007E86A9 /* TestScene.m */,
+				3F794FD622383AEB007E86A9 /* MazeScene.h */,
+				3F794FD722383AEB007E86A9 /* MazeScene.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
-				3F794FD922383AEB007E86A9 /* TestScene.m in Sources */,
+				3F794FD922383AEB007E86A9 /* MazeScene.m in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
 				29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */,
