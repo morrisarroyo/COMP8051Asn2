@@ -1,11 +1,3 @@
-//
-//  mazeProcessor.h
-//  COMP8051Asn2
-//
-//  Created by Renz on 3/12/19.
-//  Copyright © 2019 BCIT. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 typedef struct Cell {

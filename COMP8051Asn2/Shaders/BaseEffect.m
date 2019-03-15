@@ -1,11 +1,3 @@
-//
-//  BaseEffect.m
-//  HelloOpenGL
-//
-//  Created by Ray Wenderlich on 9/3/13.
-//  Copyright (c) 2013 Ray Wenderlich. All rights reserved.
-//
-
 #import "BaseEffect.h"
 
 @implementation BaseEffect {
@@ -27,6 +19,7 @@
     GLuint _fogColourUniform;
     GLuint _fogStartUniform;
     GLuint _fogEndUniform;
+    GLuint _fogActiveUniform;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -96,6 +89,7 @@
     _fogColourUniform =  glGetUniformLocation(_programHandle, "u_Fog.Colour");
     _fogStartUniform =  glGetUniformLocation(_programHandle, "u_Fog.Start");
     _fogEndUniform =  glGetUniformLocation(_programHandle, "u_Fog.End");
+    _fogActiveUniform =  glGetUniformLocation(_programHandle, "u_Fog.Active");
     
   GLint linkSuccess;
   glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
@@ -126,7 +120,7 @@
   glUniform1f(_shininessUniform, 64.0);
     glUniform4f(_matColourUniform, self.matColour.r, self.matColour.g, self.matColour.b, self.matColour.a);
     glUniform1f(_dayNightFactorUniform, _dayNightFactor);
-    glUniform1f(_flashlightRadiusUniform, .75);
+    glUniform1f(_flashlightRadiusUniform, .8);
     if (_flashlightActive) {
         glUniform1f(_flashlightActiveUniform, 1.0);
     } else {
@@ -135,14 +129,22 @@
     glUniform1f(_flashlightIntensityUniform, 1.5);
     glUniform2f(_flashlightViewportUniform, _viewportUniform.x, _viewportUniform.y);
     //glUniform4f(_fogColourUniform, _fogColour.r, _fogColour.g, _fogColour.b, _fogColour.a);
-    glUniform4f(_fogColourUniform, 0.5, 0.5, 0.5, 1.0);
-    glUniform1f(_fogStartUniform, 50.0);
-    glUniform1f(_fogEndUniform, 70.0);
+    glUniform4f(_fogColourUniform, _fogColour.r, _fogColour.g, _fogColour.b, _fogColour.a);
+    glUniform1f(_fogStartUniform, _fogStart);
+    glUniform1f(_fogEndUniform, _fogEnd);
+    if (_fogActive) {
+        glUniform1f(_fogActiveUniform, 1.0);
+    } else {
+        glUniform1f(_fogActiveUniform, 0.0);
+    }
 }
 
 - (instancetype)initWithVertexShader:(NSString *)vertexShader fragmentShader:
 (NSString *)fragmentShader {
   if ((self = [super init])) {
+      _fogColour = GLKVector4Make(.5, .5, .5, 1.0);
+      _fogStart = 50.0;
+      _fogEnd = 100.0;
     [self compileVertexShader:vertexShader fragmentShader:fragmentShader];
   }
   return self;

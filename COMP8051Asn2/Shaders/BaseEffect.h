@@ -1,11 +1,3 @@
-//
-//  BaseEffect.h
-//  HelloOpenGL
-//
-//  Created by Ray Wenderlich on 9/3/13.
-//  Copyright (c) 2013 Ray Wenderlich. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 #import "Vertex.h"
@@ -24,6 +16,9 @@
 @property (assign) GLKVector2 viewportUniform;
 @property (assign) bool flashlightActive;
 @property (assign) GLKVector4 fogColour;
+@property (assign) float fogStart;
+@property (assign) float fogEnd;
+@property (assign) bool fogActive;
 
 - (id)initWithVertexShader:(NSString *)vertexShader
             fragmentShader:(NSString *)fragmentShader;

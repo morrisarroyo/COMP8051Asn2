@@ -1,11 +1,3 @@
-//
-//  Model.h
-//  Tanks Go
-//
-//  Created by Jason Sekhon on 2019-02-12.
-//  Copyright © 2019 Jason Sekhon. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "Vertex.h"
 #import <GLKit/GLKit.h>
@@ -29,12 +21,13 @@
 @property (assign) float height;
 @property (assign) float dayNightFactor;
 @property (assign) bool flashlightActive;
+@property (assign) bool fogActive;
 
 @property (nonatomic, strong) NSMutableArray *children;
 
 - (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
 - (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive;
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive withFogActive:(bool)fogActive;
 - (void)updateWithDelta:(GLfloat)dt;
 - (void)loadTexture:(NSString *)fileName;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

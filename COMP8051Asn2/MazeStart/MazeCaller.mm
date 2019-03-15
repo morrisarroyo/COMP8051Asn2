@@ -1,11 +1,3 @@
-//
-//  mazeProcessor.m
-//  COMP8051Asn2
-//
-//  Created by Renz on 3/12/19.
-//  Copyright © 2019 BCIT. All rights reserved.
-//
-
 #import "MazeCaller.h"
 #import "maze.h"
 

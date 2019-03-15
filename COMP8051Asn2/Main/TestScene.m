@@ -1,11 +1,3 @@
-//
-//  TestScene.m
-//  Asn2
-//
-//  Created by Renz on 3/11/19.
-//  Copyright © 2019 Renz. All rights reserved.
-//
-
 #import "TestScene.h"
 #import "Cube.h"
 #import "MazeCaller.h"

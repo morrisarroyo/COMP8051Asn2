@@ -1,10 +1,3 @@
-//
-//  NorthWall.m
-//  Asn2
-//
-//  Created by Renz on 3/11/19.
-//  Copyright © 2019 Renz. All rights reserved.
-//
 #import "Cube.h"
 
 @implementation Cube
@@ -98,7 +91,7 @@ const GLubyte Indices[] = {
         
         
         
-        [self loadTexture:@"dungeon_01.png"];
+        [self loadTexture:@"crate.jpg"];
         
     }
     return self;

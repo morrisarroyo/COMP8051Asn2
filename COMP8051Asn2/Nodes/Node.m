@@ -1,11 +1,3 @@
-//
-//  Model.m
-//  Tanks Go
-//
-//  Created by Jason Sekhon on 2019-02-12.
-//  Copyright © 2019 Jason Sekhon. All rights reserved.
-//
-
 #import "Node.h"
 #import "BaseEffect.h"
 
@@ -38,6 +30,7 @@
         self.matColour = GLKVector4Make(1, 1, 1, 1);
         self.dayNightFactor = 1.0;
         self.flashlightActive = false;
+        self.fogActive = false;
         
         glGenVertexArraysOES(1, &_vao);
         glBindVertexArrayOES(_vao);
@@ -91,12 +84,12 @@
     return modelMatrix;
 }
 
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive{
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive withFogActive:(bool)fogActive{
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
     
     for (Node *child in self.children) {
-        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor withFlashlightActive:flashlightActive];
+        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor withFlashlightActive:flashlightActive withFogActive:fogActive];
     }
     
     _shader.modelViewMatrix = modelViewMatrix;
@@ -104,6 +97,7 @@
     _shader.matColour = self.matColour;    
     _shader.dayNightFactor = dayNightFactor;
     _shader.flashlightActive = flashlightActive;
+    _shader.fogActive = fogActive;
 
     [_shader prepareToDraw];
     

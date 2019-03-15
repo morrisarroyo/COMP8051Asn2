@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  Asn2
-//
-//  Created by Renz on 3/11/19.
-//  Copyright © 2019 Renz. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "ViewController.h"
 #import "Cube.h"
@@ -24,7 +16,18 @@
     //float zrot;
     GLKMatrix4 translationMatrix;
     GLKMatrix4 rotationMatrix;
+    GLKMatrix4 minimapMatrix;
 }
+@property (weak, nonatomic) IBOutlet UISlider *fogStartSlider;
+@property (weak, nonatomic) IBOutlet UISlider *fogEndSlider;
+@property (weak, nonatomic) IBOutlet UISlider *fogRedSlider;
+@property (weak, nonatomic) IBOutlet UISlider *fogGreenSlider;
+@property (weak, nonatomic) IBOutlet UISlider *fogBlueSlider;
+
+
+
+
+
 @end
 
 @implementation ViewController
@@ -32,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     GLKView *view = (GLKView *)self.view;
+    
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     xtrans = 0;
@@ -60,6 +64,38 @@
     [self.view addGestureRecognizer:swipeDownGesture];
     [self.view addGestureRecognizer:swipeUpGesture];
     [self setupScene];
+}
+- (IBAction)toggleDayNight:(id)sender {
+    if(_shader.dayNightFactor == 1.0) {
+        [Director sharedInstance].scene.dayNightFactor = .15f;
+    } else {
+        
+        [Director sharedInstance].scene.dayNightFactor = 1.0f;
+        
+    }
+    NSLog(@"%@ %f", @"Toggle Day and Night", [Director sharedInstance].scene.dayNightFactor);
+}
+- (IBAction)toggleFlashlight:(id)sender {
+    if(_shader.flashlightActive == true) {
+        [Director sharedInstance].scene.flashlightActive = false;
+    } else {
+        [Director sharedInstance].scene.flashlightActive = true;
+    }
+    NSLog(@"%@", @"Toggle Flashlight");
+}
+- (IBAction)toggleFog:(id)sender {
+    if([Director sharedInstance].scene.fogActive) {
+        [Director sharedInstance].scene.fogActive = false;
+    } else {
+        [Director sharedInstance].scene.fogActive = true;
+    }
+    NSLog(@"%@", @"Toggle Fog");
+}
+- (IBAction)setFog:(id)sender {
+    [Director sharedInstance].scene.shader.fogColour = GLKVector4Make(_fogRedSlider.value, _fogGreenSlider.value, _fogBlueSlider.value, 1.0);
+    [Director sharedInstance].scene.shader.fogStart = _fogStartSlider.value;
+    [Director sharedInstance].scene.shader.fogEnd =_fogStartSlider.value + _fogEndSlider.value;
+    NSLog(@"%@", @"Set Fog");
 }
 
 -(void)handleSingePanGesture:(UIPanGestureRecognizer *)sender {
@@ -124,6 +160,10 @@
     NSLog(@"%@", @"Reset Position");
     translationMatrix = GLKMatrix4Identity;
     rotationMatrix = GLKMatrix4Identity;
+    totalyrot = 0;
+    xtrans = 0;
+    ztrans = 0;
+    yrot = 0;
 }
 
 -(void)handleSwipeDownGesture:(UISwipeGestureRecognizer *) sender {
@@ -148,6 +188,7 @@
 
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+    
     glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
@@ -162,18 +203,28 @@
      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
-                                                                */
-
+    */
+    GLKVector2 viewportSize =  GLKVector2Make(self.view.bounds.size.width * 2, self.view.bounds.size.height * 2);
+    glViewport(0, 0, viewportSize.x, viewportSize.y );
+    glScissor(0, 0, viewportSize.x, viewportSize.y);
+    
     totalyrot += yrot;
     int tc = totalyrot / (M_PI * 2);
     totalyrot = totalyrot - (tc * M_PI * 2);
 
-    //NSLog(@"%f %f %f %f", totalyrot, xtrans, ztrans, yrot);
     translationMatrix = GLKMatrix4Translate(translationMatrix, xtrans * cosf(totalyrot) - ztrans * sinf(totalyrot), 0, xtrans * sinf(totalyrot) + ztrans * cosf(totalyrot));
     rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
     GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
-    vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);    [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive];
-    
+    vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
+    int minimapSideLength = viewportSize.x / 2;
+    glViewport(0, 0, minimapSideLength, minimapSideLength );
+    glScissor(0, 0, minimapSideLength, minimapSideLength);
+
+    [[Director sharedInstance].scene renderWithParentModelViewMatrix:minimapMatrix withDayNightFactor:1.0 withFlashlightActive:false withFogActive:false];
+    _shader.dayNightFactor = [Director sharedInstance].scene.dayNightFactor;
+    _shader.fogActive = [Director sharedInstance].scene.fogActive;
+    _shader.flashlightActive = [Director sharedInstance].scene.flashlightActive;
 }
 
 - (void) setupScene{
@@ -184,7 +235,12 @@
     cameraViewMatrix = GLKMatrix4Identity;
     translationMatrix = GLKMatrix4Identity;
     rotationMatrix = GLKMatrix4Identity;
+    minimapMatrix = GLKMatrix4Identity;
     [Director sharedInstance].scene = [[TestScene alloc] initWithShader:_shader];
+    minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(40), 1, 0, 0);
+    minimapMatrix.m30 = 5 ;
+    minimapMatrix.m31 = -90 ;
+    minimapMatrix.m32 = -10 ;
     [Director sharedInstance].view = self.view;
 }
 

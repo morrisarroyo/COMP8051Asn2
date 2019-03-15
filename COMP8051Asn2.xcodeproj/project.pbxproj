@@ -34,6 +34,7 @@
 		3F7950012238B445007E86A9 /* BaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7950002238B445007E86A9 /* BaseEffect.m */; };
 		3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */; };
 		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
+		DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD8B926B223B18BB00E9BAFD /* crate.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		3F7950002238B445007E86A9 /* BaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEffect.m; path = Shaders/BaseEffect.m; sourceTree = "<group>"; };
 		3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
 		3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
+		DD8B926B223B18BB00E9BAFD /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD8B926B223B18BB00E9BAFD /* crate.jpg */,
 				292F9A65223A13F70099250F /* eastwall.jpg */,
 				292F9A64223A13F70099250F /* floor.jpg */,
 				292F9A63223A13F60099250F /* northwall.jpg */,
@@ -272,6 +275,7 @@
 				3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */,
 				292F9A6A223A13F80099250F /* eastwall.jpg in Resources */,
 				3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */,
+				DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */,
 				292F9A6C223A13F80099250F /* westwall.jpg in Resources */,
 				292F9A69223A13F80099250F /* floor.jpg in Resources */,
 				3F794FB0223834C5007E86A9 /* Assets.xcassets in Resources */,

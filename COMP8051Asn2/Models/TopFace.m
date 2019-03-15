@@ -1,11 +1,3 @@
-//
-//  TopFace.m
-//  COMP8051Asn2
-//
-//  Created by Student on 2019-03-12.
-//  Copyright © 2019 BCIT. All rights reserved.
-//
-
 #import "TopFace.h"
 
 @implementation TopFace
