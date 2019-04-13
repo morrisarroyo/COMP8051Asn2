@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E9E0CD655D53060000E31B3 /* Jacobian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40B15B6546941FD960D35C12 /* Jacobian.cpp */; };
+		737608855900102522E249C3 /* LinearR2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AF00E1B4360152542B71D6D /* LinearR2.cpp */; };
+		1F00766251EE7B857E587EE6 /* LinearR3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C7083218E4303C5FF75B18 /* LinearR3.cpp */; };
+		6B9F3BAC203862D053D761A4 /* LinearR4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F15E31BE62AA361946078 /* LinearR4.cpp */; };
+		4C65207500B254783DC75EB3 /* MatrixRmn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E2196272D041D9341D6F49 /* MatrixRmn.cpp */; };
+		148468C458C4344E72BA1194 /* Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A4E312B0F1CC43F6947EC /* Misc.cpp */; };
+		50F12C7F6E3921CB44CA3D08 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EB47BFB3E486C921CE92F96 /* Node.cpp */; };
+		475E0A2A78C23C86064473BF /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669B58FF644C6E885D9C47B3 /* Tree.cpp */; };
+		48DB224B74C1307C3ABD7A57 /* VectorRn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BB158616E5526B350AD4E34 /* VectorRn.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		40B15B6546941FD960D35C12 /* Jacobian.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Jacobian.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/Jacobian.cpp"; sourceTree = "<group>"; };
+		6A1947825DB6077D5D0B1F96 /* Jacobian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Jacobian.h"; path = "../../examples/ThirdPartyLibs/BussIK/Jacobian.h"; sourceTree = "<group>"; };
+		4AF00E1B4360152542B71D6D /* LinearR2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LinearR2.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR2.cpp"; sourceTree = "<group>"; };
+		569563C876250B0B30D46D23 /* LinearR2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LinearR2.h"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR2.h"; sourceTree = "<group>"; };
+		34C7083218E4303C5FF75B18 /* LinearR3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LinearR3.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR3.cpp"; sourceTree = "<group>"; };
+		538809D53C9451870694618F /* LinearR3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LinearR3.h"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR3.h"; sourceTree = "<group>"; };
+		7E8F15E31BE62AA361946078 /* LinearR4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LinearR4.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR4.cpp"; sourceTree = "<group>"; };
+		658C0B010A04226C16E11D8C /* LinearR4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LinearR4.h"; path = "../../examples/ThirdPartyLibs/BussIK/LinearR4.h"; sourceTree = "<group>"; };
+		5C4F0099606A6AA46C4B66B1 /* MathMisc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MathMisc.h"; path = "../../examples/ThirdPartyLibs/BussIK/MathMisc.h"; sourceTree = "<group>"; };
+		03E2196272D041D9341D6F49 /* MatrixRmn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MatrixRmn.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/MatrixRmn.cpp"; sourceTree = "<group>"; };
+		49DC3314762F3ED329E310AD /* MatrixRmn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MatrixRmn.h"; path = "../../examples/ThirdPartyLibs/BussIK/MatrixRmn.h"; sourceTree = "<group>"; };
+		0C3A4E312B0F1CC43F6947EC /* Misc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Misc.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/Misc.cpp"; sourceTree = "<group>"; };
+		1EB47BFB3E486C921CE92F96 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Node.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/Node.cpp"; sourceTree = "<group>"; };
+		19133E371C593B3B47B15D1B /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Node.h"; path = "../../examples/ThirdPartyLibs/BussIK/Node.h"; sourceTree = "<group>"; };
+		4D343017449D2E683B9407E1 /* Spherical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spherical.h"; path = "../../examples/ThirdPartyLibs/BussIK/Spherical.h"; sourceTree = "<group>"; };
+		669B58FF644C6E885D9C47B3 /* Tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Tree.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/Tree.cpp"; sourceTree = "<group>"; };
+		16CC2B80030743A4591321E3 /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Tree.h"; path = "../../examples/ThirdPartyLibs/BussIK/Tree.h"; sourceTree = "<group>"; };
+		5BB158616E5526B350AD4E34 /* VectorRn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "VectorRn.cpp"; path = "../../examples/ThirdPartyLibs/BussIK/VectorRn.cpp"; sourceTree = "<group>"; };
+		70880D854B912D5417D328D6 /* VectorRn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VectorRn.h"; path = "../../examples/ThirdPartyLibs/BussIK/VectorRn.h"; sourceTree = "<group>"; };
+		32436A5C7A915C5E2FC946E4 /* libBussIK_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libBussIK_xcode4_x64_release.a"; path = "libBussIK_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B840D6B7F3E41FD51FF40AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52BF1B4E456A64F33C6D44ED /* BussIK */ = {
+			isa = PBXGroup;
+			children = (
+				3E51479917E543BA6A646433 /* examples */,
+				14BF3846174748B5073A75BA /* Products */,
+			);
+			name = "BussIK";
+			sourceTree = "<group>";
+		};
+		3E51479917E543BA6A646433 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				541C06C91D0C031518AC6E6A /* ThirdPartyLibs */,
+			);
+			name = "examples";
+			sourceTree = "<group>";
+		};
+		541C06C91D0C031518AC6E6A /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				02F604F2398823C36807631D /* BussIK */,
+			);
+			name = "ThirdPartyLibs";
+			sourceTree = "<group>";
+		};
+		02F604F2398823C36807631D /* BussIK */ = {
+			isa = PBXGroup;
+			children = (
+				40B15B6546941FD960D35C12 /* Jacobian.cpp */,
+				6A1947825DB6077D5D0B1F96 /* Jacobian.h */,
+				4AF00E1B4360152542B71D6D /* LinearR2.cpp */,
+				569563C876250B0B30D46D23 /* LinearR2.h */,
+				34C7083218E4303C5FF75B18 /* LinearR3.cpp */,
+				538809D53C9451870694618F /* LinearR3.h */,
+				7E8F15E31BE62AA361946078 /* LinearR4.cpp */,
+				658C0B010A04226C16E11D8C /* LinearR4.h */,
+				5C4F0099606A6AA46C4B66B1 /* MathMisc.h */,
+				03E2196272D041D9341D6F49 /* MatrixRmn.cpp */,
+				49DC3314762F3ED329E310AD /* MatrixRmn.h */,
+				0C3A4E312B0F1CC43F6947EC /* Misc.cpp */,
+				1EB47BFB3E486C921CE92F96 /* Node.cpp */,
+				19133E371C593B3B47B15D1B /* Node.h */,
+				4D343017449D2E683B9407E1 /* Spherical.h */,
+				669B58FF644C6E885D9C47B3 /* Tree.cpp */,
+				16CC2B80030743A4591321E3 /* Tree.h */,
+				5BB158616E5526B350AD4E34 /* VectorRn.cpp */,
+				70880D854B912D5417D328D6 /* VectorRn.h */,
+			);
+			name = "BussIK";
+			sourceTree = "<group>";
+		};
+		14BF3846174748B5073A75BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32436A5C7A915C5E2FC946E4 /* libBussIK_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FE699A12EB31C0347F1AFE /* BussIK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D36D15362B659C21A4214A /* Build configuration list for PBXNativeTarget "BussIK" */;
+			buildPhases = (
+				2D310FA528B10F3629B55B02 /* Resources */,
+				67DA1CBE3E3F318800751731 /* Sources */,
+				1B840D6B7F3E41FD51FF40AA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BussIK";
+			productName = "BussIK";
+			productReference = 32436A5C7A915C5E2FC946E4 /* libBussIK_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "BussIK" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 52BF1B4E456A64F33C6D44ED /* BussIK */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FE699A12EB31C0347F1AFE /* libBussIK_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D310FA528B10F3629B55B02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67DA1CBE3E3F318800751731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9E0CD655D53060000E31B3 /* Jacobian.cpp in Sources */,
+				737608855900102522E249C3 /* LinearR2.cpp in Sources */,
+				1F00766251EE7B857E587EE6 /* LinearR3.cpp in Sources */,
+				6B9F3BAC203862D053D761A4 /* LinearR4.cpp in Sources */,
+				4C65207500B254783DC75EB3 /* MatrixRmn.cpp in Sources */,
+				148468C458C4344E72BA1194 /* Misc.cpp in Sources */,
+				50F12C7F6E3921CB44CA3D08 /* Node.cpp in Sources */,
+				475E0A2A78C23C86064473BF /* Tree.cpp in Sources */,
+				48DB224B74C1307C3ABD7A57 /* VectorRn.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B500EE50A3A6E5C669763F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "BussIK_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		2BA4226A5DF30BC93BD722F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "BussIK_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		3DEA556773637428715A6B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/BussIK",
+				);
+				OBJROOT = "obj/x64/Release/BussIK";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		6D8743C4286C02484712029A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/BussIK",
+				);
+				OBJROOT = "obj/x64/Debug/BussIK";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18D36D15362B659C21A4214A /* Build configuration list for PBXNativeTarget "libBussIK_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B500EE50A3A6E5C669763F0 /* Release */,
+				2BA4226A5DF30BC93BD722F2 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "BussIK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DEA556773637428715A6B2A /* Release */,
+				6D8743C4286C02484712029A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

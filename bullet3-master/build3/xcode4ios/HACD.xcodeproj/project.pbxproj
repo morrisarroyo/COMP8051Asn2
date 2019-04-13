@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69EC2F50686D4D36196146AE /* hacdGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6154004D548514A84ED73BF5 /* hacdGraph.cpp */; };
+		39BC106E5BE723E93CCC2BF2 /* hacdHACD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A12611F63B6636503DD49B9 /* hacdHACD.cpp */; };
+		7CE60F932F5F23F828944D03 /* hacdICHull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C3CCC321866F15BEC1B3A /* hacdICHull.cpp */; };
+		58E526FA087F717F79845CB2 /* hacdManifoldMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FF947C84FCF489D3E72491C /* hacdManifoldMesh.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E41040C3F9E2E0D6E2B5AFA /* hacdCircularList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdCircularList.h"; path = "../../Extras/HACD/hacdCircularList.h"; sourceTree = "<group>"; };
+		6154004D548514A84ED73BF5 /* hacdGraph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "hacdGraph.cpp"; path = "../../Extras/HACD/hacdGraph.cpp"; sourceTree = "<group>"; };
+		5FD67C323F8E08D41CE0403F /* hacdGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdGraph.h"; path = "../../Extras/HACD/hacdGraph.h"; sourceTree = "<group>"; };
+		7A12611F63B6636503DD49B9 /* hacdHACD.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "hacdHACD.cpp"; path = "../../Extras/HACD/hacdHACD.cpp"; sourceTree = "<group>"; };
+		474648BE3D09310E2F405422 /* hacdHACD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdHACD.h"; path = "../../Extras/HACD/hacdHACD.h"; sourceTree = "<group>"; };
+		0B4C3CCC321866F15BEC1B3A /* hacdICHull.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "hacdICHull.cpp"; path = "../../Extras/HACD/hacdICHull.cpp"; sourceTree = "<group>"; };
+		2DA1302F6C6B12891B9D11F1 /* hacdICHull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdICHull.h"; path = "../../Extras/HACD/hacdICHull.h"; sourceTree = "<group>"; };
+		0FF947C84FCF489D3E72491C /* hacdManifoldMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "hacdManifoldMesh.cpp"; path = "../../Extras/HACD/hacdManifoldMesh.cpp"; sourceTree = "<group>"; };
+		471558E61AE426E47D402D95 /* hacdManifoldMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdManifoldMesh.h"; path = "../../Extras/HACD/hacdManifoldMesh.h"; sourceTree = "<group>"; };
+		1C5129511D1152C058722592 /* hacdVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdVector.h"; path = "../../Extras/HACD/hacdVector.h"; sourceTree = "<group>"; };
+		30D571E029574872589C2671 /* hacdVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "hacdVersion.h"; path = "../../Extras/HACD/hacdVersion.h"; sourceTree = "<group>"; };
+		5DD61F6B351C5DC001CD4E71 /* libHACD_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libHACD_xcode4_x64_release.a"; path = "libHACD_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		712B613E3B9B7B5B3EC73B67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37041E7A053B7DD76792466A /* HACD */ = {
+			isa = PBXGroup;
+			children = (
+				59BC031C42EF7D874F8935F9 /* Extras */,
+				7E8F11BE751151B36F1D14D7 /* Products */,
+			);
+			name = "HACD";
+			sourceTree = "<group>";
+		};
+		59BC031C42EF7D874F8935F9 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				0D845D0C4A23646C19D7131F /* HACD */,
+			);
+			name = "Extras";
+			sourceTree = "<group>";
+		};
+		0D845D0C4A23646C19D7131F /* HACD */ = {
+			isa = PBXGroup;
+			children = (
+				7E41040C3F9E2E0D6E2B5AFA /* hacdCircularList.h */,
+				6154004D548514A84ED73BF5 /* hacdGraph.cpp */,
+				5FD67C323F8E08D41CE0403F /* hacdGraph.h */,
+				7A12611F63B6636503DD49B9 /* hacdHACD.cpp */,
+				474648BE3D09310E2F405422 /* hacdHACD.h */,
+				0B4C3CCC321866F15BEC1B3A /* hacdICHull.cpp */,
+				2DA1302F6C6B12891B9D11F1 /* hacdICHull.h */,
+				0FF947C84FCF489D3E72491C /* hacdManifoldMesh.cpp */,
+				471558E61AE426E47D402D95 /* hacdManifoldMesh.h */,
+				1C5129511D1152C058722592 /* hacdVector.h */,
+				30D571E029574872589C2671 /* hacdVersion.h */,
+			);
+			name = "HACD";
+			sourceTree = "<group>";
+		};
+		7E8F11BE751151B36F1D14D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DD61F6B351C5DC001CD4E71 /* libHACD_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AAA36C56EE03578142B13F2 /* HACD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64D365D50E056BF672A96A65 /* Build configuration list for PBXNativeTarget "HACD" */;
+			buildPhases = (
+				39654693026A05B823C101E1 /* Resources */,
+				6EDC3721147D235A7D834EF7 /* Sources */,
+				712B613E3B9B7B5B3EC73B67 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HACD";
+			productName = "HACD";
+			productReference = 5DD61F6B351C5DC001CD4E71 /* libHACD_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "HACD" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 37041E7A053B7DD76792466A /* HACD */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AAA36C56EE03578142B13F2 /* libHACD_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39654693026A05B823C101E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EDC3721147D235A7D834EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69EC2F50686D4D36196146AE /* hacdGraph.cpp in Sources */,
+				39BC106E5BE723E93CCC2BF2 /* hacdHACD.cpp in Sources */,
+				7CE60F932F5F23F828944D03 /* hacdICHull.cpp in Sources */,
+				58E526FA087F717F79845CB2 /* hacdManifoldMesh.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CEB30737F7451B229126388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "HACD_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		57B27A3364AF34E1429D54F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "HACD_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		2D1A07D07AB863BD38982051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../Extras/HACD",
+				);
+				OBJROOT = "obj/x64/Release/HACD";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		5C5E5DED06C30076654E6FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../Extras/HACD",
+				);
+				OBJROOT = "obj/x64/Debug/HACD";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64D365D50E056BF672A96A65 /* Build configuration list for PBXNativeTarget "libHACD_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CEB30737F7451B229126388 /* Release */,
+				57B27A3364AF34E1429D54F0 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "HACD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D1A07D07AB863BD38982051 /* Release */,
+				5C5E5DED06C30076654E6FDF /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

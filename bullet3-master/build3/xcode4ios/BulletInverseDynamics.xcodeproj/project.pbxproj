@@ -1,0 +1,272 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37FA36071932378333CD69D7 /* IDMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 529622C60C59558F5A3646F7 /* IDMath.cpp */; };
+		2D722BC118C3696E601E5665 /* MultiBodyTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56D077F865DF2BF3799B35F0 /* MultiBodyTree.cpp */; };
+		4C24554615A807CE0B3F058D /* MultiBodyTreeImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B50101701230D9278E5D90 /* MultiBodyTreeImpl.cpp */; };
+		3EFE52B974AB19241B820367 /* MultiBodyTreeInitCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B96357745933EBF78D435D7 /* MultiBodyTreeInitCache.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		529622C60C59558F5A3646F7 /* IDMath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "IDMath.cpp"; path = "../../src/BulletInverseDynamics/IDMath.cpp"; sourceTree = "<group>"; };
+		56D077F865DF2BF3799B35F0 /* MultiBodyTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MultiBodyTree.cpp"; path = "../../src/BulletInverseDynamics/MultiBodyTree.cpp"; sourceTree = "<group>"; };
+		38B50101701230D9278E5D90 /* MultiBodyTreeImpl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MultiBodyTreeImpl.cpp"; path = "../../src/BulletInverseDynamics/details/MultiBodyTreeImpl.cpp"; sourceTree = "<group>"; };
+		1B96357745933EBF78D435D7 /* MultiBodyTreeInitCache.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MultiBodyTreeInitCache.cpp"; path = "../../src/BulletInverseDynamics/details/MultiBodyTreeInitCache.cpp"; sourceTree = "<group>"; };
+		54A2622F34623A364AAF4A31 /* libBulletInverseDynamics_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libBulletInverseDynamics_xcode4_x64_release.a"; path = "libBulletInverseDynamics_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		155501FC60B259D42C671F42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B912A1E4DC34D4F181E75D7 /* BulletInverseDynamics */ = {
+			isa = PBXGroup;
+			children = (
+				3576652025C3632B40695D31 /* src */,
+				736301E17A0450A86C83170A /* Products */,
+			);
+			name = "BulletInverseDynamics";
+			sourceTree = "<group>";
+		};
+		3576652025C3632B40695D31 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				58CC46633AC7753054FC0B52 /* BulletInverseDynamics */,
+			);
+			name = "src";
+			sourceTree = "<group>";
+		};
+		58CC46633AC7753054FC0B52 /* BulletInverseDynamics */ = {
+			isa = PBXGroup;
+			children = (
+				529622C60C59558F5A3646F7 /* IDMath.cpp */,
+				56D077F865DF2BF3799B35F0 /* MultiBodyTree.cpp */,
+				23ED4A2901AB1FEF1576106A /* details */,
+			);
+			name = "BulletInverseDynamics";
+			sourceTree = "<group>";
+		};
+		23ED4A2901AB1FEF1576106A /* details */ = {
+			isa = PBXGroup;
+			children = (
+				38B50101701230D9278E5D90 /* MultiBodyTreeImpl.cpp */,
+				1B96357745933EBF78D435D7 /* MultiBodyTreeInitCache.cpp */,
+			);
+			name = "details";
+			sourceTree = "<group>";
+		};
+		736301E17A0450A86C83170A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54A2622F34623A364AAF4A31 /* libBulletInverseDynamics_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DEB7C5F5BA158DB53652660 /* BulletInverseDynamics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CC74D397501512012FD4102 /* Build configuration list for PBXNativeTarget "BulletInverseDynamics" */;
+			buildPhases = (
+				28F91F1C18B938EC45017ADD /* Resources */,
+				00F44AA31AF90C5522F2450A /* Sources */,
+				155501FC60B259D42C671F42 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BulletInverseDynamics";
+			productName = "BulletInverseDynamics";
+			productReference = 54A2622F34623A364AAF4A31 /* libBulletInverseDynamics_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "BulletInverseDynamics" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 4B912A1E4DC34D4F181E75D7 /* BulletInverseDynamics */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DEB7C5F5BA158DB53652660 /* libBulletInverseDynamics_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28F91F1C18B938EC45017ADD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00F44AA31AF90C5522F2450A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA36071932378333CD69D7 /* IDMath.cpp in Sources */,
+				2D722BC118C3696E601E5665 /* MultiBodyTree.cpp in Sources */,
+				4C24554615A807CE0B3F058D /* MultiBodyTreeImpl.cpp in Sources */,
+				3EFE52B974AB19241B820367 /* MultiBodyTreeInitCache.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AE24CAF2BF5117B5DF0760F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "BulletInverseDynamics_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		37A33093391E7F1549225AA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "BulletInverseDynamics_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		6A33403300E411AE56815D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Release/BulletInverseDynamics";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		298714CD3F7B49444ED11CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Debug/BulletInverseDynamics";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CC74D397501512012FD4102 /* Build configuration list for PBXNativeTarget "libBulletInverseDynamics_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AE24CAF2BF5117B5DF0760F /* Release */,
+				37A33093391E7F1549225AA1 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "BulletInverseDynamics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A33403300E411AE56815D5F /* Release */,
+				298714CD3F7B49444ED11CEC /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

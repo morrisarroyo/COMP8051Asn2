@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2838139B5A5C078F6AEA4A89 /* EGLOpenGLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF52650CB8183A225C52B7 /* EGLOpenGLWindow.cpp */; };
+		4C1B41AB774A230F376A1768 /* GLFWOpenGLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A532A892A513F9F72D662BC /* GLFWOpenGLWindow.cpp */; };
+		3535548172892D06705E44F6 /* GLInstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 206A12432773226D46680545 /* GLInstancingRenderer.cpp */; };
+		2F5465E536841B3355670621 /* GLPrimitiveRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 197C2A4A75C706705B912211 /* GLPrimitiveRenderer.cpp */; };
+		773076F5629A18CC2182020B /* GLRenderToTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 011B3B1D1F8D79286C9E2B70 /* GLRenderToTexture.cpp */; };
+		1DBF0D597EEB0C6C18F47C85 /* LoadShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230C1B4902614B2E7A8E30F0 /* LoadShader.cpp */; };
+		5EE13857187957FF31E83291 /* MacOpenGLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 410B534A5A3F08344EC72633 /* MacOpenGLWindow.cpp */; };
+		38DF6EFB4638144E267623E4 /* MacOpenGLWindowObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 381901E2480D03BD1E26531D /* MacOpenGLWindowObjC.m */; };
+		51EA081748A834644B3E5A12 /* OpenSans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57101D134F116FB7116848E9 /* OpenSans.cpp */; };
+		4DCE44910FFF40C432EB7848 /* SimpleCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A08353D678157756069410B /* SimpleCamera.cpp */; };
+		51784DCA1600622703E82634 /* SimpleOpenGL2App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB58931F971FF71FCD62E1 /* SimpleOpenGL2App.cpp */; };
+		431346D34A1467CA3D2D08BB /* SimpleOpenGL2Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E2541D51D3F37541DB57314 /* SimpleOpenGL2Renderer.cpp */; };
+		0B3178695D0375B765081E9F /* SimpleOpenGL3App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11EE21F4282D46FC60964334 /* SimpleOpenGL3App.cpp */; };
+		41A47CBB11CB47480988549E /* TwFonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 232B05E456457D0F118336FD /* TwFonts.cpp */; };
+		03677131685F36045D254701 /* fontstash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E2920164232623857E101A7 /* fontstash.cpp */; };
+		0BED78CD10DD3FDE304C699F /* opengl_fontstashcallbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA56673F6E07846F900681 /* opengl_fontstashcallbacks.cpp */; };
+		0D22534A29DE392B54066528 /* gl.c in Sources */ = {isa = PBXBuildFile; fileRef = 308512180BFD2089226F3FE3 /* gl.c */; };
+		615A06D1414B61802E5F7EA8 /* stb_image_write.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484A14D5405F250436DD75D2 /* stb_image_write.cpp */; };
+		741312F94F7F54FE71DD7E0C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B06F034D5266F3110B7DA9 /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5EBF52650CB8183A225C52B7 /* EGLOpenGLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "EGLOpenGLWindow.cpp"; path = "../../examples/OpenGLWindow/EGLOpenGLWindow.cpp"; sourceTree = "<group>"; };
+		6B3236A859BE7B0323F130DB /* EGLOpenGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EGLOpenGLWindow.h"; path = "../../examples/OpenGLWindow/EGLOpenGLWindow.h"; sourceTree = "<group>"; };
+		3A532A892A513F9F72D662BC /* GLFWOpenGLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GLFWOpenGLWindow.cpp"; path = "../../examples/OpenGLWindow/GLFWOpenGLWindow.cpp"; sourceTree = "<group>"; };
+		56A24A4F140102C300FD0762 /* GLFWOpenGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLFWOpenGLWindow.h"; path = "../../examples/OpenGLWindow/GLFWOpenGLWindow.h"; sourceTree = "<group>"; };
+		38900A9962C30ADA75EA70C4 /* GLInstanceGraphicsShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLInstanceGraphicsShape.h"; path = "../../examples/OpenGLWindow/GLInstanceGraphicsShape.h"; sourceTree = "<group>"; };
+		612341F22020229F7D6D08AD /* GLInstanceRendererInternalData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLInstanceRendererInternalData.h"; path = "../../examples/OpenGLWindow/GLInstanceRendererInternalData.h"; sourceTree = "<group>"; };
+		206A12432773226D46680545 /* GLInstancingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GLInstancingRenderer.cpp"; path = "../../examples/OpenGLWindow/GLInstancingRenderer.cpp"; sourceTree = "<group>"; };
+		1FC959F313961CB3476C1255 /* GLInstancingRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLInstancingRenderer.h"; path = "../../examples/OpenGLWindow/GLInstancingRenderer.h"; sourceTree = "<group>"; };
+		0AC4708B580F733F51B008EF /* GLPrimInternalData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLPrimInternalData.h"; path = "../../examples/OpenGLWindow/GLPrimInternalData.h"; sourceTree = "<group>"; };
+		197C2A4A75C706705B912211 /* GLPrimitiveRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GLPrimitiveRenderer.cpp"; path = "../../examples/OpenGLWindow/GLPrimitiveRenderer.cpp"; sourceTree = "<group>"; };
+		1F0C62DC0C9B3DA137710434 /* GLPrimitiveRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLPrimitiveRenderer.h"; path = "../../examples/OpenGLWindow/GLPrimitiveRenderer.h"; sourceTree = "<group>"; };
+		011B3B1D1F8D79286C9E2B70 /* GLRenderToTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GLRenderToTexture.cpp"; path = "../../examples/OpenGLWindow/GLRenderToTexture.cpp"; sourceTree = "<group>"; };
+		45333C1D36F9357A718A54AD /* GLRenderToTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GLRenderToTexture.h"; path = "../../examples/OpenGLWindow/GLRenderToTexture.h"; sourceTree = "<group>"; };
+		35CF56D0750C6B255D9F133D /* GwenOpenGL3CoreRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GwenOpenGL3CoreRenderer.h"; path = "../../examples/OpenGLWindow/GwenOpenGL3CoreRenderer.h"; sourceTree = "<group>"; };
+		230C1B4902614B2E7A8E30F0 /* LoadShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LoadShader.cpp"; path = "../../examples/OpenGLWindow/LoadShader.cpp"; sourceTree = "<group>"; };
+		05877C6B68A561AB5EBB4F4A /* LoadShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoadShader.h"; path = "../../examples/OpenGLWindow/LoadShader.h"; sourceTree = "<group>"; };
+		410B534A5A3F08344EC72633 /* MacOpenGLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MacOpenGLWindow.cpp"; path = "../../examples/OpenGLWindow/MacOpenGLWindow.cpp"; sourceTree = "<group>"; };
+		6617302F7CB579812DDC654A /* MacOpenGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MacOpenGLWindow.h"; path = "../../examples/OpenGLWindow/MacOpenGLWindow.h"; sourceTree = "<group>"; };
+		75C56B2848D4742B6C7856BD /* MacOpenGLWindowObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MacOpenGLWindowObjC.h"; path = "../../examples/OpenGLWindow/MacOpenGLWindowObjC.h"; sourceTree = "<group>"; };
+		381901E2480D03BD1E26531D /* MacOpenGLWindowObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MacOpenGLWindowObjC.m"; path = "../../examples/OpenGLWindow/MacOpenGLWindowObjC.m"; sourceTree = "<group>"; };
+		7DA01C2F734B411305220207 /* OpenGL2Include.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGL2Include.h"; path = "../../examples/OpenGLWindow/OpenGL2Include.h"; sourceTree = "<group>"; };
+		43F91FD511E173FB16C70963 /* OpenGLInclude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGLInclude.h"; path = "../../examples/OpenGLWindow/OpenGLInclude.h"; sourceTree = "<group>"; };
+		57101D134F116FB7116848E9 /* OpenSans.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenSans.cpp"; path = "../../examples/OpenGLWindow/OpenSans.cpp"; sourceTree = "<group>"; };
+		6A1A71D424360C0D3E027772 /* ShapeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ShapeData.h"; path = "../../examples/OpenGLWindow/ShapeData.h"; sourceTree = "<group>"; };
+		0A08353D678157756069410B /* SimpleCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SimpleCamera.cpp"; path = "../../examples/OpenGLWindow/SimpleCamera.cpp"; sourceTree = "<group>"; };
+		6F7A3414451379205C4F7F19 /* SimpleCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SimpleCamera.h"; path = "../../examples/OpenGLWindow/SimpleCamera.h"; sourceTree = "<group>"; };
+		6BAB58931F971FF71FCD62E1 /* SimpleOpenGL2App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SimpleOpenGL2App.cpp"; path = "../../examples/OpenGLWindow/SimpleOpenGL2App.cpp"; sourceTree = "<group>"; };
+		2020505D42BE03BD06C43681 /* SimpleOpenGL2App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SimpleOpenGL2App.h"; path = "../../examples/OpenGLWindow/SimpleOpenGL2App.h"; sourceTree = "<group>"; };
+		6E2541D51D3F37541DB57314 /* SimpleOpenGL2Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SimpleOpenGL2Renderer.cpp"; path = "../../examples/OpenGLWindow/SimpleOpenGL2Renderer.cpp"; sourceTree = "<group>"; };
+		576D421C6BC41C836FC7744F /* SimpleOpenGL2Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SimpleOpenGL2Renderer.h"; path = "../../examples/OpenGLWindow/SimpleOpenGL2Renderer.h"; sourceTree = "<group>"; };
+		11EE21F4282D46FC60964334 /* SimpleOpenGL3App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SimpleOpenGL3App.cpp"; path = "../../examples/OpenGLWindow/SimpleOpenGL3App.cpp"; sourceTree = "<group>"; };
+		74F1029132A463B908A7472C /* SimpleOpenGL3App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SimpleOpenGL3App.h"; path = "../../examples/OpenGLWindow/SimpleOpenGL3App.h"; sourceTree = "<group>"; };
+		232B05E456457D0F118336FD /* TwFonts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TwFonts.cpp"; path = "../../examples/OpenGLWindow/TwFonts.cpp"; sourceTree = "<group>"; };
+		0EE255BA52C32C410F034632 /* TwFonts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TwFonts.h"; path = "../../examples/OpenGLWindow/TwFonts.h"; sourceTree = "<group>"; };
+		04FC3F9035D34F125ECC5A10 /* Win32InternalWindowData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Win32InternalWindowData.h"; path = "../../examples/OpenGLWindow/Win32InternalWindowData.h"; sourceTree = "<group>"; };
+		6ED107A97AAA6DB279CD4040 /* X11OpenGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "X11OpenGLWindow.h"; path = "../../examples/OpenGLWindow/X11OpenGLWindow.h"; sourceTree = "<group>"; };
+		3E2920164232623857E101A7 /* fontstash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "fontstash.cpp"; path = "../../examples/OpenGLWindow/fontstash.cpp"; sourceTree = "<group>"; };
+		386033351AF849B05C5F7299 /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fontstash.h"; path = "../../examples/OpenGLWindow/fontstash.h"; sourceTree = "<group>"; };
+		3BBA56673F6E07846F900681 /* opengl_fontstashcallbacks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "opengl_fontstashcallbacks.cpp"; path = "../../examples/OpenGLWindow/opengl_fontstashcallbacks.cpp"; sourceTree = "<group>"; };
+		79FC1B8541DD21537B917236 /* opengl_fontstashcallbacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "opengl_fontstashcallbacks.h"; path = "../../examples/OpenGLWindow/opengl_fontstashcallbacks.h"; sourceTree = "<group>"; };
+		308512180BFD2089226F3FE3 /* gl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = "gl.c"; path = "../../examples/ThirdPartyLibs/glad/gl.c"; sourceTree = "<group>"; };
+		484A14D5405F250436DD75D2 /* stb_image_write.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "stb_image_write.cpp"; path = "../../examples/ThirdPartyLibs/stb_image/stb_image_write.cpp"; sourceTree = "<group>"; };
+		60B06F034D5266F3110B7DA9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGL.framework"; path = "/System/Library/Frameworks/OpenGL.framework"; sourceTree = "<absolute>"; };
+		66D80CD25D546CF204395C10 /* libOpenGL_Window_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libOpenGL_Window_xcode4_x64_release.a"; path = "libOpenGL_Window_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		194A67ED2E095E7A3D4865F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741312F94F7F54FE71DD7E0C /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40070FB0089852BF1EB651D3 /* OpenGL_Window */ = {
+			isa = PBXGroup;
+			children = (
+				0BAB364235085D543B6452EC /* examples */,
+				67D84AC7776A008065435107 /* Frameworks */,
+				64DF7DC720B84B040B505AB4 /* Products */,
+			);
+			name = "OpenGL_Window";
+			sourceTree = "<group>";
+		};
+		0BAB364235085D543B6452EC /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				3A926D19273713A1408A5E67 /* OpenGLWindow */,
+				77C2033738C722BD3CA8440A /* ThirdPartyLibs */,
+			);
+			name = "examples";
+			sourceTree = "<group>";
+		};
+		3A926D19273713A1408A5E67 /* OpenGLWindow */ = {
+			isa = PBXGroup;
+			children = (
+				5EBF52650CB8183A225C52B7 /* EGLOpenGLWindow.cpp */,
+				6B3236A859BE7B0323F130DB /* EGLOpenGLWindow.h */,
+				3A532A892A513F9F72D662BC /* GLFWOpenGLWindow.cpp */,
+				56A24A4F140102C300FD0762 /* GLFWOpenGLWindow.h */,
+				38900A9962C30ADA75EA70C4 /* GLInstanceGraphicsShape.h */,
+				612341F22020229F7D6D08AD /* GLInstanceRendererInternalData.h */,
+				206A12432773226D46680545 /* GLInstancingRenderer.cpp */,
+				1FC959F313961CB3476C1255 /* GLInstancingRenderer.h */,
+				0AC4708B580F733F51B008EF /* GLPrimInternalData.h */,
+				197C2A4A75C706705B912211 /* GLPrimitiveRenderer.cpp */,
+				1F0C62DC0C9B3DA137710434 /* GLPrimitiveRenderer.h */,
+				011B3B1D1F8D79286C9E2B70 /* GLRenderToTexture.cpp */,
+				45333C1D36F9357A718A54AD /* GLRenderToTexture.h */,
+				35CF56D0750C6B255D9F133D /* GwenOpenGL3CoreRenderer.h */,
+				230C1B4902614B2E7A8E30F0 /* LoadShader.cpp */,
+				05877C6B68A561AB5EBB4F4A /* LoadShader.h */,
+				410B534A5A3F08344EC72633 /* MacOpenGLWindow.cpp */,
+				6617302F7CB579812DDC654A /* MacOpenGLWindow.h */,
+				75C56B2848D4742B6C7856BD /* MacOpenGLWindowObjC.h */,
+				381901E2480D03BD1E26531D /* MacOpenGLWindowObjC.m */,
+				7DA01C2F734B411305220207 /* OpenGL2Include.h */,
+				43F91FD511E173FB16C70963 /* OpenGLInclude.h */,
+				57101D134F116FB7116848E9 /* OpenSans.cpp */,
+				6A1A71D424360C0D3E027772 /* ShapeData.h */,
+				0A08353D678157756069410B /* SimpleCamera.cpp */,
+				6F7A3414451379205C4F7F19 /* SimpleCamera.h */,
+				6BAB58931F971FF71FCD62E1 /* SimpleOpenGL2App.cpp */,
+				2020505D42BE03BD06C43681 /* SimpleOpenGL2App.h */,
+				6E2541D51D3F37541DB57314 /* SimpleOpenGL2Renderer.cpp */,
+				576D421C6BC41C836FC7744F /* SimpleOpenGL2Renderer.h */,
+				11EE21F4282D46FC60964334 /* SimpleOpenGL3App.cpp */,
+				74F1029132A463B908A7472C /* SimpleOpenGL3App.h */,
+				232B05E456457D0F118336FD /* TwFonts.cpp */,
+				0EE255BA52C32C410F034632 /* TwFonts.h */,
+				04FC3F9035D34F125ECC5A10 /* Win32InternalWindowData.h */,
+				6ED107A97AAA6DB279CD4040 /* X11OpenGLWindow.h */,
+				3E2920164232623857E101A7 /* fontstash.cpp */,
+				386033351AF849B05C5F7299 /* fontstash.h */,
+				3BBA56673F6E07846F900681 /* opengl_fontstashcallbacks.cpp */,
+				79FC1B8541DD21537B917236 /* opengl_fontstashcallbacks.h */,
+			);
+			name = "OpenGLWindow";
+			sourceTree = "<group>";
+		};
+		77C2033738C722BD3CA8440A /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				198112D910F2230143C63106 /* glad */,
+				5FAF673415F2753E628F3369 /* stb_image */,
+			);
+			name = "ThirdPartyLibs";
+			sourceTree = "<group>";
+		};
+		198112D910F2230143C63106 /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				308512180BFD2089226F3FE3 /* gl.c */,
+			);
+			name = "glad";
+			sourceTree = "<group>";
+		};
+		5FAF673415F2753E628F3369 /* stb_image */ = {
+			isa = PBXGroup;
+			children = (
+				484A14D5405F250436DD75D2 /* stb_image_write.cpp */,
+			);
+			name = "stb_image";
+			sourceTree = "<group>";
+		};
+		67D84AC7776A008065435107 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60B06F034D5266F3110B7DA9 /* OpenGL.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		64DF7DC720B84B040B505AB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66D80CD25D546CF204395C10 /* libOpenGL_Window_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42E00D70601242730D0A3A93 /* OpenGL_Window */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70D425EF0B80312522A641CB /* Build configuration list for PBXNativeTarget "OpenGL_Window" */;
+			buildPhases = (
+				296F37FB6EC778D71D8B3258 /* Resources */,
+				4FD477B107EA149A14FF1E5F /* Sources */,
+				194A67ED2E095E7A3D4865F6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenGL_Window";
+			productName = "OpenGL_Window";
+			productReference = 66D80CD25D546CF204395C10 /* libOpenGL_Window_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "OpenGL_Window" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 40070FB0089852BF1EB651D3 /* OpenGL_Window */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42E00D70601242730D0A3A93 /* libOpenGL_Window_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		296F37FB6EC778D71D8B3258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FD477B107EA149A14FF1E5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2838139B5A5C078F6AEA4A89 /* EGLOpenGLWindow.cpp in Sources */,
+				4C1B41AB774A230F376A1768 /* GLFWOpenGLWindow.cpp in Sources */,
+				3535548172892D06705E44F6 /* GLInstancingRenderer.cpp in Sources */,
+				2F5465E536841B3355670621 /* GLPrimitiveRenderer.cpp in Sources */,
+				773076F5629A18CC2182020B /* GLRenderToTexture.cpp in Sources */,
+				1DBF0D597EEB0C6C18F47C85 /* LoadShader.cpp in Sources */,
+				5EE13857187957FF31E83291 /* MacOpenGLWindow.cpp in Sources */,
+				38DF6EFB4638144E267623E4 /* MacOpenGLWindowObjC.m in Sources */,
+				51EA081748A834644B3E5A12 /* OpenSans.cpp in Sources */,
+				4DCE44910FFF40C432EB7848 /* SimpleCamera.cpp in Sources */,
+				51784DCA1600622703E82634 /* SimpleOpenGL2App.cpp in Sources */,
+				431346D34A1467CA3D2D08BB /* SimpleOpenGL2Renderer.cpp in Sources */,
+				0B3178695D0375B765081E9F /* SimpleOpenGL3App.cpp in Sources */,
+				41A47CBB11CB47480988549E /* TwFonts.cpp in Sources */,
+				03677131685F36045D254701 /* fontstash.cpp in Sources */,
+				0BED78CD10DD3FDE304C699F /* opengl_fontstashcallbacks.cpp in Sources */,
+				0D22534A29DE392B54066528 /* gl.c in Sources */,
+				615A06D1414B61802E5F7EA8 /* stb_image_write.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12822EFE37681A932DE12AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "OpenGL_Window_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		71605EC571C565ED4FEE4010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "OpenGL_Window_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		3196261F6C5F57ED095675BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/glad",
+					"../../examples/ThirdPartyLibs",
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Release/OpenGL_Window";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		5C422A8857C83F246BB67B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "../../test/Bullet2/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SDKROOT = iphoneos;
+				ARCHS = "armv7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../examples/ThirdPartyLibs/glad",
+					"../../examples/ThirdPartyLibs",
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Debug/OpenGL_Window";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70D425EF0B80312522A641CB /* Build configuration list for PBXNativeTarget "libOpenGL_Window_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12822EFE37681A932DE12AD1 /* Release */,
+				71605EC571C565ED4FEE4010 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "OpenGL_Window" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3196261F6C5F57ED095675BB /* Release */,
+				5C422A8857C83F246BB67B42 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

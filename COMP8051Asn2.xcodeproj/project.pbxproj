@@ -17,6 +17,9 @@
 		29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59B22385E0A0031A9AF /* WestFace.m */; };
 		29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59D22385E0A0031A9AF /* NorthFace.m */; };
 		29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC5A022385E0B0031A9AF /* EastFace.m */; };
+		29EC5650226283B20078B16F /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563F22627F1B0078B16F /* libBulletCollision_xcode4_x64_debug.a */; };
+		29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */; };
+		29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */; };
 		3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */; };
 		3F794FA5223834C5007E86A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FA4223834C5007E86A9 /* main.m */; };
 		3F794FAB223834C5007E86A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FAA223834C5007E86A9 /* ViewController.m */; };
@@ -25,7 +28,7 @@
 		3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FB1223834C5007E86A9 /* LaunchScreen.storyboard */; };
 		3F794FC922383938007E86A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FC822383938007E86A9 /* AppDelegate.m */; };
 		3F794FD822383AEB007E86A9 /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD522383AEB007E86A9 /* Director.m */; };
-		3F794FD922383AEB007E86A9 /* MazeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD722383AEB007E86A9 /* MazeScene.m */; };
+		3F794FD922383AEB007E86A9 /* MazeScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FD722383AEB007E86A9 /* MazeScene.mm */; };
 		3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */; };
 		3F794FE122383B1B007E86A9 /* maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDE22383B1B007E86A9 /* maze.cpp */; };
 		3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FE322383B3D007E86A9 /* dungeon_01.png */; };
@@ -37,6 +40,30 @@
 		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
 		DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD8B926B223B18BB00E9BAFD /* crate.jpg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29EC563822627F1B0078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21684FE36E8C4D0C776E676E;
+			remoteInfo = BulletDynamics;
+		};
+		29EC563E22627F1B0078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 038B31D1281706093DD865D5;
+			remoteInfo = BulletCollision;
+		};
+		29EC564422627F1B0078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC564022627F1B0078B16F /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47CE49A85D13189627C26345;
+			remoteInfo = LinearMath;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		292F9A5D223A03D20099250F /* MazeCaller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MazeCaller.mm; path = MazeStart/MazeCaller.mm; sourceTree = "<group>"; };
@@ -54,6 +81,9 @@
 		29EBC59E22385E0B0031A9AF /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
 		29EBC59F22385E0B0031A9AF /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
 		29EBC5A022385E0B0031A9AF /* EastFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EastFace.m; path = Models/EastFace.m; sourceTree = "<group>"; };
+		29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
+		29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
+		29EC564022627F1B0078B16F /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-master/build3/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
 		3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk57-monospace.ttf"; sourceTree = "<group>"; };
 		3F794FA0223834C5007E86A9 /* COMP8051Asn2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP8051Asn2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F794FA4223834C5007E86A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,7 +98,7 @@
 		3F794FD422383AEB007E86A9 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Director.h; path = Main/Director.h; sourceTree = "<group>"; };
 		3F794FD522383AEB007E86A9 /* Director.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Director.m; path = Main/Director.m; sourceTree = "<group>"; };
 		3F794FD622383AEB007E86A9 /* MazeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MazeScene.h; path = Main/MazeScene.h; sourceTree = "<group>"; };
-		3F794FD722383AEB007E86A9 /* MazeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MazeScene.m; path = Main/MazeScene.m; sourceTree = "<group>"; };
+		3F794FD722383AEB007E86A9 /* MazeScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MazeScene.mm; path = Main/MazeScene.mm; sourceTree = "<group>"; };
 		3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DisjointSet.cpp; path = MazeStart/DisjointSet.cpp; sourceTree = "<group>"; };
 		3F794FDD22383B1B007E86A9 /* DisjointSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisjointSet.h; path = MazeStart/DisjointSet.h; sourceTree = "<group>"; };
 		3F794FDE22383B1B007E86A9 /* maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maze.cpp; path = MazeStart/maze.cpp; sourceTree = "<group>"; };
@@ -93,17 +123,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EC5650226283B20078B16F /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
+				29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */,
+				29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29EC563522627F1B0078B16F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29EC563B22627F1B0078B16F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29EC563F22627F1B0078B16F /* libBulletCollision_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29EC564122627F1B0078B16F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29EC564622627F9F0078B16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F794F97223834C4007E86A9 = {
 			isa = PBXGroup;
 			children = (
+				29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */,
+				29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */,
+				29EC564022627F1B0078B16F /* LinearMath.xcodeproj */,
 				3F794FA2223834C5007E86A9 /* COMP8051Asn2 */,
 				3F794FA1223834C5007E86A9 /* Products */,
+				29EC564622627F9F0078B16F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,7 +219,7 @@
 				3F794FD422383AEB007E86A9 /* Director.h */,
 				3F794FD522383AEB007E86A9 /* Director.m */,
 				3F794FD622383AEB007E86A9 /* MazeScene.h */,
-				3F794FD722383AEB007E86A9 /* MazeScene.m */,
+				3F794FD722383AEB007E86A9 /* MazeScene.mm */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -247,7 +315,7 @@
 				TargetAttributes = {
 					3F794F9F223834C4007E86A9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = N6RP3H788Z;
+						DevelopmentTeam = XP8JJ27LQX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -263,12 +331,50 @@
 			mainGroup = 3F794F97223834C4007E86A9;
 			productRefGroup = 3F794FA1223834C5007E86A9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 29EC563B22627F1B0078B16F /* Products */;
+					ProjectRef = 29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */;
+				},
+				{
+					ProductGroup = 29EC563522627F1B0078B16F /* Products */;
+					ProjectRef = 29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = 29EC564122627F1B0078B16F /* Products */;
+					ProjectRef = 29EC564022627F1B0078B16F /* LinearMath.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3F794F9F223834C4007E86A9 /* COMP8051Asn2 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletDynamics_xcode4_x64_debug.a;
+			remoteRef = 29EC563822627F1B0078B16F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29EC563F22627F1B0078B16F /* libBulletCollision_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletCollision_xcode4_x64_debug.a;
+			remoteRef = 29EC563E22627F1B0078B16F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLinearMath_xcode4_x64_debug.a;
+			remoteRef = 29EC564422627F1B0078B16F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3F794F9E223834C4007E86A9 /* Resources */ = {
@@ -304,7 +410,7 @@
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
-				3F794FD922383AEB007E86A9 /* MazeScene.m in Sources */,
+				3F794FD922383AEB007E86A9 /* MazeScene.mm in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
 				29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */,
@@ -381,9 +487,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-master/src";
 			};
 			name = Debug;
 		};
@@ -423,8 +531,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/bullet3-master/src";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -433,7 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6RP3H788Z;
+				DEVELOPMENT_TEAM = XP8JJ27LQX;
 				INFOPLIST_FILE = COMP8051Asn2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6RP3H788Z;
+				DEVELOPMENT_TEAM = XP8JJ27LQX;
 				INFOPLIST_FILE = COMP8051Asn2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
