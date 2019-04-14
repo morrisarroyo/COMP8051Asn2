@@ -13,13 +13,12 @@
 		292F9A6A223A13F80099250F /* eastwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A65223A13F70099250F /* eastwall.jpg */; };
 		292F9A6B223A13F80099250F /* southwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A66223A13F70099250F /* southwall.jpg */; };
 		292F9A6C223A13F80099250F /* westwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A67223A13F70099250F /* westwall.jpg */; };
-		29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59A22385E090031A9AF /* SouthFace.m */; };
-		29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59B22385E0A0031A9AF /* WestFace.m */; };
-		29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC59D22385E0A0031A9AF /* NorthFace.m */; };
-		29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBC5A022385E0B0031A9AF /* EastFace.m */; };
 		29EC5650226283B20078B16F /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563F22627F1B0078B16F /* libBulletCollision_xcode4_x64_debug.a */; };
 		29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */; };
 		29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */; };
+		29EC565B22629B7F0078B16F /* PNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC565922629B7F0078B16F /* PNode.mm */; };
+		29EC56642262AAE50078B16F /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56612262AAE40078B16F /* Box.m */; };
+		29EC56652262AAE50078B16F /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56622262AAE50078B16F /* BoxNode.mm */; };
 		3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */; };
 		3F794FA5223834C5007E86A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FA4223834C5007E86A9 /* main.m */; };
 		3F794FAB223834C5007E86A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FAA223834C5007E86A9 /* ViewController.m */; };
@@ -32,9 +31,7 @@
 		3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDC22383B1B007E86A9 /* DisjointSet.cpp */; };
 		3F794FE122383B1B007E86A9 /* maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FDE22383B1B007E86A9 /* maze.cpp */; };
 		3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FE322383B3D007E86A9 /* dungeon_01.png */; };
-		3F794FE722383B3D007E86A9 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FE522383B3D007E86A9 /* Cube.m */; };
 		3F794FEB22383B54007E86A9 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FEA22383B54007E86A9 /* Node.m */; };
-		3F794FF522385FCF007E86A9 /* TopFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FF422385FCF007E86A9 /* TopFace.m */; };
 		3F7950012238B445007E86A9 /* BaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7950002238B445007E86A9 /* BaseEffect.m */; };
 		3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */; };
 		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
@@ -63,6 +60,27 @@
 			remoteGlobalIDString = 47CE49A85D13189627C26345;
 			remoteInfo = LinearMath;
 		};
+		29EC5653226298E90078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 39EB7AFD23682B596BB747EB;
+			remoteInfo = BulletCollision;
+		};
+		29EC5655226298E90078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 70E762CE64532F7809B143BE;
+			remoteInfo = BulletDynamics;
+		};
+		29EC5657226298E90078B16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29EC564022627F1B0078B16F /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 723D215C5C874DF729200D0C;
+			remoteInfo = LinearMath;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -73,17 +91,15 @@
 		292F9A65223A13F70099250F /* eastwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = eastwall.jpg; path = Models/eastwall.jpg; sourceTree = "<group>"; };
 		292F9A66223A13F70099250F /* southwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = southwall.jpg; path = Models/southwall.jpg; sourceTree = "<group>"; };
 		292F9A67223A13F70099250F /* westwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = westwall.jpg; path = Models/westwall.jpg; sourceTree = "<group>"; };
-		29EBC59922385E090031A9AF /* EastFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EastFace.h; path = Models/EastFace.h; sourceTree = "<group>"; };
-		29EBC59A22385E090031A9AF /* SouthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SouthFace.m; path = Models/SouthFace.m; sourceTree = "<group>"; };
-		29EBC59B22385E0A0031A9AF /* WestFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WestFace.m; path = Models/WestFace.m; sourceTree = "<group>"; };
-		29EBC59C22385E0A0031A9AF /* NorthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NorthFace.h; path = Models/NorthFace.h; sourceTree = "<group>"; };
-		29EBC59D22385E0A0031A9AF /* NorthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NorthFace.m; path = Models/NorthFace.m; sourceTree = "<group>"; };
-		29EBC59E22385E0B0031A9AF /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
-		29EBC59F22385E0B0031A9AF /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
-		29EBC5A022385E0B0031A9AF /* EastFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EastFace.m; path = Models/EastFace.m; sourceTree = "<group>"; };
 		29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		29EC564022627F1B0078B16F /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-master/build3/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
+		29EC565922629B7F0078B16F /* PNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PNode.mm; path = Nodes/PNode.mm; sourceTree = "<group>"; };
+		29EC565A22629B7F0078B16F /* PNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNode.h; path = Nodes/PNode.h; sourceTree = "<group>"; };
+		29EC56602262AAE40078B16F /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Box.h; path = Nodes/Box.h; sourceTree = "<group>"; };
+		29EC56612262AAE40078B16F /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Box.m; path = Nodes/Box.m; sourceTree = "<group>"; };
+		29EC56622262AAE50078B16F /* BoxNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BoxNode.mm; path = Nodes/BoxNode.mm; sourceTree = "<group>"; };
+		29EC56632262AAE50078B16F /* BoxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxNode.h; path = Nodes/BoxNode.h; sourceTree = "<group>"; };
 		3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk57-monospace.ttf"; sourceTree = "<group>"; };
 		3F794FA0223834C5007E86A9 /* COMP8051Asn2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP8051Asn2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F794FA4223834C5007E86A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,13 +120,9 @@
 		3F794FDE22383B1B007E86A9 /* maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maze.cpp; path = MazeStart/maze.cpp; sourceTree = "<group>"; };
 		3F794FDF22383B1B007E86A9 /* maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = maze.h; path = MazeStart/maze.h; sourceTree = "<group>"; };
 		3F794FE322383B3D007E86A9 /* dungeon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dungeon_01.png; path = Models/dungeon_01.png; sourceTree = "<group>"; };
-		3F794FE422383B3D007E86A9 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = Models/Cube.h; sourceTree = "<group>"; };
-		3F794FE522383B3D007E86A9 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cube.m; path = Models/Cube.m; sourceTree = "<group>"; };
 		3F794FE922383B54007E86A9 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = Nodes/Node.h; sourceTree = "<group>"; };
 		3F794FEA22383B54007E86A9 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Nodes/Node.m; sourceTree = "<group>"; };
 		3F794FEF22383B64007E86A9 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = Shaders/Vertex.h; sourceTree = "<group>"; };
-		3F794FF322385FCF007E86A9 /* TopFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopFace.h; path = Models/TopFace.h; sourceTree = "<group>"; };
-		3F794FF422385FCF007E86A9 /* TopFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopFace.m; path = Models/TopFace.m; sourceTree = "<group>"; };
 		3F794FFF2238B445007E86A9 /* BaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEffect.h; path = Shaders/BaseEffect.h; sourceTree = "<group>"; };
 		3F7950002238B445007E86A9 /* BaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEffect.m; path = Shaders/BaseEffect.m; sourceTree = "<group>"; };
 		3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
@@ -161,6 +173,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29EC565C22629FE20078B16F /* GameNodes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GameNodes;
 			sourceTree = "<group>";
 		};
 		3F794F97223834C4007E86A9 = {
@@ -246,19 +265,7 @@
 				292F9A63223A13F60099250F /* northwall.jpg */,
 				292F9A66223A13F70099250F /* southwall.jpg */,
 				292F9A67223A13F70099250F /* westwall.jpg */,
-				29EBC59922385E090031A9AF /* EastFace.h */,
-				29EBC5A022385E0B0031A9AF /* EastFace.m */,
-				29EBC59C22385E0A0031A9AF /* NorthFace.h */,
-				29EBC59D22385E0A0031A9AF /* NorthFace.m */,
-				29EBC59F22385E0B0031A9AF /* SouthFace.h */,
-				29EBC59A22385E090031A9AF /* SouthFace.m */,
-				29EBC59E22385E0B0031A9AF /* WestFace.h */,
-				29EBC59B22385E0A0031A9AF /* WestFace.m */,
 				3F794FE322383B3D007E86A9 /* dungeon_01.png */,
-				3F794FE422383B3D007E86A9 /* Cube.h */,
-				3F794FE522383B3D007E86A9 /* Cube.m */,
-				3F794FF322385FCF007E86A9 /* TopFace.h */,
-				3F794FF422385FCF007E86A9 /* TopFace.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,8 +273,15 @@
 		3F794FEC22383B59007E86A9 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				29EC565A22629B7F0078B16F /* PNode.h */,
+				29EC565922629B7F0078B16F /* PNode.mm */,
 				3F794FE922383B54007E86A9 /* Node.h */,
 				3F794FEA22383B54007E86A9 /* Node.m */,
+				29EC56602262AAE40078B16F /* Box.h */,
+				29EC56612262AAE40078B16F /* Box.m */,
+				29EC56632262AAE50078B16F /* BoxNode.h */,
+				29EC56622262AAE50078B16F /* BoxNode.mm */,
+				29EC565C22629FE20078B16F /* GameNodes */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -298,6 +312,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				29EC5654226298E90078B16F /* PBXTargetDependency */,
+				29EC5656226298E90078B16F /* PBXTargetDependency */,
+				29EC5658226298E90078B16F /* PBXTargetDependency */,
 			);
 			name = COMP8051Asn2;
 			productName = COMP8051Asn2;
@@ -404,26 +421,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EBC5A322385E0B0031A9AF /* NorthFace.m in Sources */,
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
-				3F794FE722383B3D007E86A9 /* Cube.m in Sources */,
+				29EC565B22629B7F0078B16F /* PNode.mm in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
 				3F794FD922383AEB007E86A9 /* MazeScene.mm in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
+				29EC56642262AAE50078B16F /* Box.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
-				29EBC5A222385E0B0031A9AF /* WestFace.m in Sources */,
-				3F794FF522385FCF007E86A9 /* TopFace.m in Sources */,
+				29EC56652262AAE50078B16F /* BoxNode.mm in Sources */,
 				3F794FD822383AEB007E86A9 /* Director.m in Sources */,
 				3F794FC922383938007E86A9 /* AppDelegate.m in Sources */,
-				29EBC5A122385E0B0031A9AF /* SouthFace.m in Sources */,
 				3F794FA5223834C5007E86A9 /* main.m in Sources */,
-				29EBC5A422385E0B0031A9AF /* EastFace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29EC5654226298E90078B16F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BulletCollision;
+			targetProxy = 29EC5653226298E90078B16F /* PBXContainerItemProxy */;
+		};
+		29EC5656226298E90078B16F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BulletDynamics;
+			targetProxy = 29EC5655226298E90078B16F /* PBXContainerItemProxy */;
+		};
+		29EC5658226298E90078B16F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LinearMath;
+			targetProxy = 29EC5657226298E90078B16F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F794FAC223834C5007E86A9 /* Main.storyboard */ = {

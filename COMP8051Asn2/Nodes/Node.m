@@ -9,14 +9,15 @@
     unsigned int _vertexCount;
     unsigned int _indexCount;
     BaseEffect *_shader;
+    
 }
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount {
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount tag:(unsigned int)tag {
     if ((self = [super init])) {
-        
         _name  = name;
         _vertexCount = vertexCount;
         _shader = shader;
+        _tag = tag;
         self.position = GLKVector3Make(0, 0, 0);
         self.rotationX = 0;
         self.rotationY = 0;
@@ -28,9 +29,6 @@
         self.height = 1.0;
         self.children = [NSMutableArray array];
         self.matColour = GLKVector4Make(1, 1, 1, 1);
-        self.dayNightFactor = 1.0;
-        self.flashlightActive = false;
-        self.fogActive = false;
         
         glGenVertexArraysOES(1, &_vao);
         glBindVertexArrayOES(_vao);
@@ -64,8 +62,8 @@
     return self;
 }
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess {
-    if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount])) {
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess tag:(int)tag {
+    if ((self = [self initWithName:name shader:shader vertices:vertices vertexCount:vertexCount tag:tag])) {
         [self loadTexture:textureName];
         self.specularColor = specularColor;
         self.diffuseColor = diffuseColor;
@@ -84,21 +82,17 @@
     return modelMatrix;
 }
 
-- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive withFogActive:(bool)fogActive{
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
     
     for (Node *child in self.children) {
-        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor withFlashlightActive:flashlightActive withFogActive:fogActive];
+        [child renderWithParentModelViewMatrix:modelViewMatrix];
     }
     
     _shader.modelViewMatrix = modelViewMatrix;
     _shader.texture = self.texture;
-    _shader.matColour = self.matColour;    
-    _shader.dayNightFactor = dayNightFactor;
-    _shader.flashlightActive = flashlightActive;
-    _shader.fogActive = fogActive;
-
+    _shader.matColour = self.matColour;
     [_shader prepareToDraw];
     
     glBindVertexArrayOES(_vao);

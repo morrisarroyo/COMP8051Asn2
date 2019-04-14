@@ -4,6 +4,8 @@
 
 @class BaseEffect;
 
+#define kBoxTag 1
+
 @interface Node : NSObject
 
 @property (nonatomic, strong) BaseEffect *shader;
@@ -24,9 +26,10 @@
 @property (assign) bool fogActive;
 
 @property (nonatomic, strong) NSMutableArray *children;
+@property (nonatomic, assign) NSInteger tag;
 
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount;
-- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess;
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount tag:(unsigned int)tag;
+- (instancetype)initWithName:(char *)name shader:(BaseEffect *)shader vertices:(Vertex *)vertices vertexCount:(unsigned int)vertexCount textureName:(NSString *)textureName specularColor:(GLKVector4)specularColor diffuseColor:(GLKVector4)diffuseColor shininess:(float)shininess tag:(unsigned int)tag;
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive withFogActive:(bool)fogActive;
 - (void)updateWithDelta:(GLfloat)dt;
 - (void)loadTexture:(NSString *)fileName;

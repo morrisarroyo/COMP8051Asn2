@@ -14,3 +14,4 @@ typedef struct {
     GLfloat Normal[3];
 } Vertex;
 
+

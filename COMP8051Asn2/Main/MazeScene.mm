@@ -1,41 +1,45 @@
 #include "btBulletDynamicsCommon.h"
 #import "MazeScene.h"
-#import "Cube.h"
+//#import "Cube.h"
 #import "MazeCaller.h"
-#import "NorthFace.h"
-#import "EastFace.h"
-#import "SouthFace.h"
-#import "WestFace.h"
-#import "TopFace.h"
+//#import "NorthFace.h"
+//#import "EastFace.h"
+//#import "SouthFace.h"
+//#import "WestFace.h"
+//#import "TopFace.h"
+#import "BoxNode.h"
 
 @implementation MazeScene {
     CGSize _gameArea;
     float _sceneOffset;
-    Cube *_cube;
+    /*Cube *_cube;
     NorthFace *_north;
     EastFace *_east;
     SouthFace *_south;
     WestFace *_west;
     TopFace *_floor;
+    */
     MazeCaller *maze;
     NSString *map;
     NSArray *mapArray;
     Cell cell;
     int mazeScale;
-    /*
+    BoxNode *_box;
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
     btDefaultCollisionConfiguration *_collisionConfiguration;
     btCollisionDispatcher *_dispatcher;
     btSequentialImpulseConstraintSolver *_solver;
     btDiscreteDynamicsWorld *_world;
-    */
+    
 }
 
 
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
-    if ((self = [super initWithName:"TestScene" shader:shader vertices:nil vertexCount:0])) {
+    if ((self = [super  initWithName:"MazeScene" shader:shader vertices:nil vertexCount:0 tag:0])) {
+    
+        [self initPhysics];
         // Create initial scene position
         _gameArea = CGSizeMake(40, 80);
         _sceneOffset = _gameArea.height/2 / tanf(GLKMathRadiansToDegrees(85.0/2));
@@ -43,6 +47,15 @@
         //self.rotationX = GLKMathDegreesToRadians(15);
         self.rotationY = GLKMathDegreesToRadians(90);
         
+        
+        //Create floor and add to scene
+        _box = [[BoxNode alloc] initWithShader:shader];
+        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height, 0);
+        _box.matColour = GLKVector4Make(1, 1, 1, 1);
+        [self.children addObject:_box];
+        _world->addRigidBody(_box.body);
+        
+        /*
         _cube = [[Cube alloc] initWithShader:shader];
         _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_cube];
@@ -149,16 +162,40 @@
             //map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         NSLog(@"%@", map);
+        */
     }
     return self;
 }
 
 -(GLKVector3) getMazeEntrancePosition {
-    return GLKVector3Make(_cube.position.x, 0, _sceneOffset) ;
+    // x = _cube.position.x, 0
+    return GLKVector3Make(0, 0, _sceneOffset) ;
 }
 
 -(NSString *) getMapAscii {
     return map ;
+}
+
+- (void)initPhysics {
+    
+    _broadphase = new btDbvtBroadphase();
+    
+    _collisionConfiguration = new btDefaultCollisionConfiguration();
+    _dispatcher = new btCollisionDispatcher(_collisionConfiguration);
+    
+    _solver  = new btSequentialImpulseConstraintSolver();
+    
+    _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
+    
+    _world->setGravity(btVector3(0, -9.8, 0));
+}
+
+- (void)dealloc {
+    delete _world;
+    delete _solver;
+    delete _collisionConfiguration;
+    delete _dispatcher;
+    delete _broadphase;
 }
 
 @end

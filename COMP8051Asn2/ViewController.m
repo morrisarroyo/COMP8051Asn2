@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "ViewController.h"
-#import "Cube.h"
+//#import "Cube.h"
 #import "MazeScene.h"
 #import "Director.h"
 #import "BaseEffect.h"
