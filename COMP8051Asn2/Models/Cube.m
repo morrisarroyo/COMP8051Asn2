@@ -83,7 +83,8 @@ const GLubyte Indices[] = {
     
     if ((self = [super initWithName:"cube" shader:shader
                            vertices:(Vertex *)Vertices
-                        vertexCount:sizeof(Vertices) / sizeof(Vertices[0])])) {
+                        vertexCount:sizeof(Vertices) / sizeof(Vertices[0])
+                                tag: 0])) {
         
         self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
         self.specularColor = GLKVector4Make(1, 1, 1, 1);

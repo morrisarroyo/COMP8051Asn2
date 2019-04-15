@@ -82,6 +82,29 @@
     return modelMatrix;
 }
 
+- (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix withDayNightFactor:(float)dayNightFactor withFlashlightActive:(bool)flashlightActive withFogActive:(bool)fogActive{
+    
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
+    
+    for (Node *child in self.children) {
+        [child renderWithParentModelViewMatrix:modelViewMatrix withDayNightFactor:dayNightFactor withFlashlightActive:flashlightActive withFogActive:fogActive];
+    }
+    
+    _shader.modelViewMatrix = modelViewMatrix;
+    _shader.texture = self.texture;
+    _shader.matColour = self.matColour;
+    _shader.dayNightFactor = dayNightFactor;
+    _shader.flashlightActive = flashlightActive;
+    _shader.fogActive = fogActive;
+    
+    [_shader prepareToDraw];
+    
+    glBindVertexArrayOES(_vao);
+    glDrawArrays(GL_TRIANGLES, 0, _vertexCount);
+    glBindVertexArrayOES(0);
+    
+}
+
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix {
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);

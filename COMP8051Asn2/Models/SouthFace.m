@@ -21,7 +21,8 @@ const GLubyte Indices3[] = {
     
     if ((self = [super initWithName:"SouthWall" shader:shader
                            vertices:(Vertex *)Vertices3
-                        vertexCount:sizeof(Vertices3) / sizeof(Vertices3[0])])) {
+                        vertexCount:sizeof(Vertices3) / sizeof(Vertices3[0])
+                                tag: 0])) {
         
         self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
         self.specularColor = GLKVector4Make(1, 1, 1, 1);

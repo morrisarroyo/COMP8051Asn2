@@ -21,7 +21,8 @@ const GLubyte Indices4[] = {
     
     if ((self = [super initWithName:"TopFace" shader:shader
                            vertices:(Vertex *)Vertices4
-                        vertexCount:sizeof(Vertices4) / sizeof(Vertices4[0])])) {
+                        vertexCount:sizeof(Vertices4) / sizeof(Vertices4[0])
+                                tag: 0])) {
         
         self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
         self.specularColor = GLKVector4Make(1, 1, 1, 1);

@@ -235,7 +235,7 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
     */
-    GLKVector2 viewportSize =  GLKVector2Make(self.view.bounds.size.width * 2, self.view.bounds.size.height * 2);
+    GLKVector2 viewportSize =  GLKVector2Make(self.view.bounds.size.width * 2, self.view.frame.size.height * 2);
     glViewport(0, 0, viewportSize.x, viewportSize.y );
     glScissor(0, 0, viewportSize.x, viewportSize.y);
     

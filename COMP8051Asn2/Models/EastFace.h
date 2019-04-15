@@ -1,9 +1,8 @@
-#import "Node.h"
+#import "PNode.h"
 
-@interface EastFace : Node
+@interface EastFace : PNode
 
-- (instancetype)initWithShader:
-(BaseEffect *)shader;
+- (instancetype)initWithShader:(BaseEffect *)shader;
 
 @end
 

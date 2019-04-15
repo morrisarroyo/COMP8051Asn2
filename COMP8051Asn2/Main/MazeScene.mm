@@ -1,24 +1,24 @@
 #include "btBulletDynamicsCommon.h"
 #import "MazeScene.h"
-//#import "Cube.h"
+#import "Cube.h"
 #import "MazeCaller.h"
-//#import "NorthFace.h"
-//#import "EastFace.h"
-//#import "SouthFace.h"
-//#import "WestFace.h"
-//#import "TopFace.h"
+#import "NorthFace.h"
+#import "EastFace.h"
+#import "SouthFace.h"
+#import "WestFace.h"
+#import "TopFace.h"
 #import "BoxNode.h"
 
 @implementation MazeScene {
     CGSize _gameArea;
     float _sceneOffset;
-    /*Cube *_cube;
+    Cube *_cube;
     NorthFace *_north;
     EastFace *_east;
     SouthFace *_south;
     WestFace *_west;
     TopFace *_floor;
-    */
+    
     MazeCaller *maze;
     NSString *map;
     NSArray *mapArray;
@@ -50,12 +50,12 @@
         
         //Create floor and add to scene
         _box = [[BoxNode alloc] initWithShader:shader];
-        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height, 0);
+        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, 0);
         _box.matColour = GLKVector4Make(1, 1, 1, 1);
         [self.children addObject:_box];
         _world->addRigidBody(_box.body);
         
-        /*
+        
         _cube = [[Cube alloc] initWithShader:shader];
         _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_cube];
@@ -142,6 +142,7 @@
                     _east = [[EastFace alloc] initWithShader:shader];
                     _east.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) + (mazeScale * 2));
                     [self.children addObject:_east];
+                    _world->addRigidBody(_east.body);
                     //map = [map stringByAppendingFormat:@"%@", @("[e]]")];
                 } else {
                     //map = [map stringByAppendingFormat:@"%@", @("x")];
@@ -150,6 +151,7 @@
                     _east = [[EastFace alloc] initWithShader:shader];
                     _east.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_east];
+                    _world->addRigidBody(_east.body);
                     _west = [[WestFace alloc] initWithShader:shader];
                     _west.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) - (mazeScale * 2));
                     [self.children addObject:_west];
@@ -162,7 +164,7 @@
             //map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         NSLog(@"%@", map);
-        */
+        
     }
     return self;
 }

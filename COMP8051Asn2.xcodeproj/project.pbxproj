@@ -35,6 +35,12 @@
 		3F7950012238B445007E86A9 /* BaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7950002238B445007E86A9 /* BaseEffect.m */; };
 		3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */; };
 		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
+		DD2BA2282265395D00D9C2B5 /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21D2265395C00D9C2B5 /* WestFace.m */; };
+		DD2BA2292265395D00D9C2B5 /* TopFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21E2265395C00D9C2B5 /* TopFace.m */; };
+		DD2BA22A2265395D00D9C2B5 /* SouthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21F2265395C00D9C2B5 /* SouthFace.m */; };
+		DD2BA22B2265395D00D9C2B5 /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2202265395C00D9C2B5 /* NorthFace.m */; };
+		DD2BA22C2265395D00D9C2B5 /* EastFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2222265395C00D9C2B5 /* EastFace.mm */; };
+		DD2BA22D2265395D00D9C2B5 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2262265395D00D9C2B5 /* Cube.m */; };
 		DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD8B926B223B18BB00E9BAFD /* crate.jpg */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +133,18 @@
 		3F7950002238B445007E86A9 /* BaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEffect.m; path = Shaders/BaseEffect.m; sourceTree = "<group>"; };
 		3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
 		3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
+		DD2BA21D2265395C00D9C2B5 /* WestFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WestFace.m; path = Models/WestFace.m; sourceTree = "<group>"; };
+		DD2BA21E2265395C00D9C2B5 /* TopFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopFace.m; path = Models/TopFace.m; sourceTree = "<group>"; };
+		DD2BA21F2265395C00D9C2B5 /* SouthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SouthFace.m; path = Models/SouthFace.m; sourceTree = "<group>"; };
+		DD2BA2202265395C00D9C2B5 /* NorthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NorthFace.m; path = Models/NorthFace.m; sourceTree = "<group>"; };
+		DD2BA2212265395C00D9C2B5 /* NorthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NorthFace.h; path = Models/NorthFace.h; sourceTree = "<group>"; };
+		DD2BA2222265395C00D9C2B5 /* EastFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EastFace.mm; path = Models/EastFace.mm; sourceTree = "<group>"; };
+		DD2BA2232265395D00D9C2B5 /* EastFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EastFace.h; path = Models/EastFace.h; sourceTree = "<group>"; };
+		DD2BA2242265395D00D9C2B5 /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
+		DD2BA2252265395D00D9C2B5 /* TopFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopFace.h; path = Models/TopFace.h; sourceTree = "<group>"; };
+		DD2BA2262265395D00D9C2B5 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cube.m; path = Models/Cube.m; sourceTree = "<group>"; };
+		DD2BA2272265395D00D9C2B5 /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
+		DD2BA22E2265399900D9C2B5 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = Models/Cube.h; sourceTree = "<group>"; };
 		DD8B926B223B18BB00E9BAFD /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +277,18 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD2BA22E2265399900D9C2B5 /* Cube.h */,
+				DD2BA2262265395D00D9C2B5 /* Cube.m */,
+				DD2BA2232265395D00D9C2B5 /* EastFace.h */,
+				DD2BA2222265395C00D9C2B5 /* EastFace.mm */,
+				DD2BA2212265395C00D9C2B5 /* NorthFace.h */,
+				DD2BA2202265395C00D9C2B5 /* NorthFace.m */,
+				DD2BA2242265395D00D9C2B5 /* SouthFace.h */,
+				DD2BA21F2265395C00D9C2B5 /* SouthFace.m */,
+				DD2BA2252265395D00D9C2B5 /* TopFace.h */,
+				DD2BA21E2265395C00D9C2B5 /* TopFace.m */,
+				DD2BA2272265395D00D9C2B5 /* WestFace.h */,
+				DD2BA21D2265395C00D9C2B5 /* WestFace.m */,
 				DD8B926B223B18BB00E9BAFD /* crate.jpg */,
 				292F9A65223A13F70099250F /* eastwall.jpg */,
 				292F9A64223A13F70099250F /* floor.jpg */,
@@ -332,7 +362,7 @@
 				TargetAttributes = {
 					3F794F9F223834C4007E86A9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XP8JJ27LQX;
+						DevelopmentTeam = N6RP3H788Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -424,14 +454,20 @@
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
 				29EC565B22629B7F0078B16F /* PNode.mm in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
+				DD2BA2292265395D00D9C2B5 /* TopFace.m in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
 				3F794FD922383AEB007E86A9 /* MazeScene.mm in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
+				DD2BA22A2265395D00D9C2B5 /* SouthFace.m in Sources */,
+				DD2BA22B2265395D00D9C2B5 /* NorthFace.m in Sources */,
 				29EC56642262AAE50078B16F /* Box.m in Sources */,
+				DD2BA22D2265395D00D9C2B5 /* Cube.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
+				DD2BA2282265395D00D9C2B5 /* WestFace.m in Sources */,
 				29EC56652262AAE50078B16F /* BoxNode.mm in Sources */,
 				3F794FD822383AEB007E86A9 /* Director.m in Sources */,
+				DD2BA22C2265395D00D9C2B5 /* EastFace.mm in Sources */,
 				3F794FC922383938007E86A9 /* AppDelegate.m in Sources */,
 				3F794FA5223834C5007E86A9 /* main.m in Sources */,
 			);
@@ -575,7 +611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XP8JJ27LQX;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = COMP8051Asn2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -588,7 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XP8JJ27LQX;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = COMP8051Asn2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
