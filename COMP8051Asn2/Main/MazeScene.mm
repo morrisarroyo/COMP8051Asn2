@@ -38,7 +38,7 @@
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     if ((self = [super  initWithName:"MazeScene" shader:shader vertices:nil vertexCount:0 tag:0])) {
-    
+        self.dayNightFactor = 1.0;
         [self initPhysics];
         // Create initial scene position
         _gameArea = CGSizeMake(40, 80);

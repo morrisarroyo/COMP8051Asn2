@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     GLKView *view = (GLKView *)self.view;
-    
+    view.contentScaleFactor = 1.0f;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     xtrans = 0;
@@ -235,9 +235,9 @@
      glEnable(GL_DEPTH_TEST);
      glEnable(GL_CULL_FACE);
     */
-    GLKVector2 viewportSize =  GLKVector2Make(self.view.bounds.size.width * 2, self.view.frame.size.height * 2);
+    GLKVector2 viewportSize =  GLKVector2Make(self.view.bounds.size.width , self.view.bounds.size.height);
     glViewport(0, 0, viewportSize.x, viewportSize.y );
-    glScissor(0, 0, viewportSize.x, viewportSize.y);
+    //glScissor(0, 0, viewportSize.x, viewportSize.y);
     
     totalyrot += yrot;
     int tc = totalyrot / (M_PI * 2);
@@ -250,6 +250,7 @@
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
     [self updateConsoleText];
     // Minimap
+    /*
     int minimapSideLength = viewportSize.x / 2;
     glViewport(0, 0, minimapSideLength, minimapSideLength );
     glScissor(0, 0, minimapSideLength, minimapSideLength);
@@ -258,6 +259,7 @@
     _shader.dayNightFactor = [Director sharedInstance].scene.dayNightFactor;
     _shader.fogActive = [Director sharedInstance].scene.fogActive;
     _shader.flashlightActive = [Director sharedInstance].scene.flashlightActive;
+     */
 }
 
 - (void) setupScene{
