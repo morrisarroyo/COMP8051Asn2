@@ -35,8 +35,8 @@
     if (aDelta == 0) return;
     
     // Increase the amount of rotation
-    self.rotationY += M_PI_4 * aDelta;
-    self.rotationZ+= M_PI_4 * aDelta;
+    //self.rotationY += M_PI_4 * aDelta;
+    //self.rotationZ+= M_PI_4 * aDelta;
     
     [super updateWithDelta:aDelta];
     

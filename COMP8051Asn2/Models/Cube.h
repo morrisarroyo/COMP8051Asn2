@@ -1,8 +1,8 @@
-#import "Node.h"
+#import "PNode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Cube : Node
+@interface Cube : PNode
 
 - (instancetype)initWithShader:
 (BaseEffect *)shader;

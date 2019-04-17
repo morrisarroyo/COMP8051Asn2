@@ -1,6 +1,6 @@
-#import "Node.h"
+#import "PNode.h"
 
-@interface SouthFace : Node
+@interface SouthFace : PNode
 
 - (instancetype)initWithShader:
 (BaseEffect *)shader;

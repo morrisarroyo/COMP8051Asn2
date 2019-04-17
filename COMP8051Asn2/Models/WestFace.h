@@ -1,6 +1,6 @@
-#import "Node.h"
+#import "PNode.h"
 
-@interface WestFace : Node
+@interface WestFace : PNode
 
 - (instancetype)initWithShader:
 (BaseEffect *)shader;

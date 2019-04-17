@@ -19,6 +19,9 @@
 		29EC565B22629B7F0078B16F /* PNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC565922629B7F0078B16F /* PNode.mm */; };
 		29EC56642262AAE50078B16F /* Box.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56612262AAE40078B16F /* Box.mm */; };
 		29EC56652262AAE50078B16F /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56622262AAE50078B16F /* BoxNode.mm */; };
+		29ED92C122670A99008FBC69 /* Tank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 29ED92BF22670A99008FBC69 /* Tank1.png */; };
+		29ED92C422670FC9008FBC69 /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ED92C322670FC8008FBC69 /* Tank.m */; };
+		29ED92C722670FF4008FBC69 /* TankNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29ED92C622670FF4008FBC69 /* TankNode.mm */; };
 		3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */; };
 		3F63BD012266E74D002D9766 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD002266E74D002D9766 /* AVFoundation.framework */; };
 		3F63BD032266E75F002D9766 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD022266E75F002D9766 /* QuartzCore.framework */; };
@@ -42,12 +45,12 @@
 		3F7950012238B445007E86A9 /* BaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7950002238B445007E86A9 /* BaseEffect.m */; };
 		3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */; };
 		3F7950082238BCE0007E86A9 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */; };
-		DD2BA2282265395D00D9C2B5 /* WestFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21D2265395C00D9C2B5 /* WestFace.m */; };
-		DD2BA2292265395D00D9C2B5 /* TopFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21E2265395C00D9C2B5 /* TopFace.m */; };
-		DD2BA22A2265395D00D9C2B5 /* SouthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21F2265395C00D9C2B5 /* SouthFace.m */; };
-		DD2BA22B2265395D00D9C2B5 /* NorthFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2202265395C00D9C2B5 /* NorthFace.m */; };
+		DD2BA2282265395D00D9C2B5 /* WestFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21D2265395C00D9C2B5 /* WestFace.mm */; };
+		DD2BA2292265395D00D9C2B5 /* TopFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21E2265395C00D9C2B5 /* TopFace.mm */; };
+		DD2BA22A2265395D00D9C2B5 /* SouthFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA21F2265395C00D9C2B5 /* SouthFace.mm */; };
+		DD2BA22B2265395D00D9C2B5 /* NorthFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2202265395C00D9C2B5 /* NorthFace.mm */; };
 		DD2BA22C2265395D00D9C2B5 /* EastFace.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2222265395C00D9C2B5 /* EastFace.mm */; };
-		DD2BA22D2265395D00D9C2B5 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2262265395D00D9C2B5 /* Cube.m */; };
+		DD2BA22D2265395D00D9C2B5 /* Cube.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2BA2262265395D00D9C2B5 /* Cube.mm */; };
 		DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD8B926B223B18BB00E9BAFD /* crate.jpg */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,11 @@
 		29EC56612262AAE40078B16F /* Box.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Box.mm; path = Nodes/Box.mm; sourceTree = "<group>"; };
 		29EC56622262AAE50078B16F /* BoxNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BoxNode.mm; path = Nodes/BoxNode.mm; sourceTree = "<group>"; };
 		29EC56632262AAE50078B16F /* BoxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxNode.h; path = Nodes/BoxNode.h; sourceTree = "<group>"; };
+		29ED92BF22670A99008FBC69 /* Tank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tank1.png; path = Models/Tank1.png; sourceTree = "<group>"; };
+		29ED92C222670FC8008FBC69 /* Tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tank.h; path = Models/Tank.h; sourceTree = "<group>"; };
+		29ED92C322670FC8008FBC69 /* Tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tank.m; path = Models/Tank.m; sourceTree = "<group>"; };
+		29ED92C522670FF4008FBC69 /* TankNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TankNode.h; sourceTree = "<group>"; };
+		29ED92C622670FF4008FBC69 /* TankNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TankNode.mm; sourceTree = "<group>"; };
 		3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk57-monospace.ttf"; sourceTree = "<group>"; };
 		3F63BD002266E74D002D9766 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3F63BD022266E75F002D9766 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -147,16 +155,16 @@
 		3F7950002238B445007E86A9 /* BaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEffect.m; path = Shaders/BaseEffect.m; sourceTree = "<group>"; };
 		3F7950052238BCE0007E86A9 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragment.glsl; path = Shaders/SimpleFragment.glsl; sourceTree = "<group>"; };
 		3F7950062238BCE0007E86A9 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertex.glsl; path = Shaders/SimpleVertex.glsl; sourceTree = "<group>"; };
-		DD2BA21D2265395C00D9C2B5 /* WestFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WestFace.m; path = Models/WestFace.m; sourceTree = "<group>"; };
-		DD2BA21E2265395C00D9C2B5 /* TopFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopFace.m; path = Models/TopFace.m; sourceTree = "<group>"; };
-		DD2BA21F2265395C00D9C2B5 /* SouthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SouthFace.m; path = Models/SouthFace.m; sourceTree = "<group>"; };
-		DD2BA2202265395C00D9C2B5 /* NorthFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NorthFace.m; path = Models/NorthFace.m; sourceTree = "<group>"; };
+		DD2BA21D2265395C00D9C2B5 /* WestFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WestFace.mm; path = Models/WestFace.mm; sourceTree = "<group>"; };
+		DD2BA21E2265395C00D9C2B5 /* TopFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TopFace.mm; path = Models/TopFace.mm; sourceTree = "<group>"; };
+		DD2BA21F2265395C00D9C2B5 /* SouthFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SouthFace.mm; path = Models/SouthFace.mm; sourceTree = "<group>"; };
+		DD2BA2202265395C00D9C2B5 /* NorthFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NorthFace.mm; path = Models/NorthFace.mm; sourceTree = "<group>"; };
 		DD2BA2212265395C00D9C2B5 /* NorthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NorthFace.h; path = Models/NorthFace.h; sourceTree = "<group>"; };
 		DD2BA2222265395C00D9C2B5 /* EastFace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EastFace.mm; path = Models/EastFace.mm; sourceTree = "<group>"; };
 		DD2BA2232265395D00D9C2B5 /* EastFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EastFace.h; path = Models/EastFace.h; sourceTree = "<group>"; };
 		DD2BA2242265395D00D9C2B5 /* SouthFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SouthFace.h; path = Models/SouthFace.h; sourceTree = "<group>"; };
 		DD2BA2252265395D00D9C2B5 /* TopFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopFace.h; path = Models/TopFace.h; sourceTree = "<group>"; };
-		DD2BA2262265395D00D9C2B5 /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cube.m; path = Models/Cube.m; sourceTree = "<group>"; };
+		DD2BA2262265395D00D9C2B5 /* Cube.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Cube.mm; path = Models/Cube.mm; sourceTree = "<group>"; };
 		DD2BA2272265395D00D9C2B5 /* WestFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WestFace.h; path = Models/WestFace.h; sourceTree = "<group>"; };
 		DD2BA22E2265399900D9C2B5 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = Models/Cube.h; sourceTree = "<group>"; };
 		DD8B926B223B18BB00E9BAFD /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
@@ -305,18 +313,21 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29ED92C222670FC8008FBC69 /* Tank.h */,
+				29ED92C322670FC8008FBC69 /* Tank.m */,
+				29ED92BF22670A99008FBC69 /* Tank1.png */,
 				DD2BA22E2265399900D9C2B5 /* Cube.h */,
-				DD2BA2262265395D00D9C2B5 /* Cube.m */,
+				DD2BA2262265395D00D9C2B5 /* Cube.mm */,
 				DD2BA2232265395D00D9C2B5 /* EastFace.h */,
 				DD2BA2222265395C00D9C2B5 /* EastFace.mm */,
 				DD2BA2212265395C00D9C2B5 /* NorthFace.h */,
-				DD2BA2202265395C00D9C2B5 /* NorthFace.m */,
+				DD2BA2202265395C00D9C2B5 /* NorthFace.mm */,
 				DD2BA2242265395D00D9C2B5 /* SouthFace.h */,
-				DD2BA21F2265395C00D9C2B5 /* SouthFace.m */,
+				DD2BA21F2265395C00D9C2B5 /* SouthFace.mm */,
 				DD2BA2252265395D00D9C2B5 /* TopFace.h */,
-				DD2BA21E2265395C00D9C2B5 /* TopFace.m */,
+				DD2BA21E2265395C00D9C2B5 /* TopFace.mm */,
 				DD2BA2272265395D00D9C2B5 /* WestFace.h */,
-				DD2BA21D2265395C00D9C2B5 /* WestFace.m */,
+				DD2BA21D2265395C00D9C2B5 /* WestFace.mm */,
 				DD8B926B223B18BB00E9BAFD /* crate.jpg */,
 				292F9A65223A13F70099250F /* eastwall.jpg */,
 				292F9A64223A13F70099250F /* floor.jpg */,
@@ -339,6 +350,8 @@
 				29EC56612262AAE40078B16F /* Box.mm */,
 				29EC56632262AAE50078B16F /* BoxNode.h */,
 				29EC56622262AAE50078B16F /* BoxNode.mm */,
+				29ED92C522670FF4008FBC69 /* TankNode.h */,
+				29ED92C622670FF4008FBC69 /* TankNode.mm */,
 				29EC565C22629FE20078B16F /* GameNodes */,
 			);
 			name = Nodes;
@@ -463,6 +476,7 @@
 				DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */,
 				292F9A6C223A13F80099250F /* westwall.jpg in Resources */,
 				292F9A69223A13F80099250F /* floor.jpg in Resources */,
+				29ED92C122670A99008FBC69 /* Tank1.png in Resources */,
 				3F794FB0223834C5007E86A9 /* Assets.xcassets in Resources */,
 				3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */,
 				3F7950072238BCE0007E86A9 /* SimpleFragment.glsl in Resources */,
@@ -482,18 +496,20 @@
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
 				29EC565B22629B7F0078B16F /* PNode.mm in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
-				DD2BA2292265395D00D9C2B5 /* TopFace.m in Sources */,
+				29ED92C722670FF4008FBC69 /* TankNode.mm in Sources */,
+				DD2BA2292265395D00D9C2B5 /* TopFace.mm in Sources */,
 				3F7950012238B445007E86A9 /* BaseEffect.m in Sources */,
 				292F9A5F223A03D20099250F /* MazeCaller.mm in Sources */,
 				3F794FD922383AEB007E86A9 /* MazeScene.mm in Sources */,
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
-				DD2BA22A2265395D00D9C2B5 /* SouthFace.m in Sources */,
-				DD2BA22B2265395D00D9C2B5 /* NorthFace.m in Sources */,
+				DD2BA22A2265395D00D9C2B5 /* SouthFace.mm in Sources */,
+				DD2BA22B2265395D00D9C2B5 /* NorthFace.mm in Sources */,
 				29EC56642262AAE50078B16F /* Box.mm in Sources */,
-				DD2BA22D2265395D00D9C2B5 /* Cube.m in Sources */,
+				DD2BA22D2265395D00D9C2B5 /* Cube.mm in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
-				DD2BA2282265395D00D9C2B5 /* WestFace.m in Sources */,
+				DD2BA2282265395D00D9C2B5 /* WestFace.mm in Sources */,
 				29EC56652262AAE50078B16F /* BoxNode.mm in Sources */,
+				29ED92C422670FC9008FBC69 /* Tank.m in Sources */,
 				3F794FD822383AEB007E86A9 /* Director.m in Sources */,
 				DD2BA22C2265395D00D9C2B5 /* EastFace.mm in Sources */,
 				3F794FC922383938007E86A9 /* AppDelegate.m in Sources */,

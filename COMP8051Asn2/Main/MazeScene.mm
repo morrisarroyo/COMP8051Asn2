@@ -8,6 +8,7 @@
 #import "WestFace.h"
 #import "TopFace.h"
 #import "BoxNode.h"
+#import "TankNode.h"
 
 @implementation MazeScene {
     CGSize _gameArea;
@@ -25,6 +26,8 @@
     Cell cell;
     int mazeScale;
     BoxNode *_box;
+    TankNode *_tank;
+    
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
     btDefaultCollisionConfiguration *_collisionConfiguration;
@@ -33,8 +36,6 @@
     btDiscreteDynamicsWorld *_world;
     
 }
-
-
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     if ((self = [super  initWithName:"MazeScene" shader:shader vertices:nil vertexCount:0 tag:0])) {
@@ -49,15 +50,27 @@
         
         
         //Create floor and add to scene
+        /*
         _box = [[BoxNode alloc] initWithShader:shader];
-        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2, 0);
-        _box.matColour = GLKVector4Make(1, 1, 1, 1);
+        _box.position = GLKVector3Make(_gameArea.width/2, _gameArea.height/2 + 6, 0);
         [self.children addObject:_box];
         _world->addRigidBody(_box.body);
+        */
         
+        /*
         _cube = [[Cube alloc] initWithShader:shader];
-        //_cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_cube];
+        _world->addRigidBody(_cube.body);
+        */
+        
+        _tank = [[TankNode alloc] initWithShader:shader];
+        _tank.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        [self.children addObject:_tank];
+        _world->addRigidBody(_tank.body);
+        //_tank.body->setLinearVelocity(btVector3(4,44,0));
+         //_tank.rotationX = M_PI / 4;
+        //_tank.rotationY = M_PI / 4;
         
         map = @"\n";
         maze = [[MazeCaller alloc] init];
@@ -104,21 +117,24 @@
             map = [map stringByAppendingFormat:@"%@", @("\n")];
         }
         
-        mazeScale = 5;
+        mazeScale = 1;
         for (int i = 0; i < [maze getNumRows]; i++) {
             for (int j = 0; j < [maze getNumCols]; j++) {
                 _floor = [[TopFace alloc] initWithShader:shader];
-                _floor.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2 - 6, (j * mazeScale * 2));
+                _floor.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2 - 2, (j * mazeScale * 2));
                 [self.children addObject:_floor];
+                _world->addRigidBody(_floor.body);
                 
                 cell = [maze getCelli:i j:j];
                 if (cell.northWallPresent) {
                     _north = [[NorthFace alloc] initWithShader:shader];
                     _north.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_north];
+                    _world->addRigidBody(_north.body);
                     _south = [[SouthFace alloc] initWithShader:shader];
                     _south.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2) - (mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_south];
+                    _world->addRigidBody(_south.body);
                     //map = [map stringByAppendingFormat:@"%@", @("n")];
                 } else {
                     //map = [map stringByAppendingFormat:@"%@", @("x")];
@@ -127,9 +143,11 @@
                     _south = [[SouthFace alloc] initWithShader:shader];
                     _south.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_south];
+                    _world->addRigidBody(_south.body);
                     _north = [[NorthFace alloc] initWithShader:shader];
                     _north.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2) + (mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_north];
+                    _world->addRigidBody(_north.body);
                     //map = [map stringByAppendingFormat:@"%@", @("s")];
                 } else {
                     //map = [map stringByAppendingFormat:@"%@", @("x")];
@@ -138,6 +156,7 @@
                     _west = [[WestFace alloc] initWithShader:shader];
                     _west.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2));
                     [self.children addObject:_west];
+                    _world->addRigidBody(_west.body);
                     _east = [[EastFace alloc] initWithShader:shader];
                     _east.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) + (mazeScale * 2));
                     [self.children addObject:_east];
@@ -154,6 +173,7 @@
                     _west = [[WestFace alloc] initWithShader:shader];
                     _west.position = GLKVector3Make(_gameArea.width / 2 + (i * mazeScale * 2), _gameArea.height / 2, (j * mazeScale * 2) - (mazeScale * 2));
                     [self.children addObject:_west];
+                    _world->addRigidBody(_west.body);
                     //map = [map stringByAppendingFormat:@"%@", @("[w]")];
                 } else {
                     //map = [map stringByAppendingFormat:@"%@", @("x")];
@@ -170,7 +190,7 @@
 
 -(GLKVector3) getMazeEntrancePosition {
     // x = _cube.position.x, 0
-    return GLKVector3Make(0, 0, _sceneOffset) ;
+    return GLKVector3Make(_gameArea.width / 2, 0, _sceneOffset) ;
 }
 
 -(NSString *) getMapAscii {
@@ -194,6 +214,8 @@
 - (void)updateWithDelta: (GLfloat) dt {
     [super updateWithDelta:dt];
     _world->stepSimulation(dt);
+    
+    //[self moveTank];
 }
 
 - (void)dealloc {
@@ -202,6 +224,10 @@
     delete _collisionConfiguration;
     delete _dispatcher;
     delete _broadphase;
+}
+
+- (void)moveTank {
+    _tank.body->setLinearVelocity(btVector3(0,1,0));
 }
 
 @end

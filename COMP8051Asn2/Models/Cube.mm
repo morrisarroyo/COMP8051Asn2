@@ -79,20 +79,25 @@ const GLubyte Indices[] = {
     22, 23, 20
 };
 
+
+
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
-    if ((self = [super initWithName:"cube" shader:shader
+    if ((self = [super initWithName:"cube"
+                               mass:0.0f
+                             convex:YES
+                                tag: 0
+                             shader:shader
                            vertices:(Vertex *)Vertices
                         vertexCount:sizeof(Vertices) / sizeof(Vertices[0])
-                                tag: 0])) {
-        
-        self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
-        self.specularColor = GLKVector4Make(1, 1, 1, 1);
-        self.shininess = 10;
-        
-        
-        
-        [self loadTexture:@"crate.jpg"];
+                        textureName:@"eastwall.jpg"
+                     specularColour:GLKVector4Make(1, 1, 1, 1)
+                      diffuseColour:GLKVector4Make(1, 1, 1, 1)
+                          shininess:10
+                 ])) {
+        self.scale = 1;
+        self.width = 1;
+        self.height = 1;
         
     }
     return self;

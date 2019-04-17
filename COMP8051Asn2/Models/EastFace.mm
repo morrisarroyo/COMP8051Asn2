@@ -19,8 +19,8 @@ const GLubyte Indices1[] = {
 
 - (instancetype)initWithShader:(BaseEffect *)shader {
     
-    if ((self = [super initWithName:"EastWall"
-                               mass:1.0f
+    if ((self = [super initWithName:"EastFace"
+                               mass:0.0f
                              convex:YES
                                 tag: 0
                              shader:shader
@@ -36,9 +36,9 @@ const GLubyte Indices1[] = {
         self.specularColor = GLKVector4Make(1, 1, 1, 1);
         self.shininess = 10;
          */
-        self.scale = 5;
-        self.width = 5;
-        self.height = 5;
+        //self.scale = 5;
+        //self.width = 5;
+        //self.height = 5;
         //[self loadTexture:@"eastwall.jpg"];
     }
     return self;
