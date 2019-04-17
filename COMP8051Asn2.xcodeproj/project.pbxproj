@@ -17,9 +17,16 @@
 		29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */; };
 		29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */; };
 		29EC565B22629B7F0078B16F /* PNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC565922629B7F0078B16F /* PNode.mm */; };
-		29EC56642262AAE50078B16F /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56612262AAE40078B16F /* Box.m */; };
+		29EC56642262AAE50078B16F /* Box.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56612262AAE40078B16F /* Box.mm */; };
 		29EC56652262AAE50078B16F /* BoxNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EC56622262AAE50078B16F /* BoxNode.mm */; };
 		3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */; };
+		3F63BD012266E74D002D9766 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD002266E74D002D9766 /* AVFoundation.framework */; };
+		3F63BD032266E75F002D9766 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD022266E75F002D9766 /* QuartzCore.framework */; };
+		3F63BD052266E778002D9766 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD042266E778002D9766 /* GLKit.framework */; };
+		3F63BD072266E77F002D9766 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD062266E77F002D9766 /* OpenGLES.framework */; };
+		3F63BD092266E787002D9766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD082266E787002D9766 /* UIKit.framework */; };
+		3F63BD0B2266E792002D9766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD0A2266E792002D9766 /* Foundation.framework */; };
+		3F63BD0D2266E79A002D9766 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F63BD0C2266E79A002D9766 /* CoreGraphics.framework */; };
 		3F794FA5223834C5007E86A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FA4223834C5007E86A9 /* main.m */; };
 		3F794FAB223834C5007E86A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F794FAA223834C5007E86A9 /* ViewController.m */; };
 		3F794FAE223834C5007E86A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F794FAC223834C5007E86A9 /* Main.storyboard */; };
@@ -103,10 +110,17 @@
 		29EC565922629B7F0078B16F /* PNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PNode.mm; path = Nodes/PNode.mm; sourceTree = "<group>"; };
 		29EC565A22629B7F0078B16F /* PNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNode.h; path = Nodes/PNode.h; sourceTree = "<group>"; };
 		29EC56602262AAE40078B16F /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Box.h; path = Nodes/Box.h; sourceTree = "<group>"; };
-		29EC56612262AAE40078B16F /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Box.m; path = Nodes/Box.m; sourceTree = "<group>"; };
+		29EC56612262AAE40078B16F /* Box.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Box.mm; path = Nodes/Box.mm; sourceTree = "<group>"; };
 		29EC56622262AAE50078B16F /* BoxNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BoxNode.mm; path = Nodes/BoxNode.mm; sourceTree = "<group>"; };
 		29EC56632262AAE50078B16F /* BoxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxNode.h; path = Nodes/BoxNode.h; sourceTree = "<group>"; };
 		3F0C60CD223C5AF7002AD379 /* nk57-monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk57-monospace.ttf"; sourceTree = "<group>"; };
+		3F63BD002266E74D002D9766 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3F63BD022266E75F002D9766 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3F63BD042266E778002D9766 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3F63BD062266E77F002D9766 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3F63BD082266E787002D9766 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3F63BD0A2266E792002D9766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3F63BD0C2266E79A002D9766 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3F794FA0223834C5007E86A9 /* COMP8051Asn2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP8051Asn2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F794FA4223834C5007E86A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F794FA9223834C5007E86A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -153,6 +167,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F63BD0D2266E79A002D9766 /* CoreGraphics.framework in Frameworks */,
+				3F63BD0B2266E792002D9766 /* Foundation.framework in Frameworks */,
+				3F63BD092266E787002D9766 /* UIKit.framework in Frameworks */,
+				3F63BD072266E77F002D9766 /* OpenGLES.framework in Frameworks */,
+				3F63BD052266E778002D9766 /* GLKit.framework in Frameworks */,
+				3F63BD032266E75F002D9766 /* QuartzCore.framework in Frameworks */,
+				3F63BD012266E74D002D9766 /* AVFoundation.framework in Frameworks */,
 				29EC5650226283B20078B16F /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
 				29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */,
 				29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
@@ -189,6 +210,13 @@
 		29EC564622627F9F0078B16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F63BD0C2266E79A002D9766 /* CoreGraphics.framework */,
+				3F63BD0A2266E792002D9766 /* Foundation.framework */,
+				3F63BD082266E787002D9766 /* UIKit.framework */,
+				3F63BD062266E77F002D9766 /* OpenGLES.framework */,
+				3F63BD042266E778002D9766 /* GLKit.framework */,
+				3F63BD022266E75F002D9766 /* QuartzCore.framework */,
+				3F63BD002266E74D002D9766 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -308,7 +336,7 @@
 				3F794FE922383B54007E86A9 /* Node.h */,
 				3F794FEA22383B54007E86A9 /* Node.m */,
 				29EC56602262AAE40078B16F /* Box.h */,
-				29EC56612262AAE40078B16F /* Box.m */,
+				29EC56612262AAE40078B16F /* Box.mm */,
 				29EC56632262AAE50078B16F /* BoxNode.h */,
 				29EC56622262AAE50078B16F /* BoxNode.mm */,
 				29EC565C22629FE20078B16F /* GameNodes */,
@@ -461,7 +489,7 @@
 				3F794FAB223834C5007E86A9 /* ViewController.m in Sources */,
 				DD2BA22A2265395D00D9C2B5 /* SouthFace.m in Sources */,
 				DD2BA22B2265395D00D9C2B5 /* NorthFace.m in Sources */,
-				29EC56642262AAE50078B16F /* Box.m in Sources */,
+				29EC56642262AAE50078B16F /* Box.mm in Sources */,
 				DD2BA22D2265395D00D9C2B5 /* Cube.m in Sources */,
 				3F794FEB22383B54007E86A9 /* Node.m in Sources */,
 				DD2BA2282265395D00D9C2B5 /* WestFace.m in Sources */,

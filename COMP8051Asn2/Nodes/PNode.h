@@ -8,6 +8,8 @@
 
 #import "Node.h"
 #include "btBulletDynamicsCommon.h"
+#define kBoxTag 1
+
 
 NS_ASSUME_NONNULL_BEGIN
 

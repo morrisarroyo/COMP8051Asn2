@@ -55,9 +55,8 @@
         [self.children addObject:_box];
         _world->addRigidBody(_box.body);
         
-        
         _cube = [[Cube alloc] initWithShader:shader];
-        _cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        //_cube.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_cube];
         
         map = @"\n";
@@ -190,6 +189,11 @@
     _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
     
     _world->setGravity(btVector3(0, -9.8, 0));
+}
+
+- (void)updateWithDelta: (GLfloat) dt {
+    [super updateWithDelta:dt];
+    _world->stepSimulation(dt);
 }
 
 - (void)dealloc {
