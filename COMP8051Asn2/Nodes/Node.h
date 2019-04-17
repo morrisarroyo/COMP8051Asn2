@@ -5,7 +5,8 @@
 @class BaseEffect;
 
 #define kBoxTag 1
-#define kTankTag 1
+#define kTankTag 2
+#define kBoulderTag 3
 
 @interface Node : NSObject
 

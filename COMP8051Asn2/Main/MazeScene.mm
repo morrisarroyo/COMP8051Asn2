@@ -9,6 +9,7 @@
 #import "TopFace.h"
 #import "BoxNode.h"
 #import "TankNode.h"
+#import "BoulderNode.h"
 
 @implementation MazeScene {
     CGSize _gameArea;
@@ -26,8 +27,9 @@
     Cell cell;
     int mazeScale;
     BoxNode *_box;
-    TankNode *_tank;
-    
+    //TankNode *_tank;
+    BoulderNode *_boulder;
+    GLfloat timer;
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
     btDefaultCollisionConfiguration *_collisionConfiguration;
@@ -40,6 +42,7 @@
 - (instancetype)initWithShader:(BaseEffect *)shader {
     if ((self = [super  initWithName:"MazeScene" shader:shader vertices:nil vertexCount:0 tag:0])) {
         self.dayNightFactor = 1.0;
+        timer = 0;
         [self initPhysics];
         // Create initial scene position
         _gameArea = CGSizeMake(40, 80);
@@ -64,10 +67,17 @@
         _world->addRigidBody(_cube.body);
         */
         
+        /*
         _tank = [[TankNode alloc] initWithShader:shader];
         _tank.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_tank];
         _world->addRigidBody(_tank.body);
+        */
+        _boulder = [[BoulderNode alloc] initWithShader:shader];
+        _boulder.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
+        [self.children addObject:_boulder];
+        _world->addRigidBody(_boulder.body);
+        
         //_tank.body->setLinearVelocity(btVector3(4,44,0));
          //_tank.rotationX = M_PI / 4;
         //_tank.rotationY = M_PI / 4;
@@ -211,13 +221,6 @@
     _world->setGravity(btVector3(0, -9.8, 0));
 }
 
-- (void)updateWithDelta: (GLfloat) dt {
-    [super updateWithDelta:dt];
-    _world->stepSimulation(dt);
-    
-    //[self moveTank];
-}
-
 - (void)dealloc {
     delete _world;
     delete _solver;
@@ -226,8 +229,41 @@
     delete _broadphase;
 }
 
-- (void)moveTank {
-    _tank.body->setLinearVelocity(btVector3(0,1,0));
+- (void)updateWithDelta: (GLfloat) dt {
+    [super updateWithDelta:dt];
+    _world->stepSimulation(dt);
+    
+    timer += dt;
+    NSLog(@"Timer: %f", timer);
+    if(timer > 3.0f) {
+        timer = 0.0f;
+        [self moveTank];
+    }
 }
 
+- (void)moveTank {
+    static bool xdir = true;
+    if (xdir) {
+        _boulder.body->setAngularFactor(btVector3(1,1,1));
+        _boulder.body->setLinearFactor(btVector3(1,0,1));
+        _boulder.body->setLinearVelocity(btVector3(1,0,0));
+        //_boulder.rotationX = 0;
+        //_boulder.rotationY = 0;
+        //_boulder.rotationZ = 0;
+    } else {
+        _boulder.body->setAngularFactor(btVector3(0,0,0));
+        _boulder.body->setLinearVelocity(btVector3(0,0,0));
+        _boulder.body->setLinearFactor(btVector3(0,0,0));
+    }
+    xdir = !xdir;
+
+}
+
+- (void)moveTank2 {
+    _boulder.body->setLinearFactor(btVector3(0,0,0));
+    _boulder.body->setAngularFactor(btVector3(0,0,0));
+    _boulder.body->clearForces();
+    
+    
+}
 @end

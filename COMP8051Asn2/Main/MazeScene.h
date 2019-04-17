@@ -7,4 +7,5 @@
 -(GLKVector3) getMazeEntrancePosition;
 -(NSString *) getMapAscii;
 - (void)moveTank;
+- (void)moveTank2;
 @end

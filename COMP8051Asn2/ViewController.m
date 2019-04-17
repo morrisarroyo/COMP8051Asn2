@@ -250,7 +250,7 @@
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
     [self updateConsoleText];
     // Minimap
-    /*
+    
     int minimapSideLength = viewportSize.x / 2;
     glViewport(0, 0, minimapSideLength, minimapSideLength );
     glScissor(0, 0, minimapSideLength, minimapSideLength);
@@ -259,7 +259,7 @@
     _shader.dayNightFactor = [Director sharedInstance].scene.dayNightFactor;
     _shader.fogActive = [Director sharedInstance].scene.fogActive;
     _shader.flashlightActive = [Director sharedInstance].scene.flashlightActive;
-     */
+    
 }
 
 - (void) setupScene{
@@ -277,9 +277,9 @@
     translationMatrix.m32 = enterPos.z;
     minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(75), 1, 0, 0);
     minimapMatrix = GLKMatrix4Rotate(minimapMatrix, GLKMathDegreesToRadians(-20), 0, 0, 1);
-    minimapMatrix.m30 = 0 ;
-    minimapMatrix.m31 = -140 ;
-    minimapMatrix.m32 = -100 ;
+    minimapMatrix.m30 = 16 ;
+    minimapMatrix.m31 = -135 ;
+    minimapMatrix.m32 = -7 ;
     [Director sharedInstance].view = self.view;
 }
 

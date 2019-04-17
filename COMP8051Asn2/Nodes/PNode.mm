@@ -88,7 +88,7 @@
     
     _body->setUserPointer((__bridge void*)self);
     
-    _body->setLinearFactor(btVector3(1, 1, 0));
+    _body->setLinearFactor(btVector3(1, 1, 1));
 }
 
 - (void) dealloc {

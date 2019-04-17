@@ -13,6 +13,9 @@
 		292F9A6A223A13F80099250F /* eastwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A65223A13F70099250F /* eastwall.jpg */; };
 		292F9A6B223A13F80099250F /* southwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A66223A13F70099250F /* southwall.jpg */; };
 		292F9A6C223A13F80099250F /* westwall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F9A67223A13F70099250F /* westwall.jpg */; };
+		29EA64B62267EB5D003A8636 /* Boulder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA64B42267EB5D003A8636 /* Boulder.m */; };
+		29EA64B92267EB86003A8636 /* BoulderNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EA64B82267EB86003A8636 /* BoulderNode.mm */; };
+		29EA64BB2267EC3F003A8636 /* Boulder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EA64BA2267EC3F003A8636 /* Boulder.jpg */; };
 		29EC5650226283B20078B16F /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563F22627F1B0078B16F /* libBulletCollision_xcode4_x64_debug.a */; };
 		29EC5651226283B20078B16F /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC563922627F1B0078B16F /* libBulletDynamics_xcode4_x64_debug.a */; };
 		29EC5652226283B20078B16F /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC564522627F1B0078B16F /* libLinearMath_xcode4_x64_debug.a */; };
@@ -107,6 +110,11 @@
 		292F9A65223A13F70099250F /* eastwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = eastwall.jpg; path = Models/eastwall.jpg; sourceTree = "<group>"; };
 		292F9A66223A13F70099250F /* southwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = southwall.jpg; path = Models/southwall.jpg; sourceTree = "<group>"; };
 		292F9A67223A13F70099250F /* westwall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = westwall.jpg; path = Models/westwall.jpg; sourceTree = "<group>"; };
+		29EA64B42267EB5D003A8636 /* Boulder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Boulder.m; path = Models/Boulder.m; sourceTree = "<group>"; };
+		29EA64B52267EB5D003A8636 /* Boulder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boulder.h; path = Models/Boulder.h; sourceTree = "<group>"; };
+		29EA64B72267EB86003A8636 /* BoulderNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoulderNode.h; sourceTree = "<group>"; };
+		29EA64B82267EB86003A8636 /* BoulderNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BoulderNode.mm; sourceTree = "<group>"; };
+		29EA64BA2267EC3F003A8636 /* Boulder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Boulder.jpg; path = Models/Boulder.jpg; sourceTree = "<group>"; };
 		29EC563422627F1B0078B16F /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		29EC563A22627F1B0078B16F /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-master/build3/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		29EC564022627F1B0078B16F /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-master/build3/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
@@ -313,6 +321,8 @@
 		3F794FE822383B41007E86A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29EA64B52267EB5D003A8636 /* Boulder.h */,
+				29EA64B42267EB5D003A8636 /* Boulder.m */,
 				29ED92C222670FC8008FBC69 /* Tank.h */,
 				29ED92C322670FC8008FBC69 /* Tank.m */,
 				29ED92BF22670A99008FBC69 /* Tank1.png */,
@@ -335,6 +345,7 @@
 				292F9A66223A13F70099250F /* southwall.jpg */,
 				292F9A67223A13F70099250F /* westwall.jpg */,
 				3F794FE322383B3D007E86A9 /* dungeon_01.png */,
+				29EA64BA2267EC3F003A8636 /* Boulder.jpg */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -352,6 +363,8 @@
 				29EC56622262AAE50078B16F /* BoxNode.mm */,
 				29ED92C522670FF4008FBC69 /* TankNode.h */,
 				29ED92C622670FF4008FBC69 /* TankNode.mm */,
+				29EA64B72267EB86003A8636 /* BoulderNode.h */,
+				29EA64B82267EB86003A8636 /* BoulderNode.mm */,
 				29EC565C22629FE20078B16F /* GameNodes */,
 			);
 			name = Nodes;
@@ -471,6 +484,7 @@
 			files = (
 				3F0C60CE223C5B07002AD379 /* nk57-monospace.ttf in Resources */,
 				3F794FB3223834C5007E86A9 /* LaunchScreen.storyboard in Resources */,
+				29EA64BB2267EC3F003A8636 /* Boulder.jpg in Resources */,
 				292F9A6A223A13F80099250F /* eastwall.jpg in Resources */,
 				3F794FE622383B3D007E86A9 /* dungeon_01.png in Resources */,
 				DD8B926C223B18BB00E9BAFD /* crate.jpg in Resources */,
@@ -494,6 +508,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F794FE122383B1B007E86A9 /* maze.cpp in Sources */,
+				29EA64B62267EB5D003A8636 /* Boulder.m in Sources */,
+				29EA64B92267EB86003A8636 /* BoulderNode.mm in Sources */,
 				29EC565B22629B7F0078B16F /* PNode.mm in Sources */,
 				3F794FE022383B1B007E86A9 /* DisjointSet.cpp in Sources */,
 				29ED92C722670FF4008FBC69 /* TankNode.mm in Sources */,
