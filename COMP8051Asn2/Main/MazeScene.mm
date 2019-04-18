@@ -77,6 +77,7 @@
         _boulder.position = GLKVector3Make(_gameArea.width / 2, _gameArea.height / 2, 0);
         [self.children addObject:_boulder];
         _world->addRigidBody(_boulder.body);
+
         
         //_tank.body->setLinearVelocity(btVector3(4,44,0));
          //_tank.rotationX = M_PI / 4;
@@ -235,7 +236,7 @@
     
     timer += dt;
     NSLog(@"Timer: %f", timer);
-    if(timer > 3.0f) {
+    if(timer > 6.0f) {
         timer = 0.0f;
         [self moveTank];
     }
@@ -246,14 +247,19 @@
     if (xdir) {
         _boulder.body->setAngularFactor(btVector3(1,1,1));
         _boulder.body->setLinearFactor(btVector3(1,0,1));
-        _boulder.body->setLinearVelocity(btVector3(1,0,0));
+        _boulder.body->setLinearVelocity(btVector3(0,0,2));
         //_boulder.rotationX = 0;
         //_boulder.rotationY = 0;
         //_boulder.rotationZ = 0;
     } else {
+        /* stationary
         _boulder.body->setAngularFactor(btVector3(0,0,0));
         _boulder.body->setLinearVelocity(btVector3(0,0,0));
         _boulder.body->setLinearFactor(btVector3(0,0,0));
+         */
+        _boulder.body->setAngularFactor(btVector3(1,1,1));
+        _boulder.body->setLinearFactor(btVector3(1,0,1));
+        _boulder.body->setLinearVelocity(btVector3(0,0,-2));
     }
     xdir = !xdir;
 
