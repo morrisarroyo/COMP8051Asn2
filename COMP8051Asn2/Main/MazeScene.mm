@@ -241,8 +241,18 @@
         [self moveTank];
     }
     
-    //int cellPos = lroundf(_boulder.position.z);
-    //NSLog(@"%i", cellPos);
+    int cellPosZ = lroundf(_boulder.position.z);
+    NSLog(@"%i", cellPosZ);
+    int cellPosX = lroundf(_boulder.position.x);
+    cellPosX = cellPosX - 20;
+    NSLog(@"%i", cellPosX);
+    
+    int camPosZ = lroundf(_cam.m30);
+    camPosZ = (camPosZ - 20) * -1;
+    NSLog(@"camPosZ: %i", camPosZ);
+    int camPosX = lroundf(_cam.m32);
+    camPosX = (camPosX - 134);
+    NSLog(@"camPosX: %i", camPosX);
 }
 
 - (void)moveTank {
