@@ -247,6 +247,9 @@
     rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
     GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
     vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);
+    
+    ((MazeScene *)([Director sharedInstance].scene)).cam  = vm;
+    
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
     [self updateConsoleText];
     // Minimap

@@ -29,7 +29,6 @@
     BoxNode *_box;
     //TankNode *_tank;
     BoulderNode *_boulder;
-    GLKMatrix3 cam;
     GLfloat timer;
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
