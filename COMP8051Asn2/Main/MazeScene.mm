@@ -30,6 +30,13 @@
     //TankNode *_tank;
     BoulderNode *_boulder;
     GLfloat timer;
+    
+    int boulderPosZ;
+    int boulderPosX;
+    int camPosZ;
+    int camPosX;
+    BOOL stationary;
+    
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
     btDefaultCollisionConfiguration *_collisionConfiguration;
@@ -241,18 +248,24 @@
         [self moveTank];
     }
     
-    int cellPosZ = lroundf(_boulder.position.z);
-    NSLog(@"%i", cellPosZ);
-    int cellPosX = lroundf(_boulder.position.x);
-    cellPosX = cellPosX - 20;
-    NSLog(@"%i", cellPosX);
+    boulderPosZ = lroundf(_boulder.position.z);
+    //NSLog(@"%i", cellPosZ);
+    boulderPosX = lroundf(_boulder.position.x);
+    boulderPosX = boulderPosX - 20;
+    //NSLog(@"%i", cellPosX);
     
-    int camPosZ = lroundf(_cam.m30);
+    camPosZ = lroundf(_cam.m30);
     camPosZ = (camPosZ) * -1;
-    NSLog(@"camPosZ: %i", camPosZ);
-    int camPosX = lroundf(_cam.m32);
+    //NSLog(@"camPosZ: %i", camPosZ);
+    camPosX = lroundf(_cam.m32);
     camPosX = (camPosX - 19);
-    NSLog(@"camPosX: %i", camPosX);
+    //NSLog(@"camPosX: %i", camPosX);
+    
+    if(stationary) {
+        if (boulderPosX == camPosX && boulderPosZ == camPosZ) {
+            
+        }
+    }
 }
 
 - (void)moveTank {
