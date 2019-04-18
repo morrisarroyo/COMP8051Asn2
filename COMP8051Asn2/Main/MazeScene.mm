@@ -29,6 +29,7 @@
     BoxNode *_box;
     //TankNode *_tank;
     BoulderNode *_boulder;
+    GLKMatrix3 cam;
     GLfloat timer;
     //Bullet3 Physics variables
     btBroadphaseInterface *_broadphase;
@@ -235,11 +236,14 @@
     _world->stepSimulation(dt);
     
     timer += dt;
-    NSLog(@"Timer: %f", timer);
+    //NSLog(@"%f", _boulder.position.z);
     if(timer > 6.0f) {
         timer = 0.0f;
         [self moveTank];
     }
+    
+    //int cellPos = lroundf(_boulder.position.z);
+    //NSLog(@"%i", cellPos);
 }
 
 - (void)moveTank {
@@ -265,11 +269,15 @@
 
 }
 
-- (void)moveTank2 {
-    _boulder.body->setLinearFactor(btVector3(0,0,0));
-    _boulder.body->setAngularFactor(btVector3(0,0,0));
-    _boulder.body->clearForces();
-    
-    
+- (int)getBoulderZPos {
+    int cellPosY = lroundf(_boulder.position.z);
+    return cellPosY;
 }
+
+- (int)getBoulderXPos {
+    int cellPosX = lroundf(_boulder.position.x);
+    return cellPosX;
+}
+
+
 @end

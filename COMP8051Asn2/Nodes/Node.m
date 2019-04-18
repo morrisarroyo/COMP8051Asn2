@@ -121,7 +121,6 @@
     glBindVertexArrayOES(_vao);
     glDrawArrays(GL_TRIANGLES, 0, _vertexCount);
     glBindVertexArrayOES(0);
-    
 }
 
 - (void)loadTexture:(NSString *)fileName{
