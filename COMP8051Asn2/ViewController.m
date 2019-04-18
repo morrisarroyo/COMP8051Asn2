@@ -15,10 +15,14 @@
     float yrot;
     float totalyrot;
     //float zrot;
+    float totalxtrans;
+    float totalytrans;
+    float totalztrans;
     GLKMatrix4 translationMatrix;
     GLKMatrix4 rotationMatrix;
     GLKMatrix4 minimapMatrix;
     NSString *mazeString;
+    bool modelActive;
 }
 @property (weak, nonatomic) IBOutlet UISlider *fogStartSlider;
 @property (weak, nonatomic) IBOutlet UISlider *fogEndSlider;
@@ -44,6 +48,10 @@
     xtrans = 0;
     ztrans = 0;
     totalyrot =0;
+    totalxtrans = 0;
+    totalztrans = 0;
+    
+    modelActive = false;
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self setupGestures];
@@ -104,6 +112,12 @@
     }
     NSLog(@"%@", @"Toggle Fog");
 }
+
+- (IBAction)toggleModelActive:(id)sender {
+    modelActive = !modelActive;
+    NSLog(@"%@", @"Toggle Model Active");
+}
+
 - (IBAction)setFog:(id)sender {
     [Director sharedInstance].scene.shader.fogColour = GLKVector4Make(_fogRedSlider.value, _fogGreenSlider.value, _fogBlueSlider.value, 1.0);
     [Director sharedInstance].scene.shader.fogStart = _fogStartSlider.value;
@@ -242,13 +256,16 @@
     totalyrot += yrot;
     int tc = totalyrot / (M_PI * 2);
     totalyrot = totalyrot - (tc * M_PI * 2);
-
+    totalxtrans += xtrans;
+    totalztrans += ztrans;
     translationMatrix = GLKMatrix4Translate(translationMatrix, xtrans * cosf(totalyrot) - ztrans * sinf(totalyrot), 0, xtrans * sinf(totalyrot) + ztrans * cosf(totalyrot));
     rotationMatrix = GLKMatrix4Rotate(rotationMatrix, yrot, 0, 1, 0);
     GLKMatrix4 vm = GLKMatrix4Multiply(rotationMatrix,cameraViewMatrix);
     vm = GLKMatrix4Translate(vm, translationMatrix.m30, translationMatrix.m31, translationMatrix.m32);
     
-    ((MazeScene *)([Director sharedInstance].scene)).cam  = vm;
+    GLKMatrix4 posMatrix = GLKMatrix4Identity;
+    posMatrix = GLKMatrix4Translate(posMatrix, totalxtrans, translationMatrix.m31, totalztrans);
+    ((MazeScene *)([Director sharedInstance].scene)).cam  = posMatrix;
     
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:vm withDayNightFactor:[Director sharedInstance].scene.dayNightFactor withFlashlightActive:[Director sharedInstance].scene.flashlightActive withFogActive:[Director sharedInstance].scene.fogActive];
     [self updateConsoleText];

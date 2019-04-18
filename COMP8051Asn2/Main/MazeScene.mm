@@ -248,10 +248,10 @@
     NSLog(@"%i", cellPosX);
     
     int camPosZ = lroundf(_cam.m30);
-    camPosZ = (camPosZ - 20) * -1;
+    camPosZ = (camPosZ) * -1;
     NSLog(@"camPosZ: %i", camPosZ);
     int camPosX = lroundf(_cam.m32);
-    camPosX = (camPosX - 134);
+    camPosX = (camPosX - 19);
     NSLog(@"camPosX: %i", camPosX);
 }
 
